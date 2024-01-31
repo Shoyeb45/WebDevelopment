@@ -1,0 +1,9 @@
+body {
+    background-image: linear-gradient(45deg, black, blue);
+
+}
+
+form {
+    color: azure;
+    border: 2px solid cadetblue;
+}
