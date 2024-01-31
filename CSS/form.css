@@ -12,3 +12,7 @@ h1 {
     text-shadow: 0 0 3px #000, 0 0 5px #010101;
     color:hsl(215, 66%, 69%) ;
 }
+
+::placeholder{
+    color:indianred;
+}
