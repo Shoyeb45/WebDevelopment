@@ -33,11 +33,19 @@
     top:60px
     
 }
+
+.name{
+    width: 200px; height: 15px;
+}
+
 .Input2 {
     position: absolute;
     left: 50px;
     top:105px
     
+}
+.Nickname{
+    width: 200px; height: 15px;
 }
 .BirthDate {
     position: absolute;
@@ -45,10 +53,19 @@
     top:150px
     
 }
-#gender {
+.bday {
+    width: 100px; height: 15px;
+}
+#pswrd {
     position: absolute;
     left: 50px;
     top:195px
+    
+}
+#gender {
+    position: absolute;
+    left: 50px;
+    top:245px
     
 }
 
