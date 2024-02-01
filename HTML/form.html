@@ -7,9 +7,42 @@
     <link rel="stylesheet" href="../CSS/form.css">
 </head>
 <body>
-    <h1 id="">Form</h1>
+    
+    <img src="Media/Photos/opLogo.png" id="opLogo" height="275px" width="275px">
+    <h1 id="text1">Enter in the World of One piece</h1>
+    
 
-    <form action="" method>
+    <div class="formBox">
+        <form action="" method>
+            <div class="Input1">
+            <label for="name" style="font-size: larger; color: #AACCFF;">Character name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" name="name" placeholder="Enter your favourite character" style="width: 200px; height: 15px;">
+        </div>
+        <div class="Input2">
+            <label for="Nickname" style="font-size: larger; color: #AACCFF;">Character nickname:</label>
+            <input type="text" name="Nickname" placeholder="Enter nickname " style="width: 200px; height: 15px;">
+        </div>
+        <div class="BirthDate">
+            <label for="bday" style="font-size: larger; color: #AACCFF;">Character Birthdate:</label>
+            <input type="date" name="bday" style="width: 100px; height: 15px;">
+        </div>
+        <div id="gender">
+            <label for="Gender" style="font-size: larger; color: #AACCFF;">Character Gender:&nbsp;</label>
+            <input type="radio" name="Gender" value="female">
+            <label for="Gender">Female</label>
+            <input type="radio" name="Gender" value="male">
+            <label for="Gender">Male</label>
+        </div>
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <!-- <form action="" method>
         Name: &nbsp;<input type="text" name="Name" placeholder="Enter your name"> <br><br>
         Password: &nbsp;<input type="password" name="password" placeholder="Enter your Password"/><br><br>
         Date of Birth: &nbsp;<input type="date" name="Date"/><br><br>
@@ -18,7 +51,7 @@
 <br>
         <input type="submit">
 
-    </form>
+    </form> -->
     
 </body>
 </html>
