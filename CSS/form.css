@@ -69,3 +69,98 @@
     
 }
 
+#Checkbox {
+    position: relative;
+    left:120px;
+    top:280px;
+}
+ body {
+    background-image:url(/HTML/Media/Photos/One\ Piece.png);
+
+}
+
+#opLogo {
+    position: relative;
+    left: 610px;
+    bottom: 85px;
+}
+
+#text1 {
+    position: relative;
+    bottom: 96px;
+    left: 100px;
+    font-family: cursive;
+    color: #FFFFC1;
+}
+
+.formBox {
+    position: relative;
+   
+    height: 420px;
+    width: 550px;
+    left: 95px;
+    bottom: 105px;
+    backdrop-filter: blur(10px);
+}
+
+.Input1 {
+    position: absolute;
+    left: 50px;
+    top:60px
+    
+}
+
+.name{
+    width: 200px; height: 15px;
+}
+
+.Input2 {
+    position: absolute;
+    left: 50px;
+    top:105px
+    
+}
+.Nickname{
+    width: 200px; height: 15px;
+}
+.BirthDate {
+    position: absolute;
+    left: 50px;
+    top:150px
+    
+}
+.bday {
+    width: 100px; height: 15px;
+}
+#pswrd {
+    position: absolute;
+    left: 50px;
+    top:195px
+    
+}
+#gender {
+    position: absolute;
+    left: 50px;
+    top:245px
+    
+}
+
+#Checkbox {
+    position: relative;
+    left:120px;
+    top:280px;
+}
+#Submit {
+    position: relative;
+    left:200px;
+    top:295px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#mugiwara {
+    position: relative;
+    bottom: 230px;
+    right: 140px;
+    transform: rotate(-30deg);
+}
