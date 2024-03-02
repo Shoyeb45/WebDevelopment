@@ -150,11 +150,10 @@
     left:120px;
     top:280px;
 }
-#Submit {
+#submit {
     position: relative;
-    left:200px;
+    left:px;
     top:295px;
-    border: 1px solid black;
     text-align: center;
 }
 
@@ -164,3 +163,4 @@
     right: 140px;
     transform: rotate(-30deg);
 }
+
