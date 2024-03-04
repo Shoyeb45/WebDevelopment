@@ -8,14 +8,17 @@
     align-items: center;
     justify-content: right;
     height: 50px;
-    background-color: #534B62;
+    background-color: #0D0C1D;
     flex-direction: row-reverse;
     gap: 50px;
 }
 
 .menu {
     height: 50px;
-    background-color: #534B62;
+    background-color: #0D0C1D;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .btn {
@@ -25,10 +28,13 @@
     border: none;
     border-radius: 10px;
     color: #1B1725;
+    font-size: 15px;
+    font-weight:bolder;
 }
 
 .btn:hover {
-    background-color: #A499B3;
+    background-color: white;
+    box-shadow: 0 0 1rem rgba(241,218,196, 0.5);
 }
 
 .left {
@@ -37,4 +43,5 @@
     color: #D0BCD5;
     font-size: 2rem;
     align-items: center;
+    color: #BBBDF6;
 }
