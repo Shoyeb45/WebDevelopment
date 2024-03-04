@@ -1,0 +1,9 @@
+div > p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+div + h3 {
+    color: blue;
+}
+
