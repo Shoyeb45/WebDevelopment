@@ -1,3 +1,16 @@
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: oblique;
+    color: white;
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 0.44rem;
+    background-color: black;
+}
 div > p {
     text-align: center;
     font-size: 1.2rem;
