@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 50px;
+    background-color: #534B62;
+    flex-direction: row-reverse;
+    gap: 50px;
+}
+
+.menu {
+    height: 50px;
+    background-color: #534B62;
+}
+
+.btn {
+    background-color: #BBBDF6;
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    color: #1B1725;
+}
+
+.btn:hover {
+    background-color: #A499B3;
+}
+
+.left {
+    display: flex;
+    justify-content: left;
+    color: #D0BCD5;
+    font-size: 2rem;
+    align-items: center;
+}
