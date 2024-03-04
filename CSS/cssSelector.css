@@ -3,7 +3,52 @@ div > p {
     font-size: 1.2rem;
 }
 
-div + h3 {
-    color: blue;
+h2 ~ h4 {
+    background-color: yellowgreen;
+    color: yellow;
 }
 
+h4 + h3 {
+    border: 2.5px solid black;
+}
+
+.pseudo {
+    height: 3vh;
+    border: 0.3rem inset orange;
+    width: 250px;
+}
+
+.pseudo:hover {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    box-shadow: 0 0 20px green;
+}
+
+.para p::first-letter {
+    font-size: 2rem;
+    color: darkcyan;
+}
+
+a[href*="JavaScript"] {
+    background-color: wheat;
+    color: rgb(55, 14, 151);
+}
+
+a[href^="https://shoyeb.notion.site/HTML-CSS"] {
+    background-color: black;
+    color: white;
+}
+
+a[href $= "f2bf9c18ab9?pvs=4"] {
+    background-color:cadetblue;
+    color: yellow;
+}
+
+a[href *= "Excel-and-Spreadsheet"] {
+    border: 2px solid black;
+}
