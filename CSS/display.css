@@ -1,0 +1,12 @@
+.box {
+    height: 100px;
+    width: 100px;
+    border: 0.5rem inset orange;
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    gap:20rem;
+    row-gap: 10px;
+}
