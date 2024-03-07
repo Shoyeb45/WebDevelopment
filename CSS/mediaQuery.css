@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+}
+
+.box {
+    border: 10px solid white;
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+}
+
+
+@media (max-width: 800px) {
+    body {
+        background-color: white;
+    }
+    
+    .box {
+        border: 10px solid orange;
+        height: 200px;
+        width: 200px;
+        background-color: green;
+    }
+}
