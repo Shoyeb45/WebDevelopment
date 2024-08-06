@@ -8,13 +8,21 @@
 
     <style>
         header {
-            padding : 30px;
+            padding : 14px;
             font-size: larger;
-            display: flex;
-            justify-content: center;
+            text-align: center;
             background-color: lightcyan;
         }
 
+        header nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav a {
+            margin-right: 40px;
+        }
         section {
             display: grid;
             grid-template-columns: 3fr 6fr;
@@ -29,53 +37,73 @@
         ul {
             list-style: none;
             margin-left: -25px;
-            
+
+        }
+
+        .goToTop {
+            padding: 10px;
+            text-align: center;
+            background-color: black;
+            border: 1px solid black;
+        }
+
+        .goToTop a {
+            color: white;
         }
 
         li {
             border: 1px solid black;
             margin-bottom: 20px;
-            background-color: lightseagreen;
+            background-color: lightyellow;
             padding: 5px;
             width: 150px;
             text-align: center;
         }
-
+        a {
+            text-decoration: none;
+        }
         a:link {
             color: red;
+        }
+        header img {
+            border-radius: 50% ;
         }
     </style>
 </head>
 <body>
     <header>
-        <span class = "bi bi-cart"></span>
-        <div>Fashion Cart</div>
+        <a href="#Home"><span class = "bi bi-cart">Fashion Cart</span></a>     
+        <nav>
+            <a href="#Kid"><img src="https://s3.ap-south-1.amazonaws.com/tcsonline-live/catalog/category/land-boys_2.jpg" alt=""  width="100px" height="100px"></a>
+            <a href="#Women"><img src="https://www.kessa.com/wp-content/uploads/2024/01/kessa-ne34-ridhima-cotton-kalamkari-kurta-sitting-300x450.jpg" alt="" width="100px" height="100px"></a>
+            <a href="#Men"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJQxB3HSFhC3WNx0NWw-AZvCVECQ-1GnNxY0qeP9bhTzbr4HfO_y6Zp-ASfn2Y_Zdjh1M&usqp=CAU" alt="" width="100px" height="100px"></a>
+        </nav>
     </header>
 
     <section>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#Home">Home</a></li>
                 <li><a href="#Kid">KidFashion</a></li>
                 <li><a href="#Men">MenFashion</a></li>
                 <li><a href="#Women">WomenFashion</a></li>
             </ul>
         </nav>
         <main>
-            <h2 id = "home">Home</h2>
-            <p align = "justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit itaque quibusdam maxime tempore voluptates. Aspernatur deserunt aperiam aliquid vel mollitia quae odit recusandae dicta vitae inventore! Iure architecto, ducimus reprehenderit sunt eveniet id quae molestias cumque at. Corrupti minima reiciendis repellat sunt eaque et mollitia ad quisquam ratione consequuntur nobis voluptas nam, laudantium necessitatibus qui soluta quibusdam! Quo saepe fugit ullam qui explicabo voluptate eaque nostrum est maiores cumque dolorem sapiente possimus sunt cupiditate, doloremque id animi dicta, repellat veniam molestiae ipsa amet deleniti quos. Dolorum atque perspiciatis optio repellat veniam accusantium quo odio culpa itaque reprehenderit adipisci voluptatibus ad ipsum, vel aut quasi voluptates dolore suscipit nihil sapiente eligendi. Ipsum, sunt corporis asperiores inventore officiis aut dolorem impedit tempore dolore quidem ea voluptatibus cupiditate dicta totam amet laudantium unde? Ullam reprehenderit tempore rerum earum eius aperiam cumque vitae pariatur necessitatibus quaerat. Vitae odit enim ullam illum dolorem nulla ab facilis fugit, voluptates quibusdam sapiente amet itaque velit nisi repudiandae laborum soluta, animi, cum corporis. Dolorem veritatis fugit praesentium quam quas velit, placeat consectetur mollitia voluptatum at quia? Aspernatur sequi quod ducimus minus, architecto alias perferendis numquam facere dolore repellendus suscipit natus, labore quasi accusantium eum ab? Voluptates cum sint, aspernatur magnam doloribus nulla accusamus optio dicta quos illum neque eveniet nihil quis veniam rem molestias nam ex deleniti dolore magni a deserunt, laudantium placeat. Exercitationem quaerat fuga recusandae culpa molestiae aspernatur vel asperiores. Assumenda, tempore. Reprehenderit odit assumenda commodi dolorem! Quos error magni quae ratione voluptatibus culpa. Dolores asperiores nam cum non enim harum, reprehenderit nulla deleniti magnam obcaecati ab dolorem ea maiores fugiat ducimus corrupti! Debitis commodi, voluptas hic quo quae fugiat cumque perferendis enim placeat eius tempora porro nesciunt animi delectus, iste distinctio. Nam enim eum distinctio ab, ipsum a necessitatibus minus harum officia sequi deleniti veniam tempora aut fugiat similique possimus cupiditate omnis perspiciatis! Facilis saepe numquam ad earum iste harum pariatur. Veniam laudantium corporis cumque, illo facere sed! Placeat?</p>
+            <h2 id = "Home">Home</h2>
+            <p align = "justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit itaque quibusdam maxime tempore voluptates. Aspernatur deserunt aperiam aliquid vel mollitia quae odit recusandae dicta vitae inventore! Iure architecto, ducimus reprehenderit sunt eveniet id quae molestias cumque at. Corrupti minima reiciendis repellat sunt eaque et mollitia ad quisquam ratione consequuntur nobis voluptas nam, laudantium necessitatibus qui soluta quibusdam! Quo saepe fugit ullam qui explicabo voluptate eaque nostrum est maiores cumque dolorem sapiente possimus sunt cupiditate, doloremque id animi dicta, repellat veniam molestiae ipsa amet deleniti <span><b><a href="#Kid">Kid Fashion</a></b></span> quos. Dolorum atque perspiciatis optio repellat veniam accusantium quo odio culpa itaque reprehenderit adipisci voluptatibus ad ipsum, vel aut quasi voluptates dolore suscipit nihil sapiente eligendi. Ipsum, sunt corporis asperiores inventore officiis aut dolorem impedit tempore dolore quidem ea voluptatibus cupiditate dicta totam amet laudantium unde? Ullam reprehenderit tempore rerum earum eius aperiam cumque vitae pariatur necessitatibus quaerat. Vitae odit enim ullam illum dolorem nulla ab facilis fugit, voluptates quibusdam sapiente amet itaque velit nisi repudiandae laborum soluta, animi, cum corporis. Dolorem veritatis fugit praesentium quam quas velit, placeat consectetur mollitia voluptatum at quia? Aspernatur sequi quod ducimus minus, architecto alias perferendis numquam facere dolore repellendus suscipit natus, labore quasi accusantium eum ab? Voluptates cum sint, aspernatur magnam doloribus nulla accusamus optio dicta quos illum neque eveniet nihil quis veniam rem molestias nam ex deleniti dolore magni a deserunt, laudantium placeat. Exercitationem quaerat fuga recusandae culpa molestiae aspernatur vel asperiores. Assumenda, tempore. Reprehenderit odit assumenda commodi dolorem! Quos error magni quae ratione voluptatibus culpa. Dolores asperiores nam cum non enim harum, reprehenderit nulla deleniti magnam obcaecati ab dolorem ea maiores fugiat ducimus corrupti! Debitis commodi, voluptas hic quo quae fugiat cumque perferendis enim placeat eius tempora porro nesciunt animi delectus, iste distinctio. Nam enim eum distinctio ab, ipsum a necessitatibus minus harum officia sequi deleniti veniam tempora aut fugiat similique possimus cupiditate omnis perspiciatis! Facilis saepe numquam ad earum iste harum pariatur. Veniam laudantium corporis cumque, illo facere sed! Placeat?</p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit itaque quibusdam maxime tempore voluptates. Aspernatur deserunt aperiam aliquid vel mollitia quae odit recusandae dicta vitae inventore! Iure architecto, ducimus reprehenderit sunt eveniet id quae molestias cumque at. Corrupti minima reiciendis repellat sunt eaque et mollitia ad quisquam ratione consequuntur nobis voluptas nam, laudantium necessitatibus qui soluta quibusdam! Quo saepe fugit ullam qui explicabo voluptate eaque nostrum est maiores cumque dolorem sapiente possimus sunt cupiditate, doloremque id animi dicta, repellat veniam molestiae ipsa amet deleniti quos. Dolorum atque perspiciatis optio repellat veniam accusantium quo odio culpa itaque reprehenderit adipisci voluptatibus ad ipsum, vel aut quasi voluptates dolore suscipit nihil sapiente eligendi. Ipsum, sunt corporis asperiores inventore officiis aut dolorem impedit tempore dolore quidem ea voluptatibus cupiditate dicta totam amet laudantium unde? Ullam reprehenderit tempore rerum earum eius aperiam cumque vitae pariatur necessitatibus quaerat. Vitae odit enim ullam illum dolorem nulla ab facilis fugit, voluptates quibusdam sapiente amet itaque velit nisi repudiandae laborum soluta, animi, cum corporis. Dolorem veritatis fugit praesentium quam quas velit, placeat consectetur mollitia voluptatum at quia? Aspernatur sequi quod ducimus minus, architecto alias perferendis numquam facere dolore repellendus suscipit natus, labore quasi accusantium eum ab? Voluptates cum sint, aspernatur magnam doloribus nulla accusamus optio dicta quos illum neque eveniet nihil quis veniam rem molestias nam ex deleniti dolore magni a deserunt, laudantium placeat. Exercitationem quaerat fuga recusandae culpa molestiae aspernatur vel asperiores. Assumenda, tempore. Reprehenderit odit assumenda commodi dolorem! Quos error magni quae ratione voluptatibus culpa. Dolores asperiores nam cum non enim harum, reprehenderit nulla deleniti magnam obcaecati ab dolorem ea maiores fugiat ducimus corrupti! Debitis commodi, voluptas hic quo quae fugiat cumque perferendis enim placeat eius tempora porro nesciunt animi delectus, iste distinctio. Nam enim eum distinctio ab, ipsum a necessitatibus minus harum officia sequi deleniti veniam tempora aut fugiat similique possimus cupiditate omnis perspiciatis! Facilis saepe numquam ad earum iste harum pariatur. Veniam laudantium corporis cumque, illo facere sed! Placeat?</p>
 
             <h2 id = "Kid">Kids Fashion</h2>
-            <img src="" alt="">
+            <img src="https://s3.ap-south-1.amazonaws.com/tcsonline-live/catalog/category/land-boys_2.jpg" alt="">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit itaque quibusdam maxime tempore voluptates. Aspernatur deserunt aperiam aliquid vel mollitia quae odit recusandae dicta vitae inventore! Iure architecto, ducimus reprehenderit sunt eveniet id quae molestias cumque at. Corrupti minima reiciendis repellat sunt eaque et mollitia ad quisquam ratione consequuntur nobis voluptas nam, laudantium necessitatibus qui soluta quibusdam! Quo saepe fugit ullam qui explicabo voluptate eaque nostrum est maiores cumque dolorem sapiente possimus sunt cupiditate, doloremque id animi dicta, repellat veniam molestiae ipsa amet deleniti quos. Dolorum atque perspiciatis optio repellat veniam accusantium quo odio culpa itaque reprehenderit adipisci voluptatibus ad ipsum, vel aut quasi voluptates dolore suscipit nihil sapiente eligendi. Ipsum, sunt corporis asperiores inventore officiis aut dolorem impedit tempore dolore quidem ea voluptatibus cupiditate dicta totam amet laudantium unde? Ullam reprehenderit tempore rerum earum eius aperiam cumque vitae pariatur necessitatibus quaerat. Vitae odit enim ullam illum dolorem nulla ab facilis fugit, voluptates quibusdam sapiente amet itaque velit nisi repudiandae laborum soluta, animi, cum corporis. Dolorem veritatis fugit praesentium quam quas velit, placeat consectetur mollitia voluptatum at quia? Aspernatur sequi quod ducimus minus, architecto alias perferendis numquam facere dolore repellendus suscipit natus, labore quasi accusantium eum ab? Voluptates cum sint, aspernatur magnam doloribus nulla accusamus optio dicta quos illum neque eveniet nihil quis veniam rem molestias nam ex deleniti dolore magni a deserunt, laudantium placeat. Exercitationem quaerat fuga recusandae culpa molestiae aspernatur vel asperiores. Assumenda, tempore. Reprehenderit odit assumenda commodi dolorem! Quos error magni quae ratione voluptatibus culpa. Dolores asperiores nam cum non enim harum, reprehenderit nulla deleniti magnam obcaecati ab dolorem ea maiores fugiat ducimus corrupti! Debitis commodi, voluptas hic quo quae fugiat cumque perferendis enim placeat eius tempora porro nesciunt animi delectus, iste distinctio. Nam enim eum distinctio ab, ipsum a necessitatibus minus harum officia sequi deleniti veniam tempora aut fugiat similique possimus cupiditate omnis perspiciatis! Facilis saepe numquam ad earum iste harum pariatur. Veniam laudantium corporis cumque, illo facere sed! Placeat?</p>
-
             <h2 id = "Men">Mens Fashion</h2>
-            <img src="" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJQxB3HSFhC3WNx0NWw-AZvCVECQ-1GnNxY0qeP9bhTzbr4HfO_y6Zp-ASfn2Y_Zdjh1M&usqp=CAU" alt="">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit itaque quibusdam maxime tempore voluptates. Aspernatur deserunt aperiam aliquid vel mollitia quae odit recusandae dicta vitae inventore! Iure architecto, ducimus reprehenderit sunt eveniet id quae molestias cumque at. Corrupti minima reiciendis repellat sunt eaque et mollitia ad quisquam ratione consequuntur nobis voluptas nam, laudantium necessitatibus qui soluta quibusdam! Quo saepe fugit ullam qui explicabo voluptate eaque nostrum est maiores cumque dolorem sapiente possimus sunt cupiditate, doloremque id animi dicta, repellat veniam molestiae ipsa amet deleniti quos. Dolorum atque perspiciatis optio repellat veniam accusantium quo odio culpa itaque reprehenderit adipisci voluptatibus ad ipsum, vel aut quasi voluptates dolore suscipit nihil sapiente eligendi. Ipsum, sunt corporis asperiores inventore officiis aut dolorem impedit tempore dolore quidem ea voluptatibus cupiditate dicta totam amet laudantium unde? Ullam reprehenderit tempore rerum earum eius aperiam cumque vitae pariatur necessitatibus quaerat. Vitae odit enim ullam illum dolorem nulla ab facilis fugit, voluptates quibusdam sapiente amet itaque velit nisi repudiandae laborum soluta, animi, cum corporis. Dolorem veritatis fugit praesentium quam quas velit, placeat consectetur mollitia voluptatum at quia? Aspernatur sequi quod ducimus minus, architecto alias perferendis numquam facere dolore repellendus suscipit natus, labore quasi accusantium eum ab? Voluptates cum sint, aspernatur magnam doloribus nulla accusamus optio dicta quos illum neque eveniet nihil quis veniam rem molestias nam ex deleniti dolore magni a deserunt, laudantium placeat. Exercitationem quaerat fuga recusandae culpa molestiae aspernatur vel asperiores. Assumenda, tempore. Reprehenderit odit assumenda commodi dolorem! Quos error magni quae ratione voluptatibus culpa. Dolores asperiores nam cum non enim harum, reprehenderit nulla deleniti magnam obcaecati ab dolorem ea maiores fugiat ducimus corrupti! Debitis commodi, voluptas hic quo quae fugiat cumque perferendis enim placeat eius tempora porro nesciunt animi delectus, iste distinctio. Nam enim eum distinctio ab, ipsum a necessitatibus minus harum officia sequi deleniti veniam tempora aut fugiat similique possimus cupiditate omnis perspiciatis! Facilis saepe numquam ad earum iste harum pariatur. Veniam laudantium corporis cumque, illo facere sed! Placeat?</p>
             <h2 id = "Women">Womens Fashion</h2>
-            <img src="" alt="">
+            <img src="https://www.kessa.com/wp-content/uploads/2024/01/kessa-ne34-ridhima-cotton-kalamkari-kurta-sitting-300x450.jpg" alt="">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit itaque quibusdam maxime tempore voluptates. Aspernatur deserunt aperiam aliquid vel mollitia quae odit recusandae dicta vitae inventore! Iure architecto, ducimus reprehenderit sunt eveniet id quae molestias cumque at. Corrupti minima reiciendis repellat sunt eaque et mollitia ad quisquam ratione consequuntur nobis voluptas nam, laudantium necessitatibus qui soluta quibusdam! Quo saepe fugit ullam qui explicabo voluptate eaque nostrum est maiores cumque dolorem sapiente possimus sunt cupiditate, doloremque id animi dicta, repellat veniam molestiae ipsa amet deleniti quos. Dolorum atque perspiciatis optio repellat veniam accusantium quo odio culpa itaque reprehenderit adipisci voluptatibus ad ipsum, vel aut quasi voluptates dolore suscipit nihil sapiente eligendi. Ipsum, sunt corporis asperiores inventore officiis aut dolorem impedit tempore dolore quidem ea voluptatibus cupiditate dicta totam amet laudantium unde? Ullam reprehenderit tempore rerum earum eius aperiam cumque vitae pariatur necessitatibus quaerat. Vitae odit enim ullam illum dolorem nulla ab facilis fugit, voluptates quibusdam sapiente amet itaque velit nisi repudiandae laborum soluta, animi, cum corporis. Dolorem veritatis fugit praesentium quam quas velit, placeat consectetur mollitia voluptatum at quia? Aspernatur sequi quod ducimus minus, architecto alias perferendis numquam facere dolore repellendus suscipit natus, labore quasi accusantium eum ab? Voluptates cum sint, aspernatur magnam doloribus nulla accusamus optio dicta quos illum neque eveniet nihil quis veniam rem molestias nam ex deleniti dolore magni a deserunt, laudantium placeat. Exercitationem quaerat fuga recusandae culpa molestiae aspernatur vel asperiores. Assumenda, tempore. Reprehenderit odit assumenda commodi dolorem! Quos error magni quae ratione voluptatibus culpa. Dolores asperiores nam cum non enim harum, reprehenderit nulla deleniti magnam obcaecati ab dolorem ea maiores fugiat ducimus corrupti! Debitis commodi, voluptas hic quo quae fugiat cumque perferendis enim placeat eius tempora porro nesciunt animi delectus, iste distinctio. Nam enim eum distinctio ab, ipsum a necessitatibus minus harum officia sequi deleniti veniam tempora aut fugiat similique possimus cupiditate omnis perspiciatis! Facilis saepe numquam ad earum iste harum pariatur. Veniam laudantium corporis cumque, illo facere sed! Placeat?</p>
+            <div class = "goToTop"><a href="#Home">Back To Top</a></div>
         </main>
     </section>
 </body>
