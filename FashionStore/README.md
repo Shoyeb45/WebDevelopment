@@ -598,3 +598,148 @@ Card Footer
 ### What are fluid images?
 
 - If we set the width and height of an image in percentage then the image will be adjusted to the browser window. If the image is adjusted to browser window through percentage then such images are termed as fluid images 
+
+# Links
+
+
+Q. How to create empty link in link?
+
+Ans.   <b>href="#"</b>   <span style="color:red;">Will not Work (X)</span>
+
+
+To creat an empty link we use a javascript code as shown below:
+
+`<a href = "javascript:void()">Empty Link</a>`   (Test case passed)
+
+
+To give a link which will actually navigate we use a following code:
+
+`<a href = "javascript:void(location.href='')">Empty Link</a>`
+
+
+
+Note: 
+Whenever we send the request, the browser will create an object called `HttpRequest` Object. The structure of HttpRequest is as follows:
+
+
+Link request is of "GET" method type
+
+If the request is of get type then there would be no <u>request body</u> (Data will be sent to the server through URL)
+
+
+Server will send the response by creating http response object. The class name in java will be "Response".
+
+
+Status Number:
+
+2XX Succesful
+|Number| Msessage|
+|------|--------|
+|200|OK|
+|201| Created|
+|202| Accepted|
+|203| Non-Authoritative|
+|204| No content|
+|205| Reset content|
+|206| Partial content|
+|207| Multi-status|
+|208| Already reported|
+
+1XX Informational
+|Number| Msessage|
+|------|--------|
+|100|Conitnue|
+|101| Switching Protocols|
+|102| PRocessing|
+|103| Easy hints|
+
+
+4XX Client Eerror
+|Number| Msessage|
+|------|--------|
+|400|Bad Request|
+|401| Unauthorised|
+|402| Payment required|
+|403| Forbidden|
+|404| Not Found|
+|405| Method not allowed|
+|406| Not Acceptable|
+|407| Conflict|
+|408| Payload too large|
+|409| Too many requests|
+
+
+5XX Server Error
+|Number| Msessage|
+|------|--------|
+|500| Internet Seever Error|
+|501| Not Implemented|
+|502| Bad Gateway|
+|503| Service Unavailable|
+|504| Gateway Timeout|
+|505| HTTP Version not supported|
+|506| Variants also negotiates|
+|507| Insufficient storage|
+|508| Loop Detected|
+|510| Not Extended|
+|511| Network Authentication Required|
+
+3XX Redirection
+
+|Number| Msessage|
+|------|--------|
+|300| Moved Permanently|
+|301| Found|
+|302| See other|
+Ex. 1: link , 
+
+
+Note:   
+
+Normally links will be corrupted by the end user through a technique call URL rewriting.
+
+
+## Inter Documentation Links
+
+Q. 1. How to display the content of a link in new tab?
+
+Using an attribute called `target = _blank`.
+
+Ex. :   
+```
+<a href="" target: _blank></a>
+```
+
+Q. 2. How to specify upon linking a file such that it can be downloaded?
+
+```
+<a href="file/path/filename.extension" download="nameOfFileToBeDownloaded"></a>
+```
+
+The file will be downloaded with the link name if download name is not specified. To download a file with user defined file name we use an option called `download="name"`
+
+
+**Q 3. How to open a linked document in new window?
+
+```
+<span></span>
+<a href = "javascript:window.print()">Printer</a>
+
+<a href = "javascrip:window.open('path/to/image', 'title', 'width = 300, height = 300')">
+```
+
+Q 4. How to open linked document in the same window align with other contents in a page?
+
+Using HTML5 element called `<iframe>` 
+
+Syntax:
+
+```
+<iframe src="" name="></iframe>
+```
+
+
+In order to embed any videos, ppts, documents we always take the help of iframe element in a page.
+
+
+In case of intra document if the page content is small and still if we want to give a navigation we use an element called `:target`

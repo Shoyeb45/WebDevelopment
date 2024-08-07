@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe</title>
+
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+        }
+
+        iframe {
+            width: 50vw;
+            height: 60vh;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="./../../public/Image/picture.jpg" target="main-frame" width = 300 height = 300 >Click to open link in iframe</a></li>
+            
+            </ul>
+        </nav>
+        <main>
+            <iframe src="" name = "main-frame"></iframe>
+        </main>
+
+    </section>
+
+    <article>
+        <iframe src="https://www.youtube.com/embed/q1ZmFc-sqNc" frameborder="0"></iframe>
+    </article>
+</body>
+</html>
