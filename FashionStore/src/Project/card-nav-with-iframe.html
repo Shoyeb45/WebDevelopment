@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       
+        nav ul {
+            margin-top: 50px;
+            list-style: none;
+            margin-left: 50px;
+        }
+        nav li {
+            margin-bottom: 40px;
+            padding: 10px;
+            font-size: 19px;
+            font-weight: 700;
+            border: 2px solid black;
+            width: 180px;
+            text-align: center;
+            background-color: #FEE6E3;
+            border-radius: 8px;
+            box-shadow:  7px 8px black;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav li:hover {
+            box-shadow: none;
+            transition: 0.2;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+            grid-gap: 10px;
+        }
+        iframe {
+            /* margin-top: 50px; */
+            border: none;
+        }
+        main h1 {
+            margin-top: -1px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="./kids-cards.html" target="frame">Kids Fashion</a></li>
+                <li><a href="./men-cards.html" target="frame">Men Fashion</a></li>
+                <li><a href="./women-cards.html" target="frame">Women Fashion</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Fashion Items</h1>
+            <iframe src="" width="1100px" height="650px" name = "frame"></iframe>
+        </main>
+    </section>
+</body>
+</html>
