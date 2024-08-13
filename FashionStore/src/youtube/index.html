@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
 
     <style>
-
+        @font-face {
+            font-family: yt-logo;
+            src: url("./../../public/Font/Trade_Gothic_Font/Trade\ Gothic\ LT\ Bold\ Condensed\ No.\ 20.ttf");
+        }
         .search-bar {
             border: 1px solid gray;
             width: 40vw;
             border-radius: 20px;
-            padding: 10px;
+            padding: 5px;
             text-align: center;
             display: flex;
             font-size: 20px;
@@ -20,18 +23,26 @@
         }
 
         .search-bar .bi-search {
-            margin-right: 0.5vw;
-            border: 1px solid black;
+            margin-right: 0.9vw;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid black; */
             /* border-radius: 0px 20px 20px; */
         }
         .search-row {
             display: flex;
             padding: 10px;
         }
-
+        .search {
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        
         .bi-mic-fill {
             margin-left: 1vw;
             border: none;
+            margin-bottom: 1px;
             color: white;
             font-size: 20px;
             background-color: gray;
@@ -55,8 +66,8 @@
 
         .user-area span {
             margin-right: 20px;
-            /* padding: 5px; */
         }
+
         .user-area, .menu-bar {
             padding: 10px;
             font-size: 20px;
@@ -64,12 +75,10 @@
 
         .menu-bar {
             display: flex;
-            padding: px;
-            /* font-size: 30px; */
         }
         
         .menu-bar .bi-youtube {
-            margin-left: 25px;
+            margin-left: 20px;
             color: red;
             font-size: 30px;
             padding: 5px;
@@ -81,13 +90,18 @@
         }
 
         .logo {
-            margin-left: 5px;
+            margin-left: 2px;
             padding: 5px;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            font-family:yt-logo;
+            font-size: 23px;
         }
         
         sup {
-            font-weight: 400;
+            font-size: 13px;
+            margin-left: -4px;
+            font-weight: normal;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Section part */
@@ -185,12 +199,12 @@
         <div class="menu-bar">
             <span class="bi bi-list"></span>
             <span class="bi bi-youtube"></span>
-            <span class="logo">YouTube<sup>IN</sup></span>
+            <span class="logo">YouTube</span><sup>IN</sup>
         </div>
 
         <div class="search-row">
             <div class="search-bar">
-                <span>Search</span>
+                <span class="search">Search</span>
                 <span class="bi bi-search"></span>
             </div>
             <div class="bi bi-mic-fill"></div>
