@@ -10,6 +10,9 @@
     />
 
     <style>
+      * {
+        /* margin: 0; */
+      }
       @font-face {
         font-family: yt-logo;
         src: url("./../../public/Font/Trade_Gothic_Font/Trade\ Gothic\ LT\ Bold\ Condensed\ No.\ 20.ttf");
@@ -52,11 +55,16 @@
         border-radius: 50%;
         padding: 10px;
       }
-
+      body {
+        margin: 0px;
+      }
       header {
         display: flex;
+        background-color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
         justify-content: space-between;
-        /* padding: 5px; */
       }
       .profile {
         background-color: green;
@@ -115,6 +123,9 @@
         grid-template-columns: 2fr 10fr;
       }
 
+      section nav ul {
+        width: 165px;
+      }
       .link-new-window a {
         color: black;
       }
@@ -126,9 +137,10 @@
 
       li {
         list-style: none;
-        font-size: 18px;
+        font-size: 16px;
+        font-style: Sans-serif;
         margin-left: -20px;
-        margin-bottom: 15px;
+        margin-bottom: 22px;
       }
 
       li span {
@@ -140,12 +152,14 @@
         margin-left: 5vw;
       }
 
-      aside {
-        margin-left: px;
-      }
+      
       .nav-head {
         margin-left: 22px;
         margin-top: 15px;
+      }
+
+      article {
+        margin-top: -30px;
       }
 
       article img {
@@ -183,6 +197,9 @@
 
       .channel-nav {
         display: flex;
+        position: static;
+        top: 0;
+        z-index: 1000;
         gap: 15px;
         margin-top: 25px;
         border-bottom: 1px solid gray;
@@ -192,9 +209,97 @@
       }
 
       .channel-nav .span1 {
-        margin-left: 62px;
+        margin-left: 85px;
         font-weight: bold;
         border-bottom: 3px solid darkgray;
+      }
+
+      section img{
+        margin-left: 85px;
+      }
+
+      .main-video {
+        margin-left: 85px;
+        margin-right: 115px;
+      }
+
+      .main-video iframe {
+        border-radius: 10px;
+      }
+      .for-you {
+        display: flex;
+        justify-content: space-between;
+        /* gap: 3px; */
+        border-bottom: 1px solid gray;
+      }
+
+      .for-you div {
+        margin-bottom: 13px;
+      }
+      .video-title {
+        display: flex;
+        margin-top: 5px;
+        justify-content: space-between;
+      }
+
+      .video-title p {
+        margin: 0px;
+        /* text-wrap:wrap; */
+        width: 320px;
+        
+      }
+      .reach-detail {
+        margin-top: 10px;
+        color: #AAAAAA;
+      }
+
+      .second-block-heading h3 {
+        padding: 0px;
+        margin: 0px;
+        margin-right: 16px;
+      }
+      .second-block-heading {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 0px;
+      }
+
+      .bi-play-fill {
+        font-size: 22px;
+      }
+
+      .second-block-heading div {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        width: 80px;
+      }
+      
+      .second-block-heading div:hover {
+        background-color: gray;
+        border-radius: 30px;
+      }
+
+      .all-about-pwioi p {
+        margin: 0px;
+        width: 650px;
+      }
+
+        .videos {
+        display: flex;
+        /* gap: 2px; */
+        justify-content: space-between;
+        margin-top: 19px;
+        margin-bottom: 23px;
+      }
+
+      .all-about-pwioi {
+        border-bottom: 1px solid gray;
+      }
+      .videos .video-title p {
+        width: 200px;
+        text-overflow: ellipsis;
       }
     </style>
   </head>
@@ -248,8 +353,7 @@
         <img
           src="./../../public/Image/ytbanner.jpg"
           width="auto"
-          height="180px"
-        />
+          height="172px"/>
 
         <article>
           <img
@@ -301,13 +405,209 @@
         </nav>
 
         <div class="main-video">
-          <div>
-            <iframe width="246" height="138" src="https://www.youtube.com/embed/scX-jneH0hU?si=qJa3EpfZB7NzyJoW"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+            <h3>For You</h3>
+
+            <div class="for-you">
+              <div>
+                <iframe height="198" width="354" src="https://www.youtube.com/embed/UnCrj9xJzAU?si=K0WkHW3gVGEXiVnN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>What is PW IOI ?</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  22K views • 3 months ago
+                </div>
+              </div>
+  
+              <div>
+                <iframe width="354" height="198" src="https://www.youtube.com/embed/scX-jneH0hU?si=jYLMYm7t4cecAuOu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>PW Teachers Motivating PW IOI Students | Path to Success 🤩✌🏻</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  17K views • 4 months ago
+                </div>
+              </div>
+  
+              <div>
+                <iframe width="354" height="198" src="https://www.youtube.com/embed/PQETL7t6Nlk?si=lMaBWbzQORFP9Wo2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>How to get into PW IOI? | Complete admission process</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  16K views • 2 months ago
+                </div>
+              </div>
+
+              
+            </div>
+
+            <div class="second-block-heading">
+              <h3>All About PW IOI</h3>
+
+              <div>
+                <span class="bi bi-play-fill"></span>&nbsp;
+                <span>Play All</span>
+              </div>
+            </div>
+            <div class="all-about-pwioi">
+              <p>
+                Welcome to PW IOI! Explore our playlist for talks, seminars, and workshops led by experts. Ignite your passion for innovations in Technology and Management, enhance skills, and embrace...
+              </p>
+
+              <div class="videos">
+
+                <div>
+                  
+                  <iframe width="210" height="118" src="https://www.youtube.com/embed/MVPYoRTV438?si=w9kL15UR8KBLP8gT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                  <div class="video-title">
+                    <p>PW IOI AD WARS Challenge | The Task Announcement of... </p>
+                    <span class="bi bi-three-dots-vertical"></span>
+                  </div>
+  
+                  <div class="reach-detail">
+                    16K views • 2 months ago
+                  </div>
+                </div>
+  
+                <div>
+                  <iframe width="210" height="118" src="https://www.youtube.com/embed/D9CTsTSKx5g?si=TyeeJC3yINDB09ht" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="video-title">
+                    <p>The AD WARS Campaign by PW IOI 🔥🔥#Teaser</p>
+                    <span class="bi bi-three-dots-vertical"></span>
+                  </div>
+  
+                  <div class="reach-detail">
+                    16K views • 2 months ago
+                  </div>
+                </div>
+  
+                <div>
+                  <iframe width="210" height="118" src="https://www.youtube.com/embed/pM3370OZ7HE?si=Kb9-pLCVRtUcmkds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="video-title">
+                    <p>The Roadmap to Build the Unicorn Start-up by Prof...</p>
+                    <span class="bi bi-three-dots-vertical"></span>
+                  </div>
+  
+                  <div class="reach-detail">
+                    16K views • 2 months ago
+                  </div>
+                </div>
+  
+                <div>
+                  <iframe width="210" height="118" src="https://www.youtube.com/embed/scX-jneH0hU?si=NUSyeEZaFpQ-3rkF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                  <div class="video-title">
+                    <p>How to get into PW IOI? | Complete admission process</p>
+                    <span class="bi bi-three-dots-vertical"></span>
+                  </div>
+  
+                  <div class="reach-detail">
+                    16K views • 2 months ago
+                  </div>
+                </div>
+  
+                <div>
+                  <iframe width="210" height="118" src="https://www.youtube.com/embed/VcDavaC5Swk?si=WSEWpLAaMUjlSF2v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                  <div class="video-title">
+                    <p>How PW IOI's School of Management Offerings are...</p>
+                    <span class="bi bi-three-dots-vertical"></span>
+                  </div>
+  
+                  <div class="reach-detail">
+                    16K views • 2 months ago
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="second-block-heading">
+              <h3>Schoool Of Management</h3>
+
+              <div>
+                <span class="bi bi-play-fill"></span>&nbsp;
+                <span>Play All</span>
+              </div>
+            </div>
+
+
+            <div class="videos">
+              <div>
+                <iframe width="210" height="118" src="https://www.youtube.com/embed/cX9YVRmkpRE?si=eHP_9RjPp7eLNM-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>What makes PW IOI School of Management special?</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  16K views • 2 months ago
+                </div>
+              </div>
+
+              <div>
+                <iframe width="210" height="118" src="https://www.youtube.com/embed/Y7rKWmD1gNU?si=trBXZNzpuBe2BNEf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>Why join PW IOI School of Management?</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  16K views • 2 months ago
+                </div>
+              </div>
+              <div>
+                <iframe width="210" height="118" src="https://www.youtube.com/embed/OGZ2gCZ00Kw?si=g1GYEmPEeIFqdc9l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>Curriculum for PW IOI School of Management</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  16K views • 2 months ago
+                </div>
+              </div>
+              <div>
+                <iframe width="210" height="118" src="https://www.youtube.com/embed/aDfBV0oTfbE?si=Dnwa_0hieQN5pEqT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>Why India needs Entrepreneurial Revolution?...</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  16K views • 2 months ago
+                </div>
+              </div>
+              <div>
+                <iframe width="210" height="118" src="https://www.youtube.com/embed/lgQRVh4FFbs?si=bOAg4pJRwp6tarDF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-title">
+                  <p>Transforming Tech & Entrepreneurship: Inside PW...</p>
+                  <span class="bi bi-three-dots-vertical"></span>
+                </div>
+
+                <div class="reach-detail">
+                  16K views • 2 months ago
+                </div>
+              </div>
+            </div>
         </div>
+
+
       </main>
     </section>
   </body>
