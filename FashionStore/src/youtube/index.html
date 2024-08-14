@@ -6,8 +6,8 @@
     <title>Youtube</title>
     <link
       rel="stylesheet"
-      href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
-    />
+      href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
  
@@ -307,6 +307,10 @@
         margin-right: 15px;
         border-radius: 50%;
       }
+
+      .yt-logos span{
+        color: red;
+      }
     </style>
   </head>
   <body>
@@ -384,14 +388,14 @@
         
         <div class="nav-head">
           <span>More from YouTube</span>
-
-          <ul>
-            <li><span class="bi bi-youtube"></span>YouTube Premium</li>
-            <li><img src="./../../public/Image/ytStudio.png" alt="" width="23" height="23">YouTube Studio</li>
-            <li><span class="bi bi-"></span>YouTube Music</li>
-            <li><span class="bi bi-"></span>YouTube Kids</li>
-          </ul>
         </div>
+
+          <ul class="yt-logos">
+            <li><span class="bi bi-youtube"></span>YouTube Premium</li>
+            <li><span class="fa fa-youtube-square"></span>YouTube Studio</li>
+            <li><span class="fa fa-music"></span>YouTube Music</li>
+            <li><span class="fa fa-youtube"></span>YouTube Kids</li>
+          </ul>
 
       </nav>
 
