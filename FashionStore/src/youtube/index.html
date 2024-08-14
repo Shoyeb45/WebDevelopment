@@ -138,6 +138,8 @@
       li {
         list-style: none;
         font-size: 16px;
+        display: flex;
+        align-items: center;
         font-style: Sans-serif;
         margin-left: -20px;
         margin-bottom: 22px;
@@ -301,6 +303,12 @@
         width: 200px;
         text-overflow: ellipsis;
       }
+
+      section nav ul li img {
+        margin-left: 0px;
+        margin-right: 15px;
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body>
@@ -338,6 +346,7 @@
           <span>You</span>
           <span class="bi bi-chevron-right"></span>
         </div>
+
         <ul>
           <li><span class="bi bi-person-square"></span>Your Channel</li>
           <li><span class="bi bi-clock-history"></span>History</li>
@@ -347,6 +356,45 @@
           <li><span class="bi bi-clock"></span>Watch Later</li>
           <li><span class="bi bi-hand-thumbs-up"></span>Liked Videos</li>
         </ul>
+
+        <div class="nav-head">
+          <span>Subscriptions</span>
+        </div>
+        
+        <ul>
+          <li><img src="./../../public/Image/alanWalkerLogo.jpg" alt="" width="23" height="23">Alan Walker</li>
+          <li><img src="./../../public/Image/tuflogo.jpg" alt="" width="23" height="23">take U forward</li>
+          <li><img src="./../../public/Image/maskedManlogo.jpg" alt="" width="23" height="23">The Masked Man</li>
+          <li><img src="./../../public/Image/aryanclogo.jpg" alt="" width="23" height="23">aryanc403</li>
+          <li><img src="./../../public/Image/venomTechLogo.jpg" alt="" width="23" height="23">Venom's Tech</li>
+          <li><img src="./../../public/Image/forrestKnightLogo.jpg" alt="" width="23" height="23">Forrest Knight</li>
+          <li><img src="./../../public/Image/samdishLogo.jpg" alt="" width="23" height="23">UNFILTERED by...</li>
+          <li><span class="bi bi-chevron-down"></span>&nbsp;Show more</li>
+        </ul>
+
+        <ul>
+          <li><span class="bi bi-fire"></span>Trading</li>
+          <li><span class="bi bi-bag"></span>Shopping</li>
+          <li><span class="bi bi-music-note"></span>Music</li>
+          <li><span class="bi bi-controller"></span>Gaming</li>
+          <li><span class="bi bi-newspaper"></span>News</li>
+          <li><span class="bi bi-trophy"></span>Sport</li>
+          <li><span class="bi bi-lightbulb"></span>Courses</li>
+          <li><span class="bi bi-duffle"></span>Fashion & beauty</li>
+          <li><span class="bi bi-broadcast-pin"></span>Podcasts</li>
+        </ul>
+        
+        <div class="nav-head">
+          <span>More from YouTube</span>
+
+          <ul>
+            <li><span class="bi bi-youtube"></span>YouTube Premium</li>
+            <li><img src="./../../public/Image/ytStudio.png" alt="" width="23" height="23">YouTube Studio</li>
+            <li><span class="bi bi-"></span>YouTube Music</li>
+            <li><span class="bi bi-"></span>YouTube Kids</li>
+          </ul>
+        </div>
+
       </nav>
 
       <main>
