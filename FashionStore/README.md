@@ -763,3 +763,24 @@ In case of intra document if the page content is small and still if we want to g
 |`<th>`|It defines column heading content[header cell]|
 |`<tr>`|It defines the table row|
 |`<td>`|It defines the table cell content[ordinary cell]|
+
+
+### Attributes of table
+
+- `frame` = box, void, above, below, lhs, rhs
+
+void - it would not attache any border to the table.
+
+This attribute is used to remove the outer border from the table.
+
+- `border` : this attribute is used to set the border for entire table(for each cell and also it sets a frame for the entire table). The value of a border would be <b>0</b> or <b>1</b>. <b>1</b>
+
+With respect to cell, if we increase the value of border to any number, there would be not any effect.
+
+- `cellspacing` and `cellpadding` : It is a similar to margin and padding of css.
+
+- `rules` : row, columns, all, none
+
+> If we use rules and border together, rules value would dominate
+
+> whenever we use `rules` we should not work `border`, when we use `border` we should not use `rules`
