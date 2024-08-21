@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card With BG Image</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            height: 506px;
+        }
+        
+        .card {
+            background-color: rgb(44, 44, 44, 0.1);
+            height: 506px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        .women-fashion {
+            background-image: url("./../../public/Image/women-fashion-crd.jpg");
+            background-size: cover;
+        }
+        .men-fashion {
+            background-image: url("./../../public/Image/men-fashion-crd.jpg");
+            background-size: cover;
+           
+        }
+        .kid-fashion {
+            background-image: url("./../../public/Image/kid-fashion-crd.jpg");
+            background-size: cover;
+            
+        }
+
+       .card .card-header {
+            text-align: center;
+            color: white;
+            font-size: 2.75rem;
+            /* position: fixed; */
+       }
+
+        .card-footer button {
+            padding: 15px;
+            font-weight: bold;
+            width: 150px;
+            border: none;
+            letter-spacing: 1px;
+            position: fixed;
+            margin-top: 110px;
+            margin-left: -75px;
+        }
+      
+
+        /* .women-fashion:hover, .men-fashion:hover, .kid-fashion:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        } */
+        .card:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div class="women-fashion">
+
+            <div class="card">
+              
+                <h1 class="card-header">
+                    Women
+                </h1>
+                
+                <div class="card-footer">
+                    <button>
+                        Shop Women&nbsp; <span class="bi bi-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="men-fashion">
+
+            <div class="card">
+                <h1 class="card-header">
+                        Men
+                </h1>
+    
+                <div class="card-footer">
+                    <button>
+                        Shop Men&nbsp; <span class="bi bi-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="kid-fashion">
+
+            <div class="card">
+                    <h1 class="card-header">
+                        Kid
+                    </h1>
+    
+                <div class="card-footer">
+                    <button>
+                        Shop Kid&nbsp; <span class="bi bi-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

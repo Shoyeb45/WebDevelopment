@@ -743,3 +743,23 @@ In order to embed any videos, ppts, documents we always take the help of iframe 
 
 
 In case of intra document if the page content is small and still if we want to give a navigation we use an element called `:target`
+
+
+# Table element in HTML
+
+- Tables are used to organize the data in rows and columns[Data present inside the table is Not the SEO friendly]
+- Tables internally are presented with the help of "grid-component"
+- Data in a table would be static whereas we give the effects of filtering, sorting throught backend technologies.
+- In earlier versions of HTML tables were used to design layouts (Rows and columns).
+- In HTML 5, we use tables only to present data in static manner with the help of elements as shown in below:
+
+|Element|Description|
+|-------|---|
+|`<table>`|It is a collection of rows and columns|
+|`<caption>`|It sets caption for table which makes it SEO friendly|
+|`<thead>`|It defines the table header section|
+|`<tbody>`|It defines the table body section|
+|`<tfoot>`|It defines the table footer section|
+|`<th>`|It defines column heading content[header cell]|
+|`<tr>`|It defines the table row|
+|`<td>`|It defines the table cell content[ordinary cell]|
