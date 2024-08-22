@@ -784,3 +784,45 @@ With respect to cell, if we increase the value of border to any number, there wo
 > If we use rules and border together, rules value would dominate
 
 > whenever we use `rules` we should not work `border`, when we use `border` we should not use `rules`
+
+- `background` and `bgcolor` : 
+
+`bgcolor` : It sets a background color for table, body, footer, cell , row
+`background` : It sets background image for table. group, row, cell
+
+
+```
+<table background="./../../public/Image/Asia-Cup-2023.jpg">
+<table bgcolor="red">
+<tr bgcolor="red"></tr>
+```
+
+
+- `height` and `width` of table: height defines for row(affects whole row)
+
+Syntax:
+```
+<tr height = "200"></tr>
+
+<td height="100"> <!-- Not good --> 
+```
+
+
+Width defines cell width (affects whole column).
+
+```
+<td width="200">
+```
+
+> Note : Always define height for "tr" and width for "td | th"
+
+- In order to adjust the data within a cell, we use a attribute called `align`(Values: `left`, `center`, `right`, `justify`) and `valign`(Values: `top`, `bottom`, `center`). These attributes are applicable for a particular cell
+
+- Merging of rows and columns : 
+
+> `colspan` - It can merge specified number of columns into single column 
+> `rowspan` - It can merge specified number of row into single row 
+
+Note : `colspan` and `rowspan` can be applied only "`<td>` | `<th>`"
+
+
