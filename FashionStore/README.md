@@ -826,3 +826,75 @@ Width defines cell width (affects whole column).
 Note : `colspan` and `rowspan` can be applied only "`<td>` | `<th>`"
 
 
+# Analogy of class in java and elements in HTML
+
+# Form
+
+- Form provides an UI from where user can interact with our application.
+- Interaction includes insert, delete, update, query etc. [CRUD/ CURD/ SCUD]
+- Forn is a generic container which have <u>default functionality</u>
+- A form can submit and reset its data without configuring any explicit functionality.
+
+
+
+
+## Form container
+
+- It is designed by using `<form>` tag
+
+
+Syntax:
+```
+<form>
+    form-elements
+</form>
+```
+
+> NOTE: In a page we can submit the details only when they are enclosed in a form.
+
+
+Syntax:
+
+```
+Name: <input type="text" name="Name"> // Not good
+```
+```
+<form>
+Name: <input type="text" name="Name"> // good
+</form>
+```
+### Form Attrubutes:
+
+
+1.id, 2. class, 2. name (Required for identification purpose for css)
+
+4. Method:
+
+It indicates how the data should be submitted to the server. The values of method are : "GET" or "POST". 
+
+a. The default method type is "get".(<b>select</b> query will run based on input) 
+
+b. If we want to send large volume of the datato the server, then we go for "post" method type. (<b>insert</b> query will run for the input provided by the use)
+
+## The other values of methods are
+
+1. PUT(update clause is used)
+2. PATCH(update clause is used)
+3.  DELETE (Delete clause)
+4. TRACE
+5. OPTION
+
+- Big 7 HTTP methods
+
+
+- To send the request of type put, patch, delete - we use a softwares like CURL, POSTMAN, OPENAPI.
+
+- DIfference between GET vs POST
+
+|Sr No|GET|POST|
+|-|---|----|
+|1| It supports caching(saves round trip)| It does not supports caching|
+|2| Upon submitting the data, query string will be constructed and it will be attached to URL| Query string will be constructed and it will not be attached to URL.|
+|3| Small volume of data would be allowed(2048 character)| No limit on submitting the data(any volume).|
+|4| You can't submit the complex data like audio files, video files, image files(Binary data - it supports only ascii types)| We can submit the complex data.|
+|5. | It is not safe so the data can be hacked| The data is safe and can't be hacked easily|

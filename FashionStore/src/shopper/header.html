@@ -4,25 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/../bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            background-color: #F5F5F5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            /* padding-left:150px;
+            padding-right: 150px; */
+            font-weight: bold;
+        }
+
+        .left {
+            margin-left: 150px;
+            display: flex;
+            gap:25px;
+        }
+        .icons {
+            color: gray;
+            font-weight: lighter;
+            margin-right:  150px;
+        }
+
+        .right {
+            gap: 20px;
+        }
+
+        .bottom h1 {
+            margin: 0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.75rem;
+            /* margin-left: 1rem;; */
+            margin-top: 5px;
+            margin-left: 165px;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px;
+        }
+
+        .link-bar {
+            gap: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .bottom .icons {
+            color: black;
+            font-weight: bolder;
+            gap: 17px;
+            margin-right: 0px;
+        }
+        
+        .icons span sup {
+            /* margin-right: 20px; */
+            display: inline-block;
+            background-color: red;
+            border-radius: 50%;
+            width: 17px;
+            text-align: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .icons span {
+            margin-right: 125px;
+        }
+
+       
+        .link-bar li a:hover {
+            color: orange;
+
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
+
+<style>
+
+</style>
 <body>
     <header>
         <nav class="top">
-            <div class="left">
-                
-            </div>
+            <ul class="left">
+               <li><span class="bi bi-truck"></span> FREE SHIPPING WORLDWIDE</li>
+               <li>UNITED STATES <span class="bi bi-chevron-down"></span></li>
+               <li>USD <span class="bi bi-chevron-down"></span></li>
+               <li>English <span class="bi bi-chevron-down"></span></li>
+            </ul>
 
-            <div class="center">
+            <ul class="right">
+               <li>Shipping</li>
+               <li>FAQ</li>
+               <li>Contact</li>
+            </ul>
 
-            </div>
-
-            <div class="right">
-                
-            </div>
+            <ul class="icons">
+                <li class="bi bi-facebook"></li>
+                <li class="bi bi-twitter"></li>
+                <li class="bi bi-instagram"></li>
+                <li class="bi bi-medium"></li>
+            </ul>
         </nav>
 
         <nav class="bottom">
+            <h1>
+                Shopper.
+            </h1>
 
+            <ul class="link-bar">
+                <li><a href="javascript:void()">Home</a></li>
+                <li><a href="javascript:void()">Catalog</a></li>
+                <li><a href="javascript:void()">Shop</a></li>
+                <li><a href="javascript:void()">Pages</a></li>
+                <li><a href="javascript:void()">Blog</a></li>
+                <li><a href="javascript:void()">Docs</a></li>
+            </ul>
+
+            <ul class="icons">
+                <li class="bi bi-search"></li>
+                <li class="bi bi-person"></li>
+                <li class="bi bi-heart"></li>
+                <li class="bi bi-cart">
+                    <span>
+                        <sup>2</sup>
+                    </span>
+                </li>
+            </ul>
         </nav>
     </header>
 </body>
