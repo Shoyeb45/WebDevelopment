@@ -898,3 +898,44 @@ b. If we want to send large volume of the datato the server, then we go for "pos
 |3| Small volume of data would be allowed(2048 character)| No limit on submitting the data(any volume).|
 |4| You can't submit the complex data like audio files, video files, image files(Binary data - it supports only ascii types)| We can submit the complex data.|
 |5. | It is not safe so the data can be hacked| The data is safe and can't be hacked easily|
+
+
+What is query string?
+> It is a string which is constructed by web browser upon the user entering the details and clicking on submit button. Query string data would be in the form of key-value pair.
+![alt text](1000048576.png)
+
+<!-- <></div> -->
+
+```
+logicalName1=value & logicalName2=value2 & ......
+```w
+
+2. Action-attribute:
+
+This attribute value would be location of a program where the data has to be sent
+
+```
+<form method="post" action="http://localhost:9999/FirstProject-01/first">
+```
+
+>doGet(requestObject, responseObject)  - for get method <br>
+> doPost(requestObject, responseObject) - for post method
+
+
+3. novalidate
+
+This attribute is used to verify whether the user entered data should it be validated or not. If we use novalidate attribute then the inpu entered by the user would not be validated(email, number). 
+
+
+## Elements of Form
+
+1. `<input>`    -[HTML4]
+1. `<textarea>` -[HTML4]
+1. `<select>`   -[HTML4]
+1. `<progress>` -[HTML5]
+1. `<meter>`    -[HTML5]
+
+
+#### Attributes of input element:
+1. `type="text"` : User can enter any character type of data
+2. `placeholder=""` : It is normally used to keep a watermark content of a particular element.
