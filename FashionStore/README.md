@@ -903,6 +903,7 @@ b. If we want to send large volume of the datato the server, then we go for "pos
 What is query string?
 > It is a string which is constructed by web browser upon the user entering the details and clicking on submit button. Query string data would be in the form of key-value pair.
 ![alt text](1000048576.png)
+![alt text](image.png)
 
 <!-- <></div> -->
 
@@ -939,3 +940,21 @@ This attribute is used to verify whether the user entered data should it be vali
 #### Attributes of input element:
 1. `type="text"` : User can enter any character type of data
 2. `placeholder=""` : It is normally used to keep a watermark content of a particular element.
+3. `value` and `readonly` and `disabled` : Values is the attribute which allows us to populate the by default value in text box.
+
+If we use `readonly` attribute, then we can't edit that text field and the data will go in query string.
+
+If we use `disabled` attribute, then we can't edit that text field and the data will not go in query string. 
+
+`readonly` would permit the submitting the data to the backend whereas `disabled` would not permit submitting the data to backend.
+
+4. `required` : It indicates the value should be compulsorily entered by the user otherwise the page wouuld not be submitted.
+
+5. `size` :  It adjusts the width of the text box. (default width is 20).
+6. `minlength`: It indicates minimum number of characters to be entered by the user. (Validation)
+7. `maxlength`: It indicates maximum number of characters entered by the user (Once it reaches the max limit user can't enter any data in the container).
+
+8. `autofocus` : This attribute is used to focus on a particular element when the page gets loaded. Throught javascript we can use this attribute to make it dynammic to identify the error elements(validation failed elements) in the webpage.
+
+9. `list` : It uses a datalist that contains an options to display as autocomplete text.
+Datalist is designed using an element called `<datalist>`, to design a set of options for a `<datalist>` we use an element called option
