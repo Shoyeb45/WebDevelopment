@@ -958,3 +958,30 @@ If we use `disabled` attribute, then we can't edit that text field and the data 
 
 9. `list` : It uses a datalist that contains an options to display as autocomplete text.
 Datalist is designed using an element called `<datalist>`, to design a set of options for a `<datalist>` we use an element called option
+
+10. `pattern`: With respect to this attribute we use a regular expression. Regular expression comprises of metacharacters and quantifiers.
+
+|Metacharacters|Qunatifiers|
+|---------|---|
+|?|  {}|
+|+|{m, n}|
+|*|{m, }|
+|\|||
+|.||
+|[ ]||
+|( )||
+|<b> \ </b>||
+|^||
+|\\^||
+|$||
+
+
+|Metacharacters| Description|
+|-|-|
+|? : occurence 0 or 1| It defines zero or one occurence of a character. <br>Ex.: `<input patter="colou?r" placeholder="color/colour" type="text" name="txtColor">`.<br> Accepted values: color/colour| 
+|* : occurence  0| It defines zero or more occurennce of a character.<br>Ex.: `<input pattern="colou*r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: color/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">colorrr/ colooor</b>|
+|+| It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>|
+|.| It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y]|
+|\\ | It is used as escape sequence character for special characters[Char used by parser] <br>\\+91=91|
+| \| | It is used to club multiple expression to find a unique result<br>Ex.:<input type="text" name="txtColor" placeholder="red, green or blue" pattern="red|blue|green">`| 
+|[ ](Important)| It represents a range of characters which can be accepted as an input from the user.<br> Ex.: `[a-zA-Z0-9]`|
