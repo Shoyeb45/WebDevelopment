@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <p>Q.1 Write a pattern to validate mobile number starting from +91 and should have 10 digits</p>
+
+        Enter mobile Number: <br>
+        <input type="text" name="txtNumber" pattern="(^\+91\s[0-9]{3}-\d{4}-\d{3}$)|(^\+91\d{10}$)">
+        <button>submit</button>
+        
+        <br>
+        <p>Q.2 Write a pattern to validate US mobile format number(Ex. +(1)(425) 555-0100)</p>
+        
+        <input type="text" name="txtnum" pattern="^\+\(1\)\(\d{3}\)\s\d{3}-\d{4}$">
+        
+        <button>submit</button>
+        
+        <br>
+        <p>Q.3 Write a pattern to validate UK mobile format number(Ex.: +(44)(20)1234 5678)</p>
+        
+        <input type="text" name="txtnum2" pattern="^\+\(44\)\(\d{2}\)\d{4}\s\d{4}">
+        <button>submit</button>
+
+        <br>
+        <p>Q.4 Write a pattern to validate IFSC code of SBI Bank? (Ex.: SBIN00000813)</p>
+        
+        <input type="text" name="txtnum2" pattern="^SBIN0\d{6}$">
+        <button>submit</button>
+        
+        <br>
+        <p>Q.5 Write a pattern to allow only alpha numeric with 4 to 15 chars but special character are not allowed? (Ex.: 123fsd3)</p>
+        
+        <input type="text" name="txtnum3" pattern="^[a-zA-Z0-9]{4,15}$">
+        <button>submit</button>
+        
+        
+        <br>
+        <p>Q.6 Write a pattern to allow only alphabets with 4 to 15 characters but special characters not allowed? (Ex.: abdaf)</p>
+        
+        <input type="text" name="txtnum4" pattern="^[a-zA-Z]{4,15}$">
+
+        <br>
+        <p>Q.7 Write a pattern for username starting with uppercase letters and can be 4 to 15 chars but special characters are not allowed? (Ex.: abdaf)</p>
+        
+        <input type="text" name="txtnum4" pattern="^[A-Z][a-zA-Z]{3,14}$">
+        <button>submit</button>
+
+        <br>
+        <p>Q.8 Write a pattern to allow only alpha numeric with _, 4 to 15 chars but atleast one or many characters can be uppercase? (Ex.: abdaf)</p>
+        
+        <input type="text" name="txtnum5" pattern="(?=.*[A-Z])\w{4,15}">
+        <button>submit</button>
+
+
+        <p>Q.9 Write a pattern for username 4 to 15 chars with atleast one uppercase letter, lowercase letter, number and special character? (Ex.: abdaf)</p>
+        
+        <input type="text" name="txtnum7" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!&_@#%])[a-zA-Z0-9!&@#%_]{4,15}">
+        <button>submit</button>
+    </form>
+</body>
+</html>

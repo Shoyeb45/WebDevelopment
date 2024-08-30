@@ -979,9 +979,43 @@ Datalist is designed using an element called `<datalist>`, to design a set of op
 |Metacharacters| Description|
 |-|-|
 |? : occurence 0 or 1| It defines zero or one occurence of a character. <br>Ex.: `<input patter="colou?r" placeholder="color/colour" type="text" name="txtColor">`.<br> Accepted values: color/colour| 
-|* : occurence  0| It defines zero or more occurennce of a character.<br>Ex.: `<input pattern="colou*r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: color/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">colorrr/ colooor</b>|
-|+| It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>|
-|.| It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y]|
-|\\ | It is used as escape sequence character for special characters[Char used by parser] <br>\\+91=91|
+|* : occurence >= 0| It defines zero or more occurennce of a character.<br>Ex.: `<input pattern="colou*r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: color/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">colorrr/ colooor</b>|
+|+: occurence >= 1 | It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>|
+|<b>.</b> (dot)| It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y]|
+|\\ | It is used as escape sequence character for special characters[Char used by parser] <br>\\+91=+91|
 | \| | It is used to club multiple expression to find a unique result<br>Ex.:<input type="text" name="txtColor" placeholder="red, green or blue" pattern="red|blue|green">`| 
-|[ ](Important)| It represents a range of characters which can be accepted as an input from the user.<br> Ex.: `[a-zA-Z0-9]`|
+|[ ]  (important)| It represents a range of characters which can be accepted as an input from the user.<br> Ex.: `[a-zA-Z0-9]` <br>`[a, d, s]` <br>`[a-z, A-Z]` <br>`[0-9]` <br>`[a-d, 4-9]`|
+| ^| Exclude specified<br>`pattern="[a, d, s]"`: a,d,s are allowed<br>`pattern="[^a, d, s]"`: except a, d, s all will work|
+|\\^, $| Matcehs the beginnig of input, "starts with".<br> Matches the end of input, "Ends with".<br> `pattern="\^..your_expression$"` <br> Ex.: `pattern="\\^\[a-zA-Z]@\.[a-zA-Z0-9]$"` (a@.3)|
+|\\d| It allows only numeric value, any single digi [0-9]. <br> Ex: `<input type="text" name="ex" pattern="\d\d">` (only 2 digits number) <br> Ex.: `<input type="text" name="ex" pattern="\d?d">`|
+|\\D| Not a digit [^0-9] or \\D only non-digit|
+|\\w| Matches alpha numerical[word] characters with underscore. == [a-zA-Z0-9_] <br>` <input type="text" name="ex" pattern="\w\w">`|
+|\\W| Matches any character is not a word character. == [^a-zA-Z0-9_] <br>Ex.:`<input type="text" name="ex" pattern="\W">`|
+|\\i| ignore capitalizatoin of whole data. <br>|
+|\\s| Match a single white space character. Including space, tab, form feed, line feed and other unicode characters. <br> Ex.: \\n: Line Feed <br> \f : Form feed <br> \t : Horizontal tab <br> \v : vertical Tab|
+
+
+### Quantifiers
+
+|Qunatifiers| Meaning|
+|-|-|
+|{n}| Exactly specified number of characters, n - Refers to the number.|
+|{n,m}| Minimum -n and maximum-m. Ex: {4,10} - 4 to 10|
+|{n,}| Miniumu-n and Maximum-any. Ex. : {4, } 4 to infinity|
+
+Ex.: `<input type="text" name="ex" pattern="[a-zA-Z]{5,6}@[a-zA-Z]{5}\.[a-zA-Z]{2,}">`
+
+
+Note: 
+
+Metacharacters indicate what characters needs to be allowed. Whereas quantifiers indicates how many times it has to be allowed.
+
+Regular Expressions[Pre-defined]:
+
+1. `(?=.*[A-Z])` : Atleast one upper case letter at any place.
+1. `(?=.*[a-z])` : Atleast one lower case letter at any place.
+1. `(?=.*[0-9])` : Atleast one numeric at any place.
+1. `(?=.*[!&@#%])` : Atleast one special character at any place.
+
+
+
