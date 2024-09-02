@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <form action="">
         Departure Date: 
-        <input type="date" name="txtDate" min="2024-09-02" max="2024-10-02">
+        <input type="date" name="txtDate" min="2024-09-02" max="2024-10-02"><br>
+        DateTime:
+        <input type="datetime" name="txtDateTime" >
+        <br>
+        Week:
+        <input type="week" name="txtWeek"> <br>
+        Month:
+        <input type="month" name="txtMonth"> <br>
+        Time:
+        <input type="time" name="txtTime">
         <button>Submit</button>
     </form>
 </body>

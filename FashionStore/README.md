@@ -321,7 +321,9 @@ h2 {
 ```
 
 ## Working with paragraphs
+
 1. `<p></p>` - To present the content in the form of paragraph we use `<p>` element.
+
 - It supports "align" attribute, which can set text left, center, right or justified.
 - paragraphs will have a line break before and after.
 
@@ -348,47 +350,46 @@ blockquote {
 Q. How to set dropcap?
 
 - By using the following style we can set dropcap:
-    - Access the first letter using the class : first-letter
-    - After accessing the firstletter apply fonts[size, weight, family]
-    - Apply css float
 
+  - Access the first letter using the class : first-letter
+  - After accessing the firstletter apply fonts[size, weight, family]
+  - Apply css float
 
 - Difference between display: grid; vs column: ; of a css attribute
 
-    1. display: grid; would display the content column wise in the given frame width(column ratio).
-    2. columns:; this attribute take number of columns as the input and display the content in continuous
+  1. display: grid; would display the content column wise in the given frame width(column ratio).
+  2. columns:; this attribute take number of columns as the input and display the content in continuous
 
 ## Text Formatting In HTML
+
 - We can change the text formatting using font
-font: we can change the face (family), size and color.
+  font: we can change the face (family), size and color.
 
 face - font family
 
 color - It represents color name and color code
 
 size - 1 to 7 (increasing order)
+
 ```
-<font face = " " size = "" color = ""> Your Text </font>  
-````
+<font face = " " size = "" color = ""> Your Text </font>
+```
 
 - HTML attribute for style
 
-
-    |Tag|Design Team| Review Team|Output|
-    |----|------|-------|-------|
-    |Bold|`<b>` |`<strong>`|<b>Bold</b>|
-    |Italic|`<i>`|`<em>`|<i>Italic</i>|
-    |Underline|`<u>`|`<ins>`|<u>Underline</u>|
-    |To strike down|`<strike>`|`<del>`| <del>Strike</del>|
+  | Tag            | Design Team | Review Team | Output            |
+  | -------------- | ----------- | ----------- | ----------------- |
+  | Bold           | `<b>`       | `<strong>`  | <b>Bold</b>       |
+  | Italic         | `<i>`       | `<em>`      | <i>Italic</i>     |
+  | Underline      | `<u>`       | `<ins>`     | <u>Underline</u>  |
+  | To strike down | `<strike>`  | `<del>`     | <del>Strike</del> |
 
 - What are web safe fonts:
 
 > These fonts are such fonts which would be available in every machine and it can't be deleted .
 
-
 Ex: sans-serif, mono space, serriff
 
-     
 ## Ordered And undorderd List
 
 - Order list will add auto numbering for a list of option, which can update automatically when your add or delete items.
@@ -412,8 +413,8 @@ start[number] - It defines the numbering level to start with.
 
 ## Nesting in list elements
 
-
 Bad Code
+
 ```
 <ol>
     <li>Front End</li>
@@ -427,12 +428,14 @@ Bad Code
             <li>Node JS</li>
             <li>MongoDB</li>
         </ol>
-    
+
 </ol>
 ```
+
 ![Output](./src/list.png)
 
 Good Code
+
 ```
 <ol>
     <li>Front End
@@ -455,39 +458,40 @@ Good Code
 ![Output](./src/list.png)
 
 Questions:
+
 1. How to remove numbering in orderlist?
 
-    Ans 
-    > It is possible to remove numbering of ordered list element throught a css attribute called `list-style: none;`
+   Ans
+
+   > It is possible to remove numbering of ordered list element throught a css attribute called `list-style: none;`
 
 2. How to create scrollable list?
-    Ans
-    > Keep a Border, Keep a proper width and height as per the content area. Using an css attribute `overflow: hidden | scroll | auto`.
-    
+   Ans
+
+   > Keep a Border, Keep a proper width and height as per the content area. Using an css attribute `overflow: hidden | scroll | auto`.
 
 3. How to display list items inline?
-    
 4. How to display li in columnss wise?
 
+   i.
 
-    i. 
 ```
 ol {
     display : grid;
     grid-template-columns: 6fr 6fr;
 }
-``` 
-
+```
 
 ```
 ol {
     columns: 2;
 }
 ```
+
 5. How to change the options in ordered list?
 
-
 ## Unordered List
+
 Syntax:
 
 ```
@@ -500,11 +504,11 @@ Syntax:
 
 How to set up custom bullets?
 
-Ans:  We can do by using `list-style-image:;` attribute of css.
+Ans: We can do by using `list-style-image:;` attribute of css.
 
 ## Pagination
 
--- It refers to the process of displaying the records by splitting them into <u>pages</u>.  
+-- It refers to the process of displaying the records by splitting them into <u>pages</u>.
 
 ```
 <ul>
@@ -527,18 +531,17 @@ from -> tools
 
 > Different types of images:
 
-|Sr Number| Abbreviation| FileFormat| MIMEType| FileExtension|
-|---------|-------------|-----------|--------|--------------|
-|1.|APNG | Animated Portable Network Graphics| image/png| .apng|
-|2. |BMP| Bitmap File| image/bmp| .bmp|
-|3. |GIF| Graphics Interchange Formage| image/gif| .gif|
-|4. | ICO| Microsoft Icon| image/x-icon| .ico, .cur|
-|5. | JPEG| Joint Phototgraphic Expert Group| image/jpeg| .jpg. jpeg, .jtif, .pjpeg, .pjp|
-|6. | PNG| Portable Network Graphics| image/png| .png|
-|7. |SVG| Scalar Vector Graphics| image/svg+xml| .svg|
-|8. |TIFF| Tagged Image File Format|image/tiff|.tiff, .tif|
-|9. | WEBP| Web Picture Format| image/webp|.webp|
-
+| Sr Number | Abbreviation | FileFormat                         | MIMEType      | FileExtension                   |
+| --------- | ------------ | ---------------------------------- | ------------- | ------------------------------- |
+| 1.        | APNG         | Animated Portable Network Graphics | image/png     | .apng                           |
+| 2.        | BMP          | Bitmap File                        | image/bmp     | .bmp                            |
+| 3.        | GIF          | Graphics Interchange Formage       | image/gif     | .gif                            |
+| 4.        | ICO          | Microsoft Icon                     | image/x-icon  | .ico, .cur                      |
+| 5.        | JPEG         | Joint Phototgraphic Expert Group   | image/jpeg    | .jpg. jpeg, .jtif, .pjpeg, .pjp |
+| 6.        | PNG          | Portable Network Graphics          | image/png     | .png                            |
+| 7.        | SVG          | Scalar Vector Graphics             | image/svg+xml | .svg                            |
+| 8.        | TIFF         | Tagged Image File Format           | image/tiff    | .tiff, .tif                     |
+| 9.        | WEBP         | Web Picture Format                 | image/webp    | .webp                           |
 
 Q. What is MIME Type ?
 
@@ -550,19 +553,19 @@ Q. What is MIME Type ?
 
 Purpose of different types of images:
 
-|Type| Purpose|
-|--|--| 
-|PNG| High resolution(More space), Suitable for downloads|
-|JPG| Compressed Image Format(Less Space) , Good for on screen presentation|
-|GIF| Low Resolution, used for animations|
-|SVG| Ex. : 1. Google Map, 2. Bootstrap Icons,  not pixel based, high zoom quality|
-|WEBP|If we try to save an image it saves the entire page. Image alone can't be captured |
+| Type | Purpose                                                                            |
+| ---- | ---------------------------------------------------------------------------------- |
+| PNG  | High resolution(More space), Suitable for downloads                                |
+| JPG  | Compressed Image Format(Less Space) , Good for on screen presentation              |
+| GIF  | Low Resolution, used for animations                                                |
+| SVG  | Ex. : 1. Google Map, 2. Bootstrap Icons, not pixel based, high zoom quality        |
+| WEBP | If we try to save an image it saves the entire page. Image alone can't be captured |
 
 Embedding an image in webpage:
 
 - It is a void element
 - `<img>` is configure with following attributes
-`<img src = "" alt = "" width = "" height = "" >`
+  `<img src = "" alt = "" width = "" height = "" >`
 
 Ex 1:
 
@@ -573,9 +576,9 @@ Ex 1:
     </figure>
 ```
 
-Card 
+Card
 
-Standard Card Templated - 
+Standard Card Templated -
 
 <div style = "border: 1px solid white">
 <h2 align="center" style = "border: 1px solid white">Card Header</h2>
@@ -589,46 +592,36 @@ Card Footer
 </div>
 </div>
 
-
 <hr>
 
 ![alt text](image-1.png)
 
-
 ### What are fluid images?
 
-- If we set the width and height of an image in percentage then the image will be adjusted to the browser window. If the image is adjusted to browser window through percentage then such images are termed as fluid images 
+- If we set the width and height of an image in percentage then the image will be adjusted to the browser window. If the image is adjusted to browser window through percentage then such images are termed as fluid images
 
 # Links
 
-
 Q. How to create empty link in link?
 
-Ans.   <b>href="#"</b>   <span style="color:red;">Will not Work (X)</span>
-
+Ans. <b>href="#"</b> <span style="color:red;">Will not Work (X)</span>
 
 To creat an empty link we use a javascript code as shown below:
 
-`<a href = "javascript:void()">Empty Link</a>`   (Test case passed)
-
+`<a href = "javascript:void()">Empty Link</a>` (Test case passed)
 
 To give a link which will actually navigate we use a following code:
 
 `<a href = "javascript:void(location.href='')">Empty Link</a>`
 
-
-
-Note: 
+Note:
 Whenever we send the request, the browser will create an object called `HttpRequest` Object. The structure of HttpRequest is as follows:
-
 
 Link request is of "GET" method type
 
 If the request is of get type then there would be no <u>request body</u> (Data will be sent to the server through URL)
 
-
 Server will send the response by creating http response object. The class name in java will be "Response".
-
 
 Status Number:
 
@@ -653,7 +646,6 @@ Status Number:
 |102| PRocessing|
 |103| Easy hints|
 
-
 4XX Client Eerror
 |Number| Msessage|
 |------|--------|
@@ -667,7 +659,6 @@ Status Number:
 |407| Conflict|
 |408| Payload too large|
 |409| Too many requests|
-
 
 5XX Server Error
 |Number| Msessage|
@@ -686,18 +677,17 @@ Status Number:
 
 3XX Redirection
 
-|Number| Msessage|
-|------|--------|
-|300| Moved Permanently|
-|301| Found|
-|302| See other|
-Ex. 1: link , 
+| Number | Msessage          |
+| ------ | ----------------- |
+| 300    | Moved Permanently |
+| 301    | Found             |
+| 302    | See other         |
 
+Ex. 1: link ,
 
-Note:   
+Note:
 
 Normally links will be corrupted by the end user through a technique call URL rewriting.
-
 
 ## Inter Documentation Links
 
@@ -705,7 +695,8 @@ Q. 1. How to display the content of a link in new tab?
 
 Using an attribute called `target = _blank`.
 
-Ex. :   
+Ex. :
+
 ```
 <a href="" target: _blank></a>
 ```
@@ -718,8 +709,7 @@ Q. 2. How to specify upon linking a file such that it can be downloaded?
 
 The file will be downloaded with the link name if download name is not specified. To download a file with user defined file name we use an option called `download="name"`
 
-
-**Q 3. How to open a linked document in new window?
+\*\*Q 3. How to open a linked document in new window?
 
 ```
 <span></span>
@@ -730,7 +720,7 @@ The file will be downloaded with the link name if download name is not specified
 
 Q 4. How to open linked document in the same window align with other contents in a page?
 
-Using HTML5 element called `<iframe>` 
+Using HTML5 element called `<iframe>`
 
 Syntax:
 
@@ -738,12 +728,9 @@ Syntax:
 <iframe src="" name="></iframe>
 ```
 
-
 In order to embed any videos, ppts, documents we always take the help of iframe element in a page.
 
-
 In case of intra document if the page content is small and still if we want to give a navigation we use an element called `:target`
-
 
 # Table element in HTML
 
@@ -753,17 +740,16 @@ In case of intra document if the page content is small and still if we want to g
 - In earlier versions of HTML tables were used to design layouts (Rows and columns).
 - In HTML 5, we use tables only to present data in static manner with the help of elements as shown in below:
 
-|Element|Description|
-|-------|---|
-|`<table>`|It is a collection of rows and columns|
-|`<caption>`|It sets caption for table which makes it SEO friendly|
-|`<thead>`|It defines the table header section|
-|`<tbody>`|It defines the table body section|
-|`<tfoot>`|It defines the table footer section|
-|`<th>`|It defines column heading content[header cell]|
-|`<tr>`|It defines the table row|
-|`<td>`|It defines the table cell content[ordinary cell]|
-
+| Element     | Description                                           |
+| ----------- | ----------------------------------------------------- |
+| `<table>`   | It is a collection of rows and columns                |
+| `<caption>` | It sets caption for table which makes it SEO friendly |
+| `<thead>`   | It defines the table header section                   |
+| `<tbody>`   | It defines the table body section                     |
+| `<tfoot>`   | It defines the table footer section                   |
+| `<th>`      | It defines column heading content[header cell]        |
+| `<tr>`      | It defines the table row                              |
+| `<td>`      | It defines the table cell content[ordinary cell]      |
 
 ### Attributes of table
 
@@ -785,11 +771,10 @@ With respect to cell, if we increase the value of border to any number, there wo
 
 > whenever we use `rules` we should not work `border`, when we use `border` we should not use `rules`
 
-- `background` and `bgcolor` : 
+- `background` and `bgcolor` :
 
 `bgcolor` : It sets a background color for table, body, footer, cell , row
 `background` : It sets background image for table. group, row, cell
-
 
 ```
 <table background="./../../public/Image/Asia-Cup-2023.jpg">
@@ -797,16 +782,15 @@ With respect to cell, if we increase the value of border to any number, there wo
 <tr bgcolor="red"></tr>
 ```
 
-
 - `height` and `width` of table: height defines for row(affects whole row)
 
 Syntax:
+
 ```
 <tr height = "200"></tr>
 
-<td height="100"> <!-- Not good --> 
+<td height="100"> <!-- Not good -->
 ```
-
 
 Width defines cell width (affects whole column).
 
@@ -818,13 +802,12 @@ Width defines cell width (affects whole column).
 
 - In order to adjust the data within a cell, we use a attribute called `align`(Values: `left`, `center`, `right`, `justify`) and `valign`(Values: `top`, `bottom`, `center`). These attributes are applicable for a particular cell
 
-- Merging of rows and columns : 
+- Merging of rows and columns :
 
-> `colspan` - It can merge specified number of columns into single column 
-> `rowspan` - It can merge specified number of row into single row 
+> `colspan` - It can merge specified number of columns into single column
+> `rowspan` - It can merge specified number of row into single row
 
 Note : `colspan` and `rowspan` can be applied only "`<td>` | `<th>`"
-
 
 # Analogy of class in java and elements in HTML
 
@@ -835,15 +818,12 @@ Note : `colspan` and `rowspan` can be applied only "`<td>` | `<th>`"
 - Forn is a generic container which have <u>default functionality</u>
 - A form can submit and reset its data without configuring any explicit functionality.
 
-
-
-
 ## Form container
 
 - It is designed by using `<form>` tag
 
-
 Syntax:
+
 ```
 <form>
     form-elements
@@ -852,27 +832,27 @@ Syntax:
 
 > NOTE: In a page we can submit the details only when they are enclosed in a form.
 
-
 Syntax:
 
 ```
 Name: <input type="text" name="Name"> // Not good
 ```
+
 ```
 <form>
 Name: <input type="text" name="Name"> // good
 </form>
 ```
-### Form Attrubutes:
 
+### Form Attrubutes:
 
 1.id, 2. class, 2. name (Required for identification purpose for css)
 
 4. Method:
 
-It indicates how the data should be submitted to the server. The values of method are : "GET" or "POST". 
+It indicates how the data should be submitted to the server. The values of method are : "GET" or "POST".
 
-a. The default method type is "get".(<b>select</b> query will run based on input) 
+a. The default method type is "get".(<b>select</b> query will run based on input)
 
 b. If we want to send large volume of the datato the server, then we go for "post" method type. (<b>insert</b> query will run for the input provided by the use)
 
@@ -880,34 +860,32 @@ b. If we want to send large volume of the datato the server, then we go for "pos
 
 1. PUT(update clause is used)
 2. PATCH(update clause is used)
-3.  DELETE (Delete clause)
+3. DELETE (Delete clause)
 4. TRACE
 5. OPTION
 
 - Big 7 HTTP methods
 
-
 - To send the request of type put, patch, delete - we use a softwares like CURL, POSTMAN, OPENAPI.
 
 - DIfference between GET vs POST
 
-|Sr No|GET|POST|
-|-|---|----|
-|1| It supports caching(saves round trip)| It does not supports caching|
-|2| Upon submitting the data, query string will be constructed and it will be attached to URL| Query string will be constructed and it will not be attached to URL.|
-|3| Small volume of data would be allowed(2048 character)| No limit on submitting the data(any volume).|
-|4| You can't submit the complex data like audio files, video files, image files(Binary data - it supports only ascii types)| We can submit the complex data.|
-|5. | It is not safe so the data can be hacked| The data is safe and can't be hacked easily|
-
+| Sr No | GET                                                                                                                      | POST                                                                 |
+| ----- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| 1     | It supports caching(saves round trip)                                                                                    | It does not supports caching                                         |
+| 2     | Upon submitting the data, query string will be constructed and it will be attached to URL                                | Query string will be constructed and it will not be attached to URL. |
+| 3     | Small volume of data would be allowed(2048 character)                                                                    | No limit on submitting the data(any volume).                         |
+| 4     | You can't submit the complex data like audio files, video files, image files(Binary data - it supports only ascii types) | We can submit the complex data.                                      |
+| 5.    | It is not safe so the data can be hacked                                                                                 | The data is safe and can't be hacked easily                          |
 
 What is query string?
+
 > It is a string which is constructed by web browser upon the user entering the details and clicking on submit button. Query string data would be in the form of key-value pair.
-![alt text](1000048576.png)
-![alt text](image.png)
+> ![alt text](1000048576.png) > ![alt text](image.png)
 
 <!-- <></div> -->
 
-```
+````
 logicalName1=value & logicalName2=value2 & ......
 ```w
 
@@ -915,98 +893,94 @@ logicalName1=value & logicalName2=value2 & ......
 
 This attribute value would be location of a program where the data has to be sent
 
-```
+````
+
 <form method="post" action="http://localhost:9999/FirstProject-01/first">
 ```
 
->doGet(requestObject, responseObject)  - for get method <br>
+> doGet(requestObject, responseObject) - for get method <br>
 > doPost(requestObject, responseObject) - for post method
-
 
 3. novalidate
 
-This attribute is used to verify whether the user entered data should it be validated or not. If we use novalidate attribute then the inpu entered by the user would not be validated(email, number). 
-
+This attribute is used to verify whether the user entered data should it be validated or not. If we use novalidate attribute then the inpu entered by the user would not be validated(email, number).
 
 ## Elements of Form
 
-1. `<input>`    -[HTML4]
+1. `<input>` -[HTML4]
 1. `<textarea>` -[HTML4]
-1. `<select>`   -[HTML4]
+1. `<select>` -[HTML4]
 1. `<progress>` -[HTML5]
-1. `<meter>`    -[HTML5]
-
+1. `<meter>` -[HTML5]
 
 #### Attributes of input element: 1 . type = "text"
+
 1. `type="text"` : User can enter any character type of data
 2. `placeholder=""` : It is normally used to keep a watermark content of a particular element.
 3. `value` and `readonly` and `disabled` : Values is the attribute which allows us to populate the by default value in text box.
 
 If we use `readonly` attribute, then we can't edit that text field and the data will go in query string.
 
-If we use `disabled` attribute, then we can't edit that text field and the data will not go in query string. 
+If we use `disabled` attribute, then we can't edit that text field and the data will not go in query string.
 
 `readonly` would permit the submitting the data to the backend whereas `disabled` would not permit submitting the data to backend.
 
 4. `required` : It indicates the value should be compulsorily entered by the user otherwise the page wouuld not be submitted.
 
-5. `size` :  It adjusts the width of the text box. (default width is 20).
+5. `size` : It adjusts the width of the text box. (default width is 20).
 6. `minlength`: It indicates minimum number of characters to be entered by the user. (Validation)
 7. `maxlength`: It indicates maximum number of characters entered by the user (Once it reaches the max limit user can't enter any data in the container).
 
 8. `autofocus` : This attribute is used to focus on a particular element when the page gets loaded. Throught javascript we can use this attribute to make it dynammic to identify the error elements(validation failed elements) in the webpage.
 
 9. `list` : It uses a datalist that contains an options to display as autocomplete text.
-Datalist is designed using an element called `<datalist>`, to design a set of options for a `<datalist>` we use an element called option
+   Datalist is designed using an element called `<datalist>`, to design a set of options for a `<datalist>` we use an element called option
 
 10. `pattern`: With respect to this attribute we use a regular expression. Regular expression comprises of metacharacters and quantifiers.
 
-|Metacharacters|Qunatifiers|
-|---------|---|
-|?|  {}|
-|+|{m, n}|
-|*|{m, }|
-|\|||
-|.||
-|[ ]||
-|( )||
-|<b> \ </b>||
-|^||
-|\\^||
-|$||
+| Metacharacters | Qunatifiers |
+| -------------- | ----------- |
+| ?              | {}          |
+| +              | {m, n}      |
+| \*             | {m, }       |
+| \|             |             |
+| .              |             |
+| [ ]            |             |
+| ( )            |             |
+| <b> \ </b>     |             |
+| ^              |             |
+| \\^            |             |
+| $              |             |
 
-
-|Metacharacters| Description|
-|-|-|
-|? : occurence 0 or 1| It defines zero or one occurence of a character. <br>Ex.: `<input patter="colou?r" placeholder="color/colour" type="text" name="txtColor">`.<br> Accepted values: color/colour| 
-|* : occurence >= 0| It defines zero or more occurennce of a character.<br>Ex.: `<input pattern="colou*r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: color/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">colorrr/ colooor</b>|
-|+: occurence >= 1 | It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>|
-|<b>.</b> (dot)| It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y]|
-|\\ | It is used as escape sequence character for special characters[Char used by parser] <br>\\+91=+91|
-| \| | It is used to club multiple expression to find a unique result<br>Ex.:<input type="text" name="txtColor" placeholder="red, green or blue" pattern="red|blue|green">`| 
-|[ ]  (important)| It represents a range of characters which can be accepted as an input from the user.<br> Ex.: `[a-zA-Z0-9]` <br>`[a, d, s]` <br>`[a-z, A-Z]` <br>`[0-9]` <br>`[a-d, 4-9]`|
-| ^| Exclude specified<br>`pattern="[a, d, s]"`: a,d,s are allowed<br>`pattern="[^a, d, s]"`: except a, d, s all will work|
-|\\^, $| Matcehs the beginnig of input, "starts with".<br> Matches the end of input, "Ends with".<br> `pattern="\^..your_expression$"` <br> Ex.: `pattern="\\^\[a-zA-Z]@\.[a-zA-Z0-9]$"` (a@.3)|
-|\\d| It allows only numeric value, any single digi [0-9]. <br> Ex: `<input type="text" name="ex" pattern="\d\d">` (only 2 digits number) <br> Ex.: `<input type="text" name="ex" pattern="\d?d">`|
-|\\D| Not a digit [^0-9] or \\D only non-digit|
-|\\w| Matches alpha numerical[word] characters with underscore. == [a-zA-Z0-9_] <br>` <input type="text" name="ex" pattern="\w\w">`|
-|\\W| Matches any character is not a word character. == [^a-zA-Z0-9_] <br>Ex.:`<input type="text" name="ex" pattern="\W">`|
-|\\i| ignore capitalizatoin of whole data. <br>|
-|\\s| Match a single white space character. Including space, tab, form feed, line feed and other unicode characters. <br> Ex.: \\n: Line Feed <br> \f : Form feed <br> \t : Horizontal tab <br> \v : vertical Tab|
-
+| Metacharacters       | Description                                                                                                                                                                                                                                                                                                                      |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------- |
+| ? : occurence 0 or 1 | It defines zero or one occurence of a character. <br>Ex.: `<input patter="colou?r" placeholder="color/colour" type="text" name="txtColor">`.<br> Accepted values: color/colour                                                                                                                                                   |
+| \* : occurence >= 0  | It defines zero or more occurennce of a character.<br>Ex.: `<input pattern="colou*r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: color/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">colorrr/ colooor</b>                                                          |
+| +: occurence >= 1    | It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>                                                         |
+| <b>.</b> (dot)       | It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y] |
+| \\                   | It is used as escape sequence character for special characters[Char used by parser] <br>\\+91=+91                                                                                                                                                                                                                                |
+| \|                   | It is used to club multiple expression to find a unique result<br>Ex.:<input type="text" name="txtColor" placeholder="red, green or blue" pattern="red                                                                                                                                                                           | blue | green">` |
+| [ ] (important)      | It represents a range of characters which can be accepted as an input from the user.<br> Ex.: `[a-zA-Z0-9]` <br>`[a, d, s]` <br>`[a-z, A-Z]` <br>`[0-9]` <br>`[a-d, 4-9]`                                                                                                                                                        |
+| ^                    | Exclude specified<br>`pattern="[a, d, s]"`: a,d,s are allowed<br>`pattern="[^a, d, s]"`: except a, d, s all will work                                                                                                                                                                                                            |
+| \\^, $               | Matcehs the beginnig of input, "starts with".<br> Matches the end of input, "Ends with".<br> `pattern="\^..your_expression$"` <br> Ex.: `pattern="\\^\[a-zA-Z]@\.[a-zA-Z0-9]$"` (a@.3)                                                                                                                                           |
+| \\d                  | It allows only numeric value, any single digi [0-9]. <br> Ex: `<input type="text" name="ex" pattern="\d\d">` (only 2 digits number) <br> Ex.: `<input type="text" name="ex" pattern="\d?d">`                                                                                                                                     |
+| \\D                  | Not a digit [^0-9] or \\D only non-digit                                                                                                                                                                                                                                                                                         |
+| \\w                  | Matches alpha numerical[word] characters with underscore. == [a-zA-Z0-9_] <br>` <input type="text" name="ex" pattern="\w\w">`                                                                                                                                                                                                    |
+| \\W                  | Matches any character is not a word character. == [^a-zA-Z0-9_] <br>Ex.:`<input type="text" name="ex" pattern="\W">`                                                                                                                                                                                                             |
+| \\i                  | ignore capitalizatoin of whole data. <br>                                                                                                                                                                                                                                                                                        |
+| \\s                  | Match a single white space character. Including space, tab, form feed, line feed and other unicode characters. <br> Ex.: \\n: Line Feed <br> \f : Form feed <br> \t : Horizontal tab <br> \v : vertical Tab                                                                                                                      |
 
 ### Quantifiers
 
-|Qunatifiers| Meaning|
-|-|-|
-|{n}| Exactly specified number of characters, n - Refers to the number.|
-|{n,m}| Minimum -n and maximum-m. Ex: {4,10} - 4 to 10|
-|{n,}| Miniumu-n and Maximum-any. Ex. : {4, } 4 to infinity|
+| Qunatifiers | Meaning                                                           |
+| ----------- | ----------------------------------------------------------------- |
+| {n}         | Exactly specified number of characters, n - Refers to the number. |
+| {n,m}       | Minimum -n and maximum-m. Ex: {4,10} - 4 to 10                    |
+| {n,}        | Miniumu-n and Maximum-any. Ex. : {4, } 4 to infinity              |
 
 Ex.: `<input type="text" name="ex" pattern="[a-zA-Z]{5,6}@[a-zA-Z]{5}\.[a-zA-Z]{2,}">`
 
-
-Note: 
+Note:
 
 Metacharacters indicate what characters needs to be allowed. Whereas quantifiers indicates how many times it has to be allowed.
 
@@ -1017,41 +991,38 @@ Regular Expressions[Pre-defined]:
 1. `(?=.*[0-9])` : Atleast one numeric at any place.
 1. `(?=.*[!&@#%])` : Atleast one special character at any place.
 
-
-
 ### summary of attributes of input:
 
-|`<input>`||
-|-|-|
-|| name, id, class|
-|| size|
-|| placeholder|
-|| autofocus|
-|| value|
-|<b>text<b/>| readonly|
-|| disabled|
-|| required: validation |
-|| minlength: validation|
-|| maxlength: not able to enter if data exceeds maxlength |
-||list: autosuggestion|
-||pattern: validation using regEx|
-
-
+| `<input>`   |                                                        |
+| ----------- | ------------------------------------------------------ |
+|             | name, id, class                                        |
+|             | size                                                   |
+|             | placeholder                                            |
+|             | autofocus                                              |
+|             | value                                                  |
+| <b>text<b/> | readonly                                               |
+|             | disabled                                               |
+|             | required: validation                                   |
+|             | minlength: validation                                  |
+|             | maxlength: not able to enter if data exceeds maxlength |
+|             | list: autosuggestion                                   |
+|             | pattern: validation using regEx                        |
 
 ### 2. `type = password`
 
 - Value entered by the use will be masked by star symbol
 
 ### 3. `type="number"`
+
 - To enter the only number type we use attribute value `type="number"`
 
 `<input type="number" name="txtNumber" min="18" max="58" step=5>`
 
-
 ### 4. `type="range"`
-`<input type="range" name="txtLoan" min="50000" max="400000">`
-- The value chosen through the slider option can be displayed on the page only through "javascript". 
 
+`<input type="range" name="txtLoan" min="50000" max="400000">`
+
+- The value chosen through the slider option can be displayed on the page only through "javascript".
 
 ### 5. `type="email"`
 
@@ -1060,42 +1031,43 @@ Regular Expressions[Pre-defined]:
 ### 6. `type="url"`
 
 - It validates URL format
-- If you want the user to input websire address(URL) abd restrict to URL format then you can define  `type="url"`
+- If you want the user to input websire address(URL) abd restrict to URL format then you can define `type="url"`
 - URL Format should contain "protocol and domain"
 
-
 #### Syntax:
-Ex.: 
+
+Ex.:
 `<input type="url" name="txtUrl" size="50">`
 
 www.amazon.com :-> Invalid
 
-
-
 ### 7. `type="color"`
+
 - To give a color type of input we go for `type="color"`
 - color inputs in html can be provided in 3 ways:
-    1. name : red, green, yellow, blue
-    2. lightcolors or color shade name:  Darkcyan, lightcyan
-    3. Hexadecimal code:
 
-        - Hexadecimal color can be defined in 3 or 6 chars followed by hash (#)
+  1. name : red, green, yellow, blue
+  2. lightcolors or color shade name: Darkcyan, lightcyan
+  3. Hexadecimal code:
 
-            1. 3 chars Code : #RGB
-            2. 6 chars code: #RRGGBB
-    4. Red, Green  and Blue value can be "0" to "F"
+     - Hexadecimal color can be defined in 3 or 6 chars followed by hash (#)
 
-        Hexa - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f
-        [0 is minimum, f is maximum]
+       1. 3 chars Code : #RGB
+       2. 6 chars code: #RRGGBB
 
-        0 - Dark, f - Bright
+  4. Red, Green and Blue value can be "0" to "F"
 
+     Hexa - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f
+     [0 is minimum, f is maximum]
+
+     0 - Dark, f - Bright
 
 ### 8. `type="date"`
 
 - HTML allows to input datae value by using the "type=date"
 - It is not supported on all browser, hence we have to implement using jQuery.
 - datetime value is removed from 'html5 major version'
+
 1. date
 2. datetime-local
 3. month
@@ -1103,6 +1075,7 @@ www.amazon.com :-> Invalid
 5. time
 
 How to restrict the user for date selection?
+
 > Using `min` and `max` attribute
 
 Note: always the date input format must be "year-month-day"( "YYYY-MM-DD") - (mysql) || "day-month-year" (DD-MM-YYYY).
@@ -1111,7 +1084,47 @@ we cam't select range of dates using html, for that we have to go for jQuery/jav
 eg. :
 
 ```
-Departure Date: 
+Departure Date:
         <input type="date" name="txtDate" min="2024-09-02" max="2024-10-02">
         <button>Submit</button>
 ```
+
+### 9. `type="file"`
+
+- In order to accept file as the input from user we go for the type="file".
+- attribute:
+
+  1. multiple : to accept the multiple files
+  2. accept=".png, .jpg, .jpeg" : To accept the only specified file format
+
+### 10. radio button[grouped] and checkbox
+
+- Radio button are referred as group button(mutex nature would be imposed on those elements by giving <u>common names</u>)
+
+Note : Mutex referes to <b>mutual exclusion</b>.
+
+Mutual exclusion is a threading terminology where one thread will execute only one task at any given point of time.
+
+Ex.:
+
+```
+<p>What's your favourite langauge?</p>
+
+<input type="radio" name="lang" value="Java"> Java
+<input type="radio" name="lang" value="Python" checked> Python
+<input type="radio" name="lang" value="cpp"> C++
+
+<br>
+<p>Please select gender? </p>
+
+<input type="radio" name="gender" value="male"> male
+<input type="radio" name="gender" value="female"> female
+
+<br>
+```
+
+FAQ 1. When should we use radio button element in a webpage?
+
+> If we want to user to compulsorily select one option among the supplied inputs we go for radio buttons .<br>
+> To make it default selected we use an attribute called 
+<u>"checked"</u>
