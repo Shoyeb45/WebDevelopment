@@ -937,7 +937,7 @@ This attribute is used to verify whether the user entered data should it be vali
 1. `<meter>`    -[HTML5]
 
 
-#### Attributes of input element:
+#### Attributes of input element: 1 . type = "text"
 1. `type="text"` : User can enter any character type of data
 2. `placeholder=""` : It is normally used to keep a watermark content of a particular element.
 3. `value` and `readonly` and `disabled` : Values is the attribute which allows us to populate the by default value in text box.
@@ -1019,3 +1019,99 @@ Regular Expressions[Pre-defined]:
 
 
 
+### summary of attributes of input:
+
+|`<input>`||
+|-|-|
+|| name, id, class|
+|| size|
+|| placeholder|
+|| autofocus|
+|| value|
+|<b>text<b/>| readonly|
+|| disabled|
+|| required: validation |
+|| minlength: validation|
+|| maxlength: not able to enter if data exceeds maxlength |
+||list: autosuggestion|
+||pattern: validation using regEx|
+
+
+
+### 2. `type = password`
+
+- Value entered by the use will be masked by star symbol
+
+### 3. `type="number"`
+- To enter the only number type we use attribute value `type="number"`
+
+`<input type="number" name="txtNumber" min="18" max="58" step=5>`
+
+
+### 4. `type="range"`
+`<input type="range" name="txtLoan" min="50000" max="400000">`
+- The value chosen through the slider option can be displayed on the page only through "javascript". 
+
+
+### 5. `type="email"`
+
+- It just checks for "@", but will not worry about extension like (.com, .livem .ai, ... )
+
+### 6. `type="url"`
+
+- It validates URL format
+- If you want the user to input websire address(URL) abd restrict to URL format then you can define  `type="url"`
+- URL Format should contain "protocol and domain"
+
+
+#### Syntax:
+Ex.: 
+`<input type="url" name="txtUrl" size="50">`
+
+www.amazon.com :-> Invalid
+
+
+
+### 7. `type="color"`
+- To give a color type of input we go for `type="color"`
+- color inputs in html can be provided in 3 ways:
+    1. name : red, green, yellow, blue
+    2. lightcolors or color shade name:  Darkcyan, lightcyan
+    3. Hexadecimal code:
+
+        - Hexadecimal color can be defined in 3 or 6 chars followed by hash (#)
+
+            1. 3 chars Code : #RGB
+            2. 6 chars code: #RRGGBB
+    4. Red, Green  and Blue value can be "0" to "F"
+
+        Hexa - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f
+        [0 is minimum, f is maximum]
+
+        0 - Dark, f - Bright
+
+
+### 8. `type="date"`
+
+- HTML allows to input datae value by using the "type=date"
+- It is not supported on all browser, hence we have to implement using jQuery.
+- datetime value is removed from 'html5 major version'
+1. date
+2. datetime-local
+3. month
+4. week
+5. time
+
+How to restrict the user for date selection?
+> Using `min` and `max` attribute
+
+Note: always the date input format must be "year-month-day"( "YYYY-MM-DD") - (mysql) || "day-month-year" (DD-MM-YYYY).
+
+we cam't select range of dates using html, for that we have to go for jQuery/javascript.
+eg. :
+
+```
+Departure Date: 
+        <input type="date" name="txtDate" min="2024-09-02" max="2024-10-02">
+        <button>Submit</button>
+```
