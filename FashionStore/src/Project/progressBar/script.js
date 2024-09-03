@@ -4,8 +4,8 @@ let ratings = [0, 0, 0, 0 , 0];
 
 function doOnClick(x, arr, ratings) {
     arr[x].onclick = () => {
-        ratings[x]++;
-        let sum = 0;
+    ratings[4 - x]++;
+    let sum = 0;
     for(let i = 0; i < ratings.length; i++) {
         sum += ratings[i];
     }
