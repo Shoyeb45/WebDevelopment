@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Course details</legend>
+
+            <label for="course">Courses</label>
+            <select name="course" multiple size="10">
+                <!-- <option value="hi">Full stack course</option> -->
+                <optgroup label="MEAN">
+                    <option value="mongoDB">MongoDB</option>
+                    <option value="expressJS">Express.js</option>
+                    <option value="angular">Angular</option>
+                    <option value="Nodejs">Node.js</option>
+                </optgroup>
+
+                <optgroup label="MERN">
+                    <option value="mongoDB">MongoDB</option>
+                    <option value="expressJS">Express.js</option>
+                    <option value="react">React.js</option>
+                    <option value="Nodejs">Node.js</option>
+                </optgroup>
+
+                <optgroup label="JAVA">
+                    <option value="JRE">CoreJava</option>
+                    <option value="JEE">AdvancedJava</option>
+                    <option value="ORM">Hibernate</option>
+                    <option value="springBoot">SpringBoot</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>

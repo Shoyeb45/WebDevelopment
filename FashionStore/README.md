@@ -38,15 +38,16 @@ To markup the content on a browser, we need language called HTML.
 
 1. Normal Elements - `<b>`
 2. Void Elements - `<img>`
+
 3. RC(Rich Context) Data Elements
 
-Ex.:
+    Ex.:
 
-```
-    <textarea>
-        <p>Hello pw'ian</p>
-    </textarea>
-```
+    ```
+        <textarea>
+            <p>Hello pw'ian</p>
+        </textarea>
+    ```
 
 Ouptut:
 ![Output:](image.png)
@@ -63,7 +64,6 @@ Temperature25C 4500/-
 Temperature25&deg;C &#8377;4500/-
 ```
 
-![alt text](image-1.png)
 
 5. Foreign Elements - ex. svg, mathml
 
@@ -527,8 +527,6 @@ We can use only those images from google which are filtered using : Creative com
 
 from -> tools
 
-![alt text](image.png)
-
 > Different types of images:
 
 | Sr Number | Abbreviation | FileFormat                         | MIMEType      | FileExtension                   |
@@ -952,9 +950,10 @@ If we use `disabled` attribute, then we can't edit that text field and the data 
 | \\^            |             |
 | $              |             |
 
-| Metacharacters       | Description                                                                                                                                                                                                                                                                                                                      |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------- |
-| ? : occurence 0 or 1 | It defines zero or one occurence of a character. <br>Ex.: `<input patter="colou?r" placeholder="color/colour" type="text" name="txtColor">`.<br> Accepted values: color/colour                                                                                                                                                   |
+
+| Metacharacters | Description |
+| ---------------| ------------|
+| ? : occurence 0 or 1 | It defines zero or one occurence of a character. <br>Ex.: `<input patter="colou?r" placeholder="color/colour" type="text" name="txtColor">`.<br> Accepted values: color/colour |
 | \* : occurence >= 0  | It defines zero or more occurennce of a character.<br>Ex.: `<input pattern="colou*r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: color/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">colorrr/ colooor</b>                                                          |
 | +: occurence >= 1    | It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>                                                         |
 | <b>.</b> (dot)       | It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y] |
@@ -1123,8 +1122,130 @@ Ex.:
 <br>
 ```
 
-FAQ 1. When should we use radio button element in a webpage?
+CheckBox:
+
+- Checkbox allow user to select and deselect any option
+- You can use checkbox for selecting one or multiple options from a group of choices
+- The attributes ate same as radion buttons
+    - id
+    - name
+    - class
+    - value
+    - checked ... etc
+- it is defined by `type="checkbox"`
+#### FAQ 1. When should we use radio button element in a webpage?
 
 > If we want to user to compulsorily select one option among the supplied inputs we go for radio buttons .<br>
-> To make it default selected we use an attribute called 
-<u>"checked"</u>
+> To make it default selected we use an attribute called
+> <u>"checked"</u>
+
+
+#### FAQ 2. How to create a checkbox list in HTML?
+
+```
+<form action="">
+        Name: <br>
+        <input type="text" name="txtName" placeholder="Type your name"> <br> <br>
+
+        Select Programming languages which you have studied: <br>   
+
+        <ul>
+            <li>
+                <input type="checkbox" name="chk" > <label for="chk">Java</label>
+            </li>
+            
+                <li><input type="checkbox" name="chk" > <label for="chk">Ruby</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">Javascript</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">C</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">CPP</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">Ruby</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">R</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">Bash</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">SQL</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">DAX</label></li>
+                <li><input type="checkbox" name="chk" > <label for="chk">Scala</label></li>
+            <li>
+                <input type="checkbox" name="chk" > <label for="chk">Python</label>
+            </li>
+        </ul>
+
+        <button>Submit</button>
+    </form>
+```
+
+<p align=center>
+    <img src = "image-1.png" width=400px> 
+</p>
+
+
+Dropdown list:
+- it allows the user to select any one option from a group of choices.
+- It shows the list of items using a dropdown menu.
+- HTML provides the following elements for designing dropdown list:
+    - `<select>` : It is used to configure a list
+    - `<option>` : It is used to configure a list item
+    - `<optgroup>` : It is used to grp a set of options into one category
+
+- Every `<option>` comprises of following attributes
+    - value : It defines the value to be submitted
+    - selected : It defines the value to be selected (not checked here)
+    - disabled : To make it disabled we use this option
+
+NOTE: In one line it is presenting more elements information
+
+ListBox:
+- Everything is same as dropdown list in elements and attribute
+- It allows to select one or multiple 
+- To change the dropdown into listbox you have the attribute "size or multiple"
+
+Note : The options in dropdown or listbox are RC data type. They allow only plain text number and special chars.
+        You can't add icon/.gif or images we need to use bootstrap and css
+        We can't create nested drop downs using HTML(using bootstrap and css) 
+
+
+### 11. `textarea` element
+
+- It is used to handle multiline input
+- It is RC data element used to present plain text.
+- It is similar to textbox but allows to write multiple lines
+- Attributes are similar to text input, additional used:
+    - rows : It represents height.
+    - cols : It represents width.
+    - readonly : It will not alllow to modify text but we can submit.
+    - disabled: It will not allow to modify and submit.
+
+
+### 12. `button` element
+
+|Generic Button| Non-generic button|
+|--------------|-------------------|
+|HTML5: <br>`<button>TEXT,IMAGE,SYMBOLS</button>` <br> `<button type="submit">TEXT,IMAGE,SYMBOLS</button>` <br> `<button type="reset">TEXT,IMAGE,SYMBOLS</button>`| HTML5:<br>`<button onclick="window.print()" type="button">Print Page</button>`|
+|HTML4:<br>`<input type="submit">Submit</input>`<br>`<input type="reset">ClearForm</input>` |HTML4:<br> `<input type="button"></input>`|
+# `meter` element
+
+- It can be used to display the grade meter
+- It can display a value range with
+    - min
+    - max
+    - low
+    - high
+    - optimum
+    - value
+- It can be controlled by javascript
+
+
+# `progress` element
+
+- It is used to show the status of any task performed in the page.
+- The task includes action like
+    - copying 
+    - Downloading
+    - uploading
+    - connecting
+- It is used to display the time elapsed or the remaining to complete the task
+- Specially progress is used in pages that use "Ajax"[Asynchronous JavaScript and XML]
+- Attributes used for progress
+    - min
+    - max
+    - value
+
