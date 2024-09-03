@@ -1,0 +1,100 @@
+<!-- Building review bar using meter -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">    
+    <style>
+
+        fieldset {
+            border: none;
+            margin-left: 40px;
+        }
+        header {
+            margin-left: 40px;
+            display: flex;
+            margin-bottom: 11px;
+            gap: 23px;
+        }
+
+        fieldset .bi-star-fill {
+            color: gold;
+        }
+        button:hover {
+            background-color: green;
+            color: black;
+        }
+        button {
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button>1 <span class="bi bi-star-fill"></span></button>
+        <button>2 <span class="bi bi-star-fill"></span></button>
+        <button>3 <span class="bi bi-star-fill"></span></button>
+        <button>4 <span class="bi bi-star-fill"></span></button>
+        <button>5 <span class="bi bi-star-fill"></span></button>
+    </header>
+
+    <fieldset>
+        <legend>Rating and Review</legend>
+
+        <div>
+            <span>5</span>
+            <span class="bi bi-star-fill"></span>
+
+            <span>
+                <meter min="0" max="100" low="20" high="70" optimum="100" value="0"></meter>
+            </span>
+        </div>
+
+        <div>
+            <span>4</span>
+            <span class="bi bi-star-fill"></span>
+
+            <span>
+                <meter min="0" max="100" low="20" high="70" optimum="100" value="0"></meter>
+            </span>
+        </div>
+
+        <div>
+            <span>3</span>
+            <span class="bi bi-star-fill"></span>
+
+            <span>
+                <meter min="0" max="100" low="20" high="70" optimum="100" value="0"></meter>
+            </span>
+        </div>
+
+        <div>
+            <span>2</span>
+            <span class="bi bi-star-fill"></span>
+
+            <span>
+                <meter min="0" max="100" low="20" high="70" optimum="100" value="0"></meter>
+            </span>
+        </div>
+
+        <div>
+            <span>1</span>
+            <span class="bi bi-star-fill"></span>
+
+            <span>
+                <meter min="0" max="100" low="20" high="70" optimum="100" value="0"></meter>
+            </span>
+        </div>
+
+    </fieldset>
+
+    <script src="./script.js"></script>
+</body>
+</html>
