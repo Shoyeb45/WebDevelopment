@@ -409,7 +409,7 @@ Note : Default numbering will be given for items
 
 `type` : It specified the numbering type, which can be: a, A, i, I, 1(default)
 
-start[number] - It defines the numbering level to start with.
+`start`[number] - It defines the numbering level to start with.
 
 ## Nesting in list elements
 
@@ -614,12 +614,18 @@ To give a link which will actually navigate we use a following code:
 
 Note:
 Whenever we send the request, the browser will create an object called `HttpRequest` Object. The structure of HttpRequest is as follows:
+<p>
+    <img src="./httpreqobject-2.jpg">
+</p>
 
 Link request is of "GET" method type
 
 If the request is of get type then there would be no <u>request body</u> (Data will be sent to the server through URL)
 
 Server will send the response by creating http response object. The class name in java will be "Response".
+<p>
+    <img src="./httpresobject.png">
+</p>
 
 Status Number:
 
@@ -763,7 +769,7 @@ With respect to cell, if we increase the value of border to any number, there wo
 
 - `cellspacing` and `cellpadding` : It is a similar to margin and padding of css.
 
-- `rules` : row, columns, all, none
+- `rules` : rows, columns, all, none
 
 > If we use rules and border together, rules value would dominate
 
@@ -808,6 +814,17 @@ Width defines cell width (affects whole column).
 Note : `colspan` and `rowspan` can be applied only "`<td>` | `<th>`"
 
 # Analogy of class in java and elements in HTML
+
+<p>
+    <img src="./classAndElement.jpg">
+</p>
+<p>
+    <img src="./httpReqObject.jpg">
+</p>
+<p>
+    <img src="./backend.jpg">
+</p>
+
 
 # Form
 
@@ -1221,7 +1238,9 @@ Note : The options in dropdown or listbox are RC data type. They allow only plai
 |--------------|-------------------|
 |HTML5: <br>`<button>TEXT,IMAGE,SYMBOLS</button>` <br> `<button type="submit">TEXT,IMAGE,SYMBOLS</button>` <br> `<button type="reset">TEXT,IMAGE,SYMBOLS</button>`| HTML5:<br>`<button onclick="window.print()" type="button">Print Page</button>`|
 |HTML4:<br>`<input type="submit">Submit</input>`<br>`<input type="reset">ClearForm</input>` |HTML4:<br> `<input type="button"></input>`|
-# `meter` element
+
+
+### 13. `meter` element
 
 - It can be used to display the grade meter
 - It can display a value range with
@@ -1234,7 +1253,7 @@ Note : The options in dropdown or listbox are RC data type. They allow only plai
 - It can be controlled by javascript
 
 
-# `progress` element
+### 14. `progress` element
 
 - It is used to show the status of any task performed in the page.
 - The task includes action like
@@ -1249,3 +1268,6 @@ Note : The options in dropdown or listbox are RC data type. They allow only plai
     - max
     - value
 
+
+
+### 15. 
