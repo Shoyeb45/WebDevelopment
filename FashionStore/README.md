@@ -1270,4 +1270,32 @@ Note : The options in dropdown or listbox are RC data type. They allow only plai
 
 
 
-### 15. 
+### 15. `label` element
+
+- `label` it is an element which is used to describe the information about what input the user should give (information to the user)
+- `label` element is also used to bind with fields(dynamically linked through javascript).
+- To bind with any field it uses an attribute called "`for`"
+- Binding is required to manipulate the field dynamically 
+
+
+# Library
+- It referes to the set of readymade methods available for the user to use in the application development.
+<p>
+    <img src="./library.png">
+</p>
+
+## Installing a library
+
+1. Thorugh package manager (it would be downloaded and installed directly on the project folder ) locally
+
+2. Through server - HTML
+
+<p>
+    <img src="./HTMLLibraryNw.png">
+</p>
+
+3. Through server - JAVA
+
+<p>
+    <img src="./JavaLibraryNw.png">
+</p>

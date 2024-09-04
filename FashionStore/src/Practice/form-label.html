@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Label</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        form {
+            height: 300px;
+            border: 1px solid black;
+            padding: 20px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-field {
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h2><span class="bi bi-person"></span>&nbsp;User login</h2>
+        <div>
+            <div>
+                <label for="txtUser">Username:</label>
+            </div>
+
+            <div>
+                <input type="text" name="txtUser"> <br>
+                <span class="error-field">Password is manadatory</span>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="txtPswd">Password:</label>
+            </div>
+
+            <div>
+                <input type="password" name="txtPswd"> <br>
+                <span class="error-field">Password is manadatory</span>
+            </div>
+        </div>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>
