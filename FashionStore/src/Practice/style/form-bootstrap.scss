@@ -1,0 +1,11 @@
+@import './../../../node_modules/bootstrap/scss/bootstrap';
+
+.input {
+    @extend .border;
+    @extend .border-primary;
+    @extend .rounded-2;
+}
+
+body {
+    height: 100vh;
+}
