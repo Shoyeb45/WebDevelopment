@@ -1337,7 +1337,7 @@ eg. : `<form class="ms-5">` , `<h2 class="ms-4">Bootstrap</h2>`
 ### 4. Border
 - .border : to give border
 - .border-{size} : {1 to 5}
-- .bordder-{contextual} : warning dange success info primary seconday
+- .border-{contextual} : warning dange success info primary seconday
 
 ### 5. rounded
 - .rounded
