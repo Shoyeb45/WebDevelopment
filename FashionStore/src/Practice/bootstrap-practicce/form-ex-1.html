@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Ex 1</title>
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <style>
+        body {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    <form action="" class="w-25 border border-1 border-primary p-3">
+        <div class="h3">Registration Form</div>
+
+        <dl>
+            <dt>
+                Username
+            </dt>
+
+            <dd>
+                <input type="text" name="txtName" class="form-control">
+            </dd>
+
+            <dt>
+                Password
+            </dt>
+
+            <dd>
+                <input type="password" name="txtPswrd" class="form-control">
+            </dd>
+
+            <dt>
+                Select City
+            </dt>
+
+            <dd>
+                <select name="txtCity" id="" class="form-select">
+                    <option value="beng">Bengaluru</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="bhuj">Bhuj</option>
+                </select>
+            </dd>
+
+            <dt>
+                Price Range
+            </dt>
+
+            <dd>
+                <input type="range" name="txtPrice" class="form-range">
+            </dd>
+
+            <dt>
+                Subscribed
+            </dt>
+
+            <dd class="form-switch">
+                <input type="checkbox" name="txtSubscirbe" class="form-check-input">
+            </dd>
+        </dl>
+    </form>
+</body>
+</html>

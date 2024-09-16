@@ -1366,4 +1366,24 @@ eg. : `<form class="ms-5">` , `<h2 class="ms-4">Bootstrap</h2>`
 - .row 
 - .col : responsive
 - .col-{size} : 1 to 12
+
+
+### 9. Bootstrap inbuilt classes for form elements
+
+- 
+
+
+
+
+### Button  classes  : 
+1. .btn
+1. .btn-{contextual}
+1. .btn-outline-{contextual}
+1. .btn-sm
+1. .btn-lg
+1. .btn-group
+1. .btn-group-vertical
+1. .btn-close
+1. .btn-link
+1. .btn-toolbar
  
