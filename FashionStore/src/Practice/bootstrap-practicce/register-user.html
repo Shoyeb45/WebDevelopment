@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    
+    <form class="border border-primary w-50 p-3 m-3 ms-5">
+        <div class="h3">Register User</div>
+        <dl class="row">
+            <dt class="col-2">
+                Username
+            </dt>
+            <dd class="col-10">
+                <input type="text" name="txtName" class="form-control">
+            </dd>
+
+            <dt class="col-2">
+                Password
+            </dt>
+            <dd class="col-10">
+                <input type="password" name="txtPswrd" class="form-control">
+            </dd>
+
+            <dt class="col-2">
+                Age
+            </dt>
+            <dd class="col-10">
+                <input type="number" name="txtNumber" class="form-control">
+            </dd>
+
+            <dt class="col-2">
+                City
+            </dt>
+            <dd class="col-10">
+                <select name="txtSelect" class="form-select">
+                    <option value="none">Select City</option>
+                    <option value="bgl">Bengaluru</option>
+                    <option value="hyd">Hyderabad</option>
+                </select>
+            </dd>
+        </dl>
+    </form>
+</body>
+</html>
