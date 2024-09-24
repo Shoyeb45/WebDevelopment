@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .term + span {
+            color: red;
+        }
+
+        .term:checked  + span{
+            color: green;
+        }
+
+        .term ~ button {
+            display: none;
+        }
+       
+        .term:checked + span + button {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="">
+
+        <dl>
+            <dt>
+                Terms and conditions
+            </dt>
+            <dd>
+                <textarea name="tnc" disabled rows="5" cols="40">
+                    Terms and conditions
+                </textarea>
+            </dd>
+
+            <dd>
+                <input type="checkbox" name="isChecked" class="term"> 
+                <span>
+                    I agree to terms and conditions
+                </span>
+            
+                <button class="btn btn-primary">Submit</button>
+            </dd>
+        </dl>
+        
+    </form>
+
+</body>
+</html>

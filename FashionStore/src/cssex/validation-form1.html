@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:required + span {
+            display: inline;
+            color: red;
+        }
+
+        input:optional + span {
+            display: none;
+        }
+
+        input:optional  {
+            border: 1px solid black;
+        }
+
+        
+        input:invalid {
+            border: 1px solid red;;
+        }
+        input:valid {
+            border: 1px solid green;;
+        }
+        
+
+        input:valid + span {
+            display: none;
+        }
+
+        
+        input:valid + span + div{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="" novalidate>
+
+        <dl>
+            <dt>Username</dt>
+            <dd>
+                <input type="text" name="txtUser" required>
+                <span>*</span>
+                <div>
+                    Username is required 
+                </div>
+            </dd>
+            <dt>Password</dt>
+            <dd>
+                <input type="password" required name="txtPwd">
+                <span>*</span>
+                <div>
+                    Password is required 
+                </div>
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="text" name="txtAge" >
+                <span>*</span>
+            </dd>
+        </dl>
+
+    </form>
+
+</body>
+</html>

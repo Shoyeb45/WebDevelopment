@@ -1401,3 +1401,28 @@ syntax :
         <span class="input-group-text">.00</span>
     </div>
 ```
+
+
+### CSS Classes for validating the elements
+
+
+1. :required -> It configures when the field is defined with required
+2. :optional -> If configures when the field is not defined with required.
+
+<p align=center>
+    <img src="./domVisualization1.png">
+</p>
+
+
+3. :valid -> It defines effects when all validations attributes are satisfied.
+
+4. :invalid -> It defines effects when the field validation return error.
+
+
+
+## Multimedia with HTML
+
+1. `<marquee>`
+2. `<audio>`
+3. `<vidoe>`
+4. `<embed>` [HTML4 - Deprecated]
