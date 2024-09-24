@@ -1426,3 +1426,86 @@ syntax :
 2. `<audio>`
 3. `<vidoe>`
 4. `<embed>` [HTML4 - Deprecated]
+
+
+1. marquee
+
+|Attribute| Description|
+|--|--|
+|Scroll amount| Control the marquee scrolling speed[1 to 100]|
+|direction| It specifies the scrolling directions, which can be left, right, up or down| 
+|width and height| Sets the widht and height of the content| 
+|loop| specifies the number of time marquee content need to display| 
+|bgcolor|It sets the background area|
+
+2. video and audio element
+
+|Attribute| Description|
+|--|--|
+|autoplay | It uses "boolean" value [true/false].|
+|controls| It is used to define the controls for media player.| 
+|mute| it uses boolean value to mute the video on loading| 
+|loop| it allows us to loop the video| 
+|poster | it is used as thumbnail for video before playback|
+
+
+----------------------------------------------
+<hr>
+
+# CSS
+
+- Styles refers to providing an extra attribute through which the apperance can be change to get good look and feel.
+- In case of styling language we go for a mime type called text/css.
+
+
+- we can link css to HTML in three ways :
+1. Inline
+2. Embed 
+3. External
+
+
+
+## 1. Inline 
+```
+<element style="attribute2: value; attribute1: value;......."></element>
+```
+
+- Applying the stylen with respect to inline is faster as it is local to that particular element.
+- It is best suited only, when we want to use that style for that particular element.
+### Limitation :
+
+1. Increase in redundancy as the scope is limited to that line, we need to rewrite the instruction again to get the effect for another element. 
+
+
+## 2. embed
+
+```
+<style type=text/css>
+    x {
+        ....
+        ....
+    }
+</style>
+``` 
+1. If the `<style>` element is placed inside head element.Then the code would be loaded to browser memory and it would be used at the later stage as per our requirement.
+Ex. :
+```
+<head>
+    <style>
+        h1 {
+            background-color: red;
+            text-align: center;
+        }
+    </style>  
+</head>    // browser memory
+
+<body>
+    <h1>Hii</h1>
+</body>
+```
+
+
+2. Inside the body element. : If we keep the style element inside the body at the time of the rendering the element style effect would be applied by the browser.
+
+3. Outside HTML element. : Same as case 2, but it will behave in abnormal ways in some scenarios.
+
