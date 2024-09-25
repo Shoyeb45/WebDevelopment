@@ -1566,4 +1566,33 @@ Syntax:
       - css
     - script
       - javascript
-x
+
+
+### What is Minification ? 
+1. Minification is the process of compressing css.
+2. It is always recommended to minify and use the CSS for production. [Live]
+3. CSS original file will occupy more space, we have to us them for development but not for production.
+
+## CSS Selector
+
+- Priority order of CSS in linking  : Inline > Embed > External (If new properties are defined in external, embed, inline all will be applied)
+
+```
+<head>
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+    </style>
+    <link rel = "stylesheet" href = "test-effect.css">
+</head>
+
+<body>
+    <h1 style="color:red; background-color: black;"> Web Development </h1>
+</body>
+```
+<p>
+    <img src = "./prio.png">
+    <i>Priority of CSS </i>
+</p>
