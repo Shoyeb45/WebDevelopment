@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .tkt-container {
+            margin: 10px;
+            /* padding: 10px; */
+            border: 4px solid black;
+            background-color: lightyellow;
+        }
+        
+        dl, button{
+            margin: 5px;
+        }
+        
+        dt {
+            font-size: large;
+        }
+        dl {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+
+        .mq {
+            scrollamount: 0 ;
+            animation: none;
+        }
+
+    </style>
+
+    <style  media="print">
+        .btn {
+            display: none;
+        }
+
+        .mq {
+            margin-left: 10px;
+            animation-play-state: paused;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="tkt-container">
+        <marquee behavior="" direction="right" class="mq">
+            <img src="./../../public/Image/train.png" alt="">
+        </marquee>
+
+        <h1 align = center>
+            Train Ticket
+        </h1>
+        <dl>
+            <dt>
+                Departure Date
+            </dt>
+
+            <dd>
+                26-07-2024
+            </dd>
+
+            <dt>
+                Departure Time
+            </dt>
+
+            <dd>
+                15:00
+            </dd>
+        </dl>
+
+        <button class="btn btn-info">
+            Print Ticket
+        </button>
+
+    </div>
+</body>
+</html>

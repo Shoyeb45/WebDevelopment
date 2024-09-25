@@ -1470,7 +1470,7 @@ syntax :
 <element style="attribute2: value; attribute1: value;......."></element>
 ```
 
-- Applying the stylen with respect to inline is faster as it is local to that particular element.
+- Applying the style with respect to inline is faster as it is local to that particular element.
 - It is best suited only, when we want to use that style for that particular element.
 ### Limitation :
 
@@ -1509,3 +1509,61 @@ Ex. :
 
 3. Outside HTML element. : Same as case 2, but it will behave in abnormal ways in some scenarios.
 
+
+
+## Median type in css
+
+Q. What is mediatype for styles?
+
+> It configures your styles for various devices and viewport.
+We can set styles for screen, print and speech.
+
+Syntax: 
+
+```
+<style type="text/css" media="all | screen | print | speech">
+    x {
+        ....
+        ....
+    }
+</style>
+```
+
+
+- Screen : To see the effect on screen 
+- Print  : To see the effect when we take printout
+
+
+
+
+
+## Styles in external file
+
+- We can write a styles in separate stylesheet.
+- Stylesheet have extemsion of ".css"
+- Stylesheet can cascade over HTML Pages.[Cascade Style sheet]
+- You can access across pagees.
+- However if you are using external files, then number of request will increase for a page, which internally increase the page load time.
+
+Syntax:
+1. Maintain separate css file in folder called "styles" in "src" folder.
+2. Add a new file called `ticket-effects.css`
+3. Link to webpage using : 
+    ```
+        <link rel="stylesheet" href="path-to-css-file">
+    ```
+
+### Standard structure of any project:
+
+- ProjectName
+  - public 
+    - image
+    - video
+    - audio
+    - document
+  - src 
+    - styles
+      - css
+    - script
+      - javascript
+x
