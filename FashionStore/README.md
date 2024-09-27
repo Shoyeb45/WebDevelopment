@@ -1511,7 +1511,7 @@ Ex. :
 
 
 
-## Median type in css
+## Media type in css
 
 Q. What is mediatype for styles?
 
@@ -1596,3 +1596,180 @@ Syntax:
     <img src = "./prio.png">
     <i>Priority of CSS </i>
 </p>
+
+
+## Selectors of CSS
+
+<p>
+    <img src="./CSSOM.png">
+</p>
+
+- It refers to process of selecting an element in webpage.
+
+CSS Selectors are classfied into various categories:
+> Primary 
+1.  Primary Selection 
+2. Rational Selection 
+
+> Pseudo selector
+3. Dynamic pseudo classes 
+4. Structural pseudo classes
+5. Element pseudo classes
+6. Validation state pseduo classes
+
+
+> Basic Selector
+7. Attribute selectors
+8. Universal selectors
+9. Root selector
+10. Behavioural selector
+
+
+### 1. Primary selector
+- Id selector, type selector, class selector
+
+
+### Type selector: 
+
+- We target the element directly by referring to token.  
+
+syntax :
+```
+<style>
+    h1 {
+        color : red;
+    }
+</style>
+```
+
+### Id selector: 
+- Id refers to an identifying an element with unique names.
+```
+<head>
+    <style>
+        #library {
+            color : red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="library">REACT</h1>
+</body>
+```
+
+> NOTE: In real time coding normally we write multiple designs (styles with effects ). To use this design on multiple element if we go for id selector then the effects would not be applied on the elements. To resolve this problem we go for class selector   
+
+- When we give id like : id = "id1 id2", then no effect will be seen.
+- But when we give the id like `<ele id="id1" id="id2" id="id3"...> </ele>`, so the first id will have effect on the element.
+
+### CSS selector:
+
+- If we want to apply multiple effects for an element, then we go for class selector.
+Syntax: 
+
+```
+<style>
+    .className1 {
+
+    }
+    .className2 {
+
+    }
+    .className3 {
+
+    }
+</style>
+
+<body>
+    <element class="className1 className2 className3 className4..."></element>
+</body>
+```
+
+FAQ:
+
+1. If styles are defined for any element in all 3 ways, then which set of effects would apply?
+2. If style container is defined with same attributes in both head and body section, then which set of effect would apply?
+3. If the style container is defined with same attribute muliptle times in body, then which set will apply?
+
+
+FAQ-2:
+1. If we define style for any element usinga all 3 primary selectors, which one will apply?
+
+> Priority order : Id > class > type.
+> If different attirbute will be present all will be applied.
+
+
+
+2. If same attributes are defined using ID Selector in embeded and external file, which set will apply?
+> The first will embed apply and then external will apply, but if we have same selector in botht place then the first which is appearing in code will have effect. (first come first serve)
+
+> NOTE :
+ ```
+ <head>  <--- Browser memory (line by line interpretation would happen)
+    <style></style>  
+    <link src="" rel="stylesheet">
+</head>
+```
+
+3. Is it possible to group the selectors to apply the same effects on different elements?
+
+> Yes , we can do . 
+Ex. : 
+```
+<style>
+    .className, elementName, #idName {
+
+    }
+</style>
+```
+
+## 2. Rational Selector
+- We can select elements using parent and child hierarchy.
+- We can also select elements using siblings.
+
+> `parent child` : all child elements in specific parent
+
+> `parent > child` : only direct elements in specific parent
+
+> `elementA + elementB` : Adjacent Selector [sibling]
+
+> `elementA ~ elementB` : Generic sibling
+
+Ex. 1: 
+
+<p>
+    <img src="./selector.png">
+</p>
+
+styling ex:
+1. 
+
+
+#### Ex. 2:
+<p align=center>
+    <img src="./selector2.png">
+</p>
+
+
+### 3. Attribute selector:
+
+Syntax: 
+```
+elementName[attribute] {
+
+}
+
+elementName[attributeName=value] {
+
+}
+```
+
+|Condition | Purpose|
+|-|-|
+|[attribute="val"]| Equal specifies that it should be exact match.|
+|[attribute^="val"]| It refers the value starting with specified.|
+|[attribute$="val"]| It specifies that the value ending with given term.|
+|[attribute\|="val"]| Name starts with specified term and separated with "-"|
+|[attribute\~="val"]| Name starts with specified term and not binded with other words|
+|[attribute\*="val"]| It matches the term at any location|
