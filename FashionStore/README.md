@@ -1773,3 +1773,88 @@ elementName[attributeName=value] {
 |[attribute\|="val"]| Name starts with specified term and separated with "-"|
 |[attribute\~="val"]| Name starts with specified term and not binded with other words|
 |[attribute\*="val"]| It matches the term at any location|
+
+### 4. Dynamic Pseudo class selector
+
+- Dynamic indicates that the effect can change according to state and situation.
+- Pseudo means false representation
+- Class refers to program template in computer programming, it contains predefined logci and data which you can implement and customize according to the requirements.
+
+|Selector | Description |
+|--|--|
+|:link| Specifies effect for hyperlink [anchor in default state]|
+|:visited | It defines effects for visited links [anchor in visited state]|
+|:target | It defines effects for the target element [ used normally in intradocument (not scrollable)]   [Element is target of specified hyperlink]|
+|:hover | It defines effects when mouse pointer is over element. [ mouseover] |
+|:active | It defines effects when link is in active state [ mousedown ]|
+
+> NOTE: Class can transform element apperance, transformatin time can be controlled by using "CSS Attribute called transition."
+
+
+### 5. Validation state pseudo classes
+- On that particular element we are validating
+
+|Selector | Description |
+|--|--|
+|:valid | It defines effects for element if is value is valid against the validation defined<br>Validation can be verified by using : <br>minlength, maxlength, required, pattern, email , url, etc.|
+|:invalid | It defines effect for element when it is invalid|
+|:required| It defines effects to element when it verified with required |
+|:optional | If it is not defines with required validation then it is treated as optional|
+
+
+### 5. Element state selector
+
+|Selector | Description |
+|--|--|
+|:enabled | It defines effects when element is enabled|
+|:disabled| It defines effects when element is disable|
+|:read-only | It defines effects when element is set to read-only|
+|:checked| It defines effects when element is checked|
+|:focus| It defines effects when element get focus|
+
+### 6. Structural pseudo selector
+
+- You can target your effects based on the position of the element in parent and child hierarchy 
+
+|Selector | Description |
+|--|--|
+|:first-child| It defines effect only for first child element|
+|:last-child| It defines effects only for last child element|
+|:nth-child(LevelNumber)| It defines effects only to specific child element that occurs at given level.<br>1.Level number starts with<br>2. Index number starts with 0.<br>You can also define the pre-set value like "even & odd" to apply effects based on even and odd occurences|
+|nth-of-type(3|3n|3n+1)| Select elemens from top nth occurrence |
+|nth-last-of-type(3n+1)| Select elemetns from bottom nth occurence |
+
+Ex.:
+<p align=center>
+    <img src="./sele6.png">
+</p>
+
+CSS Code : 
+
+```
+<style>
+    ol li:first-child {    /* first item of list*/
+        color : red;
+    }
+    ol li:last-child {   /* last item of list*/
+        color: green;
+    }
+
+    ol li:nth-child(even) {  /* those items which are in even position */
+        font-size: 30px;
+    }
+</style>
+```
+
+- 
+<p align=center>
+    <img src="./out1.png">
+</p>
+
+
+### 7. Behavioural and occurence class
+
+<p>
+    <img src="./tableOccur.png">
+    <i></i>
+</p>

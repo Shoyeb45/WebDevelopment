@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* first item of list*/
+        /* ol li:first-child {    
+            color : red;
+        } */
+
+        /* last item of list*/
+        /* ol li:last-child {   
+            color: green;
+        } */
+
+         /* those items which are in even position */
+        /* ol li:nth-child(even) { 
+            font-size: 30px;
+        } */
+        
+        ol li:nth-last-of-type(2n + 1) {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>JS</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>MongoDB</li>
+        <li>SpringBoot</li>
+        <li>SpringCloud</li>
+    </ol>
+</body>
+</html>
