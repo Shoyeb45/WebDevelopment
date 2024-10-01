@@ -1976,3 +1976,72 @@ h1 {
 - All the properties of the parent will not reach to child, if we want it to reach to the child, then we use `inherit` value on that particular attribute all `all:inherit;` attribute
 - After inheriting the attribute from the parent if the child is interesting in changing the value, the child can change the value or set the value to default apperance.
 - To remove the default nature of a particular element we use `unset` value to the attribute   
+
+
+## CSS box model
+
+1. `margin`
+1. `padding`
+1. `border`
+1. `border-radius`
+1. `width`
+1. `height`
+1. `box-shadow`
+1. `border-image`
+
+
+### 1. `margin`
+- It specifies the space around border.
+- You define by using the following properties:
+    - margin [short hand - sets in all direction]
+    - margin-top
+    - margin-bottom
+    - margin-left
+    - margin-right
+
+Syntax:
+
+```
+{
+    margin: 0px 0px 0px 0px; /*top , right, bottom, left*/
+}
+```
+
+### 2. `padding`
+- It specifies the space around content
+- You can define
+    - padding [short hand - sets in all direction]
+    - padding-top
+    - padding-bottom
+    - padding-left
+    - padding-right
+- All options are similar like margin
+
+Syntax:
+
+```
+{
+    padding: 0px 0px 0px 0px; /*top , right, bottom, left*/
+}
+```
+
+### 3. border
+
+- `border` - short hand for style, color and width
+- `border-style: dotted, double, dotted, solid, dashed, etc..; `
+- `border-width: border-size;`
+- `border-color: border-color;`
+- `border-left` - short hand for style color and width
+- `border-left-style` 
+- `border-left-width` 
+- `border-left-color` 
+
+> Similarly for all directions [Indicates top, right, bottom]
+
+### 4. border-radius
+
+- `border-radius` - short hand for all directions (top-left, top-right, bottom-right, bottom-left)
+- `border-top-right-radius`
+- `border-top-left-radius`
+- `border-bottom-right-radius`
+- `border-bottom-left-radius`
