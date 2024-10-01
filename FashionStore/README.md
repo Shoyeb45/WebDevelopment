@@ -1858,3 +1858,121 @@ CSS Code :
     <img src="./tableOccur.png">
     <i></i>
 </p>
+
+### 8. Universal Selector
+
+- It is mainly used for applying the effects for all the elements in a page.
+
+- Syntax: 
+```
+<style>
+    * {
+        attribute1: value1;
+        attribute2: value2;
+        .
+        .
+        .
+        attribute-n: value-n;
+    }
+</style>
+```
+
+### 9. Root Selector
+- will be discussed in javascript
+
+### 10. Language selector
+- It is used to give the effects based on a langauge configured for an element. If your page contains multiple langauge data then to define the effects based on specific language , we go for langauge selector
+
+- Syntax :
+```
+<style>
+    elementName:lang(lang) {
+        attribute1: value1;
+        attribute2: value2;
+        .
+        .
+        .
+        attribute-n: value-n;
+    }
+</style>
+```
+
+## CSS Inheritance 
+
+Ex.:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INHERITANCE</title>
+
+    <style>
+        .container {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 15px;
+            color: white;
+            font-family: Brush script MT;
+            background-color: black;
+        }
+
+        h1 {
+            border: inherit;
+            background-color: white;
+            color: black;
+        }
+
+        p {
+            font-family: initial;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Development</h1>
+        <p>HTML</p>
+    </div>
+</body>
+</html>
+```
+
+<p>
+    <img src="./dom4.png"><br>
+    <p align="center">DOM</p>
+</p>
+
+
+Default nature of p and h1 :
+
+```
+p {
+    display : block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h1 {
+    display : block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+```
+
+- In CSS inheritance is the process of configuring parent effects to child elements.
+- child elements automatically implements some of the parent feature which we can control by using following css values:
+1. inherit
+2. initial
+3. unset
+
+- All the properties of the parent will not reach to child, if we want it to reach to the child, then we use `inherit` value on that particular attribute all `all:inherit;` attribute
+- After inheriting the attribute from the parent if the child is interesting in changing the value, the child can change the value or set the value to default apperance.
+- To remove the default nature of a particular element we use `unset` value to the attribute   
