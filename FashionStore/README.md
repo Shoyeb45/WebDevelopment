@@ -1973,7 +1973,7 @@ h1 {
 2. initial
 3. unset
 
-- All the properties of the parent will not reach to child, if we want it to reach to the child, then we use `inherit` value on that particular attribute all `all:inherit;` attribute
+- All the properties of the parent will not reach to child, if we want it to reach to the child, then we use `inherit` value on that particular attribute all `all: inherit;` attribute
 - After inheriting the attribute from the parent if the child is interesting in changing the value, the child can change the value or set the value to default apperance.
 - To remove the default nature of a particular element we use `unset` value to the attribute   
 
@@ -2045,3 +2045,102 @@ Syntax:
 - `border-top-left-radius`
 - `border-bottom-right-radius`
 - `border-bottom-left-radius`
+
+- In order to make image to appear like a proper circle, width  and height value of an image should be made equal to border-radius value.
+
+<p>
+    <img src="./output1.png"><br>
+</p>
+
+### 5. border-image
+
+- We can set image as border by using attributes like : border and border-image
+
+Syntax:
+```
+<style>
+    border: 10px solid transparent;
+    border-image: url() stretch|space 1-100;  
+</style>
+```
+
+
+### 5. CSS Units
+
+- CSS units define size and position 
+- They are used to define dimension and location of an elements in page.
+- You can configure size with : height and width
+- The css units are categorized into 2 groups
+    - Absolute length units
+    - Relative length units
+
+
+1. Absolute Length units
+- They are not relative to anything else and are generally considered as normal units.
+- These are not affected by other relative elements and their units.
+- They are not affected by parent or adjacent elements, they are individual and configured for various media devices.
+
+|Unit| Name| Equivalent ID|
+|--|--|--|
+|cm| centimeters | 1cm = 96px/2.54 = 37px|
+| mm| millimeters| 1mm =1/10th of 1 cm|
+|Q	|Quarter-millimeters|	1Q = 1/40th of 1cm|
+|in	|Inches|	1in = 2.54cm = 96px|
+|pc	|Picas	|1pc = 1/6th of 1in|
+|pt	|Points|	1pt = 1/72nd of 1in|
+|px	|Pixels|	1px = 1/96th of 1in|
+
+
+> NOTE : When we are creating an animations on a button click, if we want to zoom, the go for "Absolute Path",
+
+> If we want to move the objects little far in a screen the go for "inch|cm|mm" 
+
+
+2. Relative unit
+
+- These are related to other content in the page.
+- The size of any element can be determined based on its parent, child or adjacent.
+- The advantege are whe nparent element size is change it will relatively affects the child element also.
+
+|Unit| Relative to |
+|--|--|
+|em| It uses the font size of parent element and applies to current element.[element relative]<br>note : <br>1em -> 100% of parent element <br> 0.5em -> 50% of parent element|
+|rem| Font size to the root element size[root element relative]|
+|%|  Relative to view port|
+
+- when we use `rem` we need to target the root element[`<HTML>`]
+
+
+### 6. CSS Positions 
+
+- Generally , elements are placed according to the documnet layour flow.
+- Positions allow to make element behave differently and take time out of the document flow.
+- CSS positions are defined by using "position" style attribute.
+    1. Static
+    2. absolute
+    3. fixed
+    4. sticky
+    5. relaive
+
+1. static
+- This value would not disturb the layout of the page
+- It keeps element according to normal flow of the document.
+- Static position is not affected by top, right, bottom, left if defined.
+- Generally in js, if we want to move the elements we can change it's place, but if we don't want to change then we need to take those elements as "static"
+- While designing a responsive design also the element should not be changed dynamically, then we need to for position as "static".
+
+
+2.  Absoulte
+- It disturbs the flow layout of the page.
+- It allows to change the position using top, bottom, left and right value.
+- It attaches to the content in the paga and moves along with content in page.
+
+3. Fixed
+- It disturbs the normal flow, the position of the element is fixed when we use with top, left, right, bottom attributes.
+- It attached to the browser of the page and it won't move along with content of the page.
+
+4. sticky 
+- It does not disturbs the layout of the page.
+- It would not allow you to change the position.
+- It can make the element sticky. After reaching to certain position.
+ 
