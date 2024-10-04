@@ -1788,7 +1788,7 @@ elementName[attributeName=value] {
 |:hover | It defines effects when mouse pointer is over element. [ mouseover] |
 |:active | It defines effects when link is in active state [ mousedown ]|
 
-> NOTE: Class can transform element apperance, transformatin time can be controlled by using "CSS Attribute called transition."
+> NOTE: Class can transform element apperance, transformatin time can be controlled by using "CSS Attribute called `transition`."
 
 
 ### 5. Validation state pseudo classes
@@ -2143,4 +2143,7 @@ Syntax:
 - It does not disturbs the layout of the page.
 - It would not allow you to change the position.
 - It can make the element sticky. After reaching to certain position.
+ 
+
+ ## CSS Z-index
  
