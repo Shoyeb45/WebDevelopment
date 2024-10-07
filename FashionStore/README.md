@@ -2145,5 +2145,48 @@ Syntax:
 - It can make the element sticky. After reaching to certain position.
  
 
- ## CSS Z-index
+## CSS Z-index
  
+
+## CSS Display
+
+Values of display are: 
+1. none
+2. block
+3. inlint-block
+4. inline
+5. flex [for responsive design]
+5. grid [for responsive design]
+
+
+
+FAQ:
+### 1. `none`
+- What is the difference between `display: none` vs `visibility: hidden`
+> `visibility: hidden` will not remove memory for that element on a page, whereas `display: none` would remove memory for an element on a page, as a result of which it disturbs the layout of the page.
+
+
+### 2. `block`
+- Content will appear in new line (`<br>`)
+
+### 3. `inline`
+- Content will appear in same line
+
+### 4. `inline-block`
+- To adjust the dimension of few html elements we use inline block. Ex., `<span>`, `<img>`, `<a>`
+
+### 5. `flex`
+- Should be applied on a container not on element.
+- By default the elements present in inside a container would be arranged "row" wise.
+- If we apply `display: flex;` on elements, we get abnormal behaviour as the response.
+- Flex would support adjusting the elements in both <u>row and column wise</u>
+- `display: inline` is applicable only for elements, not for container.
+
+NOTE :
+```
+{
+    display : flex;
+    flex-direction: column;
+}
+```
+> The elements present in the container would be adjusted as per width of the container, if the flex-direction is row then the elements present in the container would be adjusted as per the height of the container.
