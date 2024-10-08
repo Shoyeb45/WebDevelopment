@@ -615,7 +615,7 @@ To give a link which will actually navigate we use a following code:
 Note:
 Whenever we send the request, the browser will create an object called `HttpRequest` Object. The structure of HttpRequest is as follows:
 <p>
-    <img src="./httpreqobject-2.jpg">
+    <img src="./notesImg/httpreqobject-2.jpg">
 </p>
 
 Link request is of "GET" method type
@@ -624,7 +624,7 @@ If the request is of get type then there would be no <u>request body</u> (Data w
 
 Server will send the response by creating http response object. The class name in java will be "Response".
 <p>
-    <img src="./httpresobject.png">
+    <img src="./notesImg/httpresobject.png">
 </p>
 
 Status Number:
@@ -816,13 +816,13 @@ Note : `colspan` and `rowspan` can be applied only "`<td>` | `<th>`"
 # Analogy of class in java and elements in HTML
 
 <p>
-    <img src="./classAndElement.jpg">
+    <img src="./notesImg/classAndElement.jpg">
 </p>
 <p>
-    <img src="./httpReqObject.jpg">
+    <img src="./notesImg/httpReqObject.jpg">
 </p>
 <p>
-    <img src="./backend.jpg">
+    <img src="./notesImg/backend.jpg">
 </p>
 
 
@@ -1191,7 +1191,7 @@ CheckBox:
 ```
 
 <p align=center>
-    <img src = "image-1.png" width=400px> 
+    <img src = /notesImg"image-1.png" width=400px> 
 </p>
 
 
@@ -1281,7 +1281,7 @@ Note : The options in dropdown or listbox are RC data type. They allow only plai
 # Library
 - It referes to the set of readymade methods available for the user to use in the application development.
 <p>
-    <img src="./library.png">
+    <img src="./notesImg/library.png">
 </p>
 
 ## Installing a library
@@ -1291,13 +1291,13 @@ Note : The options in dropdown or listbox are RC data type. They allow only plai
 2. Through server - HTML
 
 <p>
-    <img src="./HTMLLibraryNw.png">
+    <img src="./notesImg/HTMLLibraryNw.png">
 </p>
 
 3. Through server - JAVA
 
 <p>
-    <img src="./JavaLibraryNw.png">
+    <img src="./notesImg/JavaLibraryNw.png">
 </p>
 
 
@@ -1410,7 +1410,7 @@ syntax :
 2. :optional -> If configures when the field is not defined with required.
 
 <p align=center>
-    <img src="./domVisualization1.png">
+    <img src="./notesImg/domVisualization1.png">
 </p>
 
 
@@ -1593,7 +1593,7 @@ Syntax:
 </body>
 ```
 <p>
-    <img src = "./prio.png">
+    <img src = /notesImg"./prio.png">
     <i>Priority of CSS </i>
 </p>
 
@@ -1601,7 +1601,7 @@ Syntax:
 ## Selectors of CSS
 
 <p>
-    <img src="./CSSOM.png">
+    <img src="./notesImg/CSSOM.png">
 </p>
 
 - It refers to process of selecting an element in webpage.
@@ -1739,7 +1739,7 @@ Ex. :
 Ex. 1: 
 
 <p>
-    <img src="./selector.png">
+    <img src="./notesImg/selector.png">
 </p>
 
 styling ex:
@@ -1748,7 +1748,7 @@ styling ex:
 
 #### Ex. 2:
 <p align=center>
-    <img src="./selector2.png">
+    <img src="./notesImg/selector2.png">
 </p>
 
 
@@ -1826,7 +1826,7 @@ elementName[attributeName=value] {
 
 Ex.:
 <p align=center>
-    <img src="./sele6.png">
+    <img src="./notesImg/sele6.png">
 </p>
 
 CSS Code : 
@@ -1848,14 +1848,14 @@ CSS Code :
 
 - 
 <p align=center>
-    <img src="./out1.png">
+    <img src="./notesImg/out1.png">
 </p>
 
 
 ### 7. Behavioural and occurence class
 
 <p>
-    <img src="./tableOccur.png">
+    <img src="./notesImg/tableOccur.png">
     <i></i>
 </p>
 
@@ -1940,7 +1940,7 @@ Ex.:
 ```
 
 <p>
-    <img src="./dom4.png"><br>
+    <img src="./notesImg/dom4.png"><br>
     <p align="center">DOM</p>
 </p>
 
@@ -2049,7 +2049,7 @@ Syntax:
 - In order to make image to appear like a proper circle, width  and height value of an image should be made equal to border-radius value.
 
 <p>
-    <img src="./output1.png"><br>
+    <img src="./notesImg/output1.png"><br>
 </p>
 
 ### 5. border-image
@@ -2144,6 +2144,12 @@ Syntax:
 - It would not allow you to change the position.
 - It can make the element sticky. After reaching to certain position.
  
+5. relative
+
+- It is defined for parent element
+- The parent element keeps all child elements relative to the contextual
+- It requires placement of child element using absolute
+- Fixed will keep element regard to Page
 
 ## CSS Z-index
  
@@ -2173,7 +2179,7 @@ FAQ:
 - Content will appear in same line
 
 ### 4. `inline-block`
-- To adjust the dimension of few html elements we use inline block. Ex., `<span>`, `<img>`, `<a>`
+- To adjust the dimension of few html elements we use inline block. Ex., `<span>`, `<img>`, `</anotesImg>`
 
 ### 5. `flex`
 - Should be applied on a container not on element.
@@ -2194,26 +2200,26 @@ NOTE :
 Ex. 1:
 
 <p>
-    <img src="./ex1.png">
+    <img src="./notesImg/ex1.png">
 </p>
 
 <p>
-    <img src="./ex2.png">
+    <img src="./notesImg/ex2.png">
 </p>
 <p>
-    <img src="./ex3.png">
+    <img src="./notesImg/ex3.png">
 </p>
 <p>
-    <img src="./ex4.png">
-</p>
-
-
-<p>
-    <img src="./ex5.png">
+    <img src="./notesImg/ex4.png">
 </p>
 
+
 <p>
-    <img src="./ex6.png">
+    <img src="./notesImg/ex5.png">
+</p>
+
+<p>
+    <img src="./notesImg/ex6.png">
 </p>
 
 
