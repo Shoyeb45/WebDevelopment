@@ -2190,3 +2190,172 @@ NOTE :
 }
 ```
 > The elements present in the container would be adjusted as per width of the container, if the flex-direction is row then the elements present in the container would be adjusted as per the height of the container.
+
+Ex. 1:
+
+<p>
+    <img src="./ex1.png">
+</p>
+
+<p>
+    <img src="./ex2.png">
+</p>
+<p>
+    <img src="./ex3.png">
+</p>
+<p>
+    <img src="./ex4.png">
+</p>
+
+
+<p>
+    <img src="./ex5.png">
+</p>
+
+<p>
+    <img src="./ex6.png">
+</p>
+
+
+
+
+
+- flex-wrap
+> In order tp wrap the element within the container we go for `flex-wrap: wrap;`.
+> If we set the container to wrap, the elements would span to multiple row, depending upon width of the element 
+
+```
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+```
+
+- elements will be adjust in container by to multiple row as per the screen adjustment(It will not shrink the content)
+
+
+##  CSS background
+1. background-color
+1. background-image
+1. background-size
+1. background-attachment
+1. background-repeat
+
+NOTE: 
+1. background-color: `rgb`   
+1. background-image: `url("")`
+1. background-repeat: `no-repeat`, `repeat-x`, `repeat-y`, `repeat`
+1. background-attachment: `fixed`, `scroll`
+1. background-position: `left`, `right`, `center` | `top`, `center`, `bottom`
+1. background(shorthand property): color image repeat position;
+
+Syntax:
+    ```
+    background: #fffff url("img.png") no-repeat right top;
+    ```
+
+FAQ:
+
+q. Can we set a multiple background images?
+
+> Yes, it is possible but we need to control the alignment
+
+Code: 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-image: url("./../../public/Image/zoro.jpg"), url("./../../public/Image/saitama.jpg");
+            background-repeat: no-repeat, repeat;
+            background-size: 20% 100%, 30% 90%;
+            background-position: center center, top left;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+Output:
+<p>
+    <img src="./multBgImg.png">
+</p>
+Q. Can we change background image dynamically?
+
+Q. Can we give background color and background image both?
+> Yes:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 600px;
+            height: 600px;
+            border: 1px solid black;
+            background-color: black;
+            background-image: url("./../../public/Image/One\ Piece.png");
+            background-repeat: no-repeat;
+            background-size: 40% 30%;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>
+```
+<p>
+    <img src="./bgic.png" height=400px>
+</p>
+
+
+## CSS text effects
+- font-family
+- font-weight
+- font-variant: small-caps[all lower case letters convert into capital letters and font size is small]
+- font-style
+- font-size
+
+CSS text effects:
+
+1. text-align: left| center| right| justify
+1. text-shadow: (same like box shadow)
+1. text-indent: first line of the paragraph with some space(length | initial| inherit )
+1. text-transform: uppercase, lowercase, capitalize
+1. text-overflow: it can display overflowing text chars like ellipsis
+1. text-decoration: overline, underline, linethrough, size, color
+
+Short hand for `text-decoration:`
+```
+    text-decoration: text-decoration-line text-decoration-style text-decoration-color thickness
+```
+While working with paragraph:
+1. line-height: space b/w lines;
+2. word-space: space b/w words;
+2. letter-space: space b/w letters;
+4. word-break: breaks lengthy words are right margin of paragraph.
+5. white-space: it controls wrapping of text in the container (nowrap)
+6. overflow: hidden| scroll | auto
