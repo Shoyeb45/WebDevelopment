@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header, section , footer {
+            margin: 5px;
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        section {
+            padding: 10px;
+        }
+        .border {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 2fr 8fr 2fr;
+        }
+        body {
+            height: 90vh;
+            display: grid;
+            grid-template-columns: 2fr 8fr 2fr;
+        }
+
+        @media screen and (orientation:landscape) {
+            header {
+                grid-row: 1;
+                grid-column: 1/4;
+            }
+
+            section {
+                grid-row: 2;
+                grid-column: 1/4;
+            }
+            
+            footer {
+                grid-row: 3;
+                grid-column: 1/4;
+            }
+
+            main {
+                grid-row: 1;
+                grid-column: 2;
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            header {
+                grid-row: 1;
+                grid-column: 1/4;
+            }
+    
+            section {
+                grid-row: 2;
+                grid-column: 1/4;
+            }
+            footer {
+                grid-row: 3;
+                grid-column: 1/4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        HEADER
+    </header>
+
+    <section>
+        <nav class="border">
+            NAV
+        </nav>
+
+        <main class="border"> 
+            MAIN
+        </main>
+
+        <aside class="border">
+            ASIDE
+        </aside>
+    </section>
+
+    <footer>
+        FOOTER
+    </footer>
+</body>
+</html>
