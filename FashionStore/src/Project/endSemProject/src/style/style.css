@@ -1,0 +1,116 @@
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+#top ul {
+    margin-left: 450px;
+}
+
+.logo {
+    font-size: 45px;
+    margin-left: 60px;
+}
+
+main {
+    background-image: url("./../../public/image/banner.png");
+    height: 70vh;
+    color: white;
+}
+
+main button {
+    color: inherit;
+    border: none;
+    /* padding: 10px; */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #F35C22;
+}
+
+.card {
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.card-m a {
+    text-decoration: none;
+    color: #F35C22;
+}
+
+
+.text-grey {
+    color: grey;
+}
+
+.card-footer {
+    margin-top: 70px;
+}
+
+#surfing {
+    margin-left: 50px;
+    gap: 100px;
+}
+
+.txt-info {
+    margin-top: 80px;
+}
+
+#surfing button {
+    background-color: #fff;
+    width: 200px;
+    padding: 5px;
+    margin-top: 12px;
+}
+
+.reviews h1 {
+    font-weight: 400;
+}
+
+.reviews {
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: #FEF7F4;
+    padding: 40px;
+}
+
+.review-card {
+    /* margin-left: 60px;
+    margin-right: 60px; */
+    background: #fff;
+}
+
+.text-orange {
+    color: #F35C22;
+}
+
+footer {
+    background: #F35C22;
+}
+
+.newsletter {
+    font-size: 35px;
+}
+
+input {
+    height: 35px;
+    border: none;
+}
+input::placeholder {
+    padding: 10px;
+    font-size: 15px;
+    color: lightgrey;
+}
+
+footer button {
+    border: 1px solid white;
+    color: white;
+    padding: 8px;
+    width: 160px;
+    background-color: #F35C22;
+}
