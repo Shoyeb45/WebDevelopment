@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 10px;
+        }
+        header {
+            font-family: Arial;
+            display: flex;
+            color: white;
+            background-color: black;
+            justify-content: space-around;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        
+        @media screen and (orientation:landscape) {
+            .bi-justify {
+                display: none;
+            }   
+        }
+
+        @media screen and (orientation:portrait) {
+            nav {
+                display: none;
+            }
+
+            header {
+                background-color: red;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="fw-bold fs-2">Shopper</div>
+
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Catalog</li>
+                <li>Shop</li>
+                <li>Pages</li>
+                <li>Blog</li>
+                <li>Docs</li>
+            </ul>
+        </nav>
+
+        <nav>
+            <ul>
+                <li><i class="bi bi-search"></i></li>
+                <li><i class="bi bi-person"></i></li>
+                <li><i class="bi bi-heart"></i></li>
+                <li><i class="bi bi-cart3"></i></li>
+            </ul>
+        </nav>
+
+        <i class="bi bi-justify"></i>
+    </header>
+</body>
+</html>

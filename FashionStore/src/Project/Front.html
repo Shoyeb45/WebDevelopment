@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front</title>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: #677788;;
+            display: flex;
+            list-style: none;
+            margin: 0px;
+        }
+        nav {
+            display: flex;   
+            margin-left: 100px;
+            margin-right: 100px;
+            justify-content: space-around;
+        }
+
+        main {
+            background-color: #F3F7FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        
+        .front {
+            font-weight: bolder;
+            font-size: 70px;
+            font-family: Arial;
+            text-align: center;
+        }
+        
+        .front span {
+            color: #377DFF;
+            text-decoration: underline solid #F6E2CC 15px;
+        }
+        .extra {
+            margin-top: 20px;
+            color: #677788;
+            font-style: Arial;
+            font-size: 25px;
+        }
+        
+        .front::selection {
+            background-color: #E6EEFF;
+            color: #377DFF;
+        }
+        .vers {
+            background-color: #132144;
+            font-size: 12px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="p-3">
+        <div class="logo">
+           <img src="https://htmlstream.com/preview/front-dashboard-v2.1.1/assets/svg/logos/logo.svg" height=30px alt="">
+        </div>
+
+        <ul>
+            <li>
+                Documentation <span class="vers text-white rounded rounded-4">v2.1.1</span>
+            </li>
+            <li>
+                Support <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li>
+                Buy Now
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <button class="btn"><i class="bi bi-sun"></i></button>
+            </li>
+            <li>
+                <button class="btn btn-primary fw-bold">Preview Demo</button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main>
+        <div class="front">
+            Admin & Dashboard <br>
+            theme <span>for everyone!</span>
+        </div>
+        <div class="extra">
+            Developer friendly and highly customizable Admin & Dashboard theme.
+        </div>
+    </main>
+</body>
+</html>

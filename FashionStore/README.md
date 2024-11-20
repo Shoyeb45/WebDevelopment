@@ -896,20 +896,20 @@ b. If we want to send large volume of the datato the server, then we go for "pos
 What is query string?
 
 > It is a string which is constructed by web browser upon the user entering the details and clicking on submit button. Query string data would be in the form of key-value pair.
-> ![alt text](1000048576.png) > ![alt text](image.png)
+>  ![alt text](./notesImg/image.png)
 
 <!-- <></div> -->
 
-````
+```
 logicalName1=value & logicalName2=value2 & ......
-```w
+```
 
 2. Action-attribute:
 
 This attribute value would be location of a program where the data has to be sent
 
-````
 
+```
 <form method="post" action="http://localhost:9999/FirstProject-01/first">
 ```
 
@@ -918,7 +918,7 @@ This attribute value would be location of a program where the data has to be sen
 
 3. novalidate
 
-This attribute is used to verify whether the user entered data should it be validated or not. If we use novalidate attribute then the inpu entered by the user would not be validated(email, number).
+This attribute is used to verify whether the user entered data should it be validated or not. If we use novalidate attribute then the input entered by the user would not be validated(email, number).
 
 ## Elements of Form
 
@@ -975,7 +975,7 @@ If we use `disabled` attribute, then we can't edit that text field and the data 
 | +: occurence >= 1    | It defines one or more occurennce of a character.<br>Ex.: ` <input pattern="colou+r" placeholder="color/colour" type="text" name="txtColor">`<br> Accepted values: colour/colouuur/colouuuuuuuuur. <br> Not accepted values : <b style="color:red;">color/ colooouur</b>                                                         |
 | <b>.</b> (dot)       | It stnads for replacing exactly one character and that character can be (uppercase, lowecase, digits, special symbols). <br> Ex.:`<input pattern=".o." placeholder="color/colour" type="text" name="txtColor">` [boy, #o?, ioi]<br>`<input pattern=".y" placeholder="color/colour" type="text" name="txtColor">`[by, hy, .y, @y] |
 | \\                   | It is used as escape sequence character for special characters[Char used by parser] <br>\\+91=+91                                                                                                                                                                                                                                |
-| \|                   | It is used to club multiple expression to find a unique result<br>Ex.:<input type="text" name="txtColor" placeholder="red, green or blue" pattern="red                                                                                                                                                                           | blue | green">` |
+| \|                   | It is used to club multiple expression to find a unique result<br>Ex.:<input type="text" name="txtColor" placeholder="red, green or blue" pattern="red\|blue|green">` |
 | [ ] (important)      | It represents a range of characters which can be accepted as an input from the user.<br> Ex.: `[a-zA-Z0-9]` <br>`[a, d, s]` <br>`[a-z, A-Z]` <br>`[0-9]` <br>`[a-d, 4-9]`                                                                                                                                                        |
 | ^                    | Exclude specified<br>`pattern="[a, d, s]"`: a,d,s are allowed<br>`pattern="[^a, d, s]"`: except a, d, s all will work                                                                                                                                                                                                            |
 | \\^, $               | Matcehs the beginnig of input, "starts with".<br> Matches the end of input, "Ends with".<br> `pattern="\^..your_expression$"` <br> Ex.: `pattern="\\^\[a-zA-Z]@\.[a-zA-Z0-9]$"` (a@.3)                                                                                                                                           |
@@ -1593,7 +1593,7 @@ Syntax:
 </body>
 ```
 <p>
-    <img src = /notesImg"./prio.png">
+    <img src="./notesImg/prio.png">
     <i>Priority of CSS </i>
 </p>
 
@@ -2293,7 +2293,7 @@ Code:
 
 Output:
 <p>
-    <img src="./multBgImg.png">
+    <img src="./notesImg/multBgImg.png">
 </p>
 Q. Can we change background image dynamically?
 
@@ -2334,7 +2334,7 @@ Q. Can we give background color and background image both?
 </html>
 ```
 <p>
-    <img src="./bgic.png" height=400px>
+    <img src="./notesImg/bgic.png" height=400px>
 </p>
 
 
@@ -2365,3 +2365,25 @@ While working with paragraph:
 4. word-break: breaks lengthy words are right margin of paragraph.
 5. white-space: it controls wrapping of text in the container (nowrap)
 6. overflow: hidden| scroll | auto
+
+## Media query 
+
+- It is associated with making a page as responsive
+
+- Media have type : screen|print|speech
+- Media have orientation : landscape| potrait
+- media have min-width & max-width
+
+- min-width: it defines the value starting from specified units to end. Eg: `min-width: 600px;` (starting from 600 =px to end) 
+```
+@media (width<=..px) {
+    
+}
+```
+- max-width: It defines the value starting from 0px to specified units. Eg, `max-width:400px;` (startinng from 0px to 400px)
+@media (width>=..px) {
+
+}
+
+
+## CSS Animation, CSS 2d, CSS 3d
