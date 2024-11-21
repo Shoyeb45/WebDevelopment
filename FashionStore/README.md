@@ -2387,3 +2387,52 @@ While working with paragraph:
 
 
 ## CSS Animation, CSS 2d, CSS 3d
+- Remaining 
+
+
+# Bootstrap Components
+- Linking jQuery
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+```
+
+- NOTE : For scripts order is compulsory, first keep jquery.js and later keep bootstrap.bundle.js
+- We can use complete bootstrap library except "poper" we will learn poper at the end.
+
+
+### Classes:
+1. `.alert`
+1. `.alert-{contextual}` : primary, success, danger, info, warning etc..
+3. `.alert-dismissible`'
+4. `.alert-heading`
+
+## Jquery Attributes
+- bootstrap components use jQuery attributes to configure and handle functionality 
+- Bootstrap-5 version defines the attributes using "data-bs-{}"
+- Bootstrap upto 4 version defines the attributes using "data-{}".
+- Bootstrap jQuery attributes are of various types:
+    1. `data-bs-target`
+    1. `data-bs-toggle`
+    1. `data-bs-dismiss`
+    1. `data-bs-slide`
+    1. `data-bs-ride` 
+
+> To close any componenet in bootstrap you can attach the attribute called `data-bs-dismiss` to any clickable element like [button, links]
+```
+    <button class="btn btn-close" data-bs-dismiss="alert">
+```
