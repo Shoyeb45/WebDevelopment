@@ -2436,3 +2436,12 @@ While working with paragraph:
 ```
     <button class="btn btn-close" data-bs-dismiss="alert">
 ```
+
+## Card classess in bootstrap
+1. `.card`
+2. `.card-header`
+3. `.card-body`
+3. `.card-footer`
+5. `.card-title`
+6. `.card-subtitle`
+7. `.card-img-top`
