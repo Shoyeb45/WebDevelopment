@@ -2445,3 +2445,11 @@ While working with paragraph:
 5. `.card-title`
 6. `.card-subtitle`
 7. `.card-img-top`
+
+## Pagination classess in bootstrap
+
+1. `pagination`
+2. `page-item`
+3. `page-link`
+3. `active`
+3. `disabled`
