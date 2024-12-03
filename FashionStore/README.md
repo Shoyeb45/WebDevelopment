@@ -2453,3 +2453,126 @@ While working with paragraph:
 3. `page-link`
 3. `active`
 3. `disabled`
+
+## Carousel classess
+1. `.carousel`
+1. `.carousel-inner`
+1. `.carousel-item`
+1. `.carousel-fade`
+1. `.carousel-slide`
+
+Syntax : 
+```
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item">
+        // content
+        </div>
+        // Add multiple items
+    </div>
+</div> 
+```
+
+- Carousel item cannot display any item directly 
+- Carousel can't start the animation directly, we need to define the attribute "data-bs-ride" for carousel
+    `<div class="carousel" data-bs-ride="carousel">`
+
+- Carousel doesn't have any defualt transition, we have to set the transition using classes
+1. slide
+2. carousel-sllde
+
+- Adding carousel indicators to the items
+### Carousel controls 
+- You can add controls for carousel so that user can navigate to previos and next slide 
+
+Classes : 
+1. `.carousel-control-prev`
+1. `.carousel-control-prev-icon`
+1. `.carousel-control-next`
+1. `.carousel-control-next-icon`
+
+> Carousel controls are normall buttons
+
+- Carousel controls needs jQuery attributes to handle navigation
+1. `data-bs-slide="prev"`
+1. `data-bs-slide="next"`
+1. `data-bs-target="#carouselID"`
+
+> NOTE : It is also possible to control the transition time of each carousel items
+
+Syntax : `data-bs-interval="time_in_milliseconds"` : Give it to `carousel-item`
+
+### Carousel indicators
+
+- Indicators allow to navigate randomly
+- WE can navigate to any slide directly by using indicators
+
+### Class 
+1. `.carousel-indicators`
+
+- Usually indiactors is a collection of buttons
+- Indicators requre JQuery attrubute `data-bs-slid-to="IndexNumber(0-based))"`
+
+- Any one indicator must be active 
+```
+<div class="carousel-indicators">
+    <button class="active" data-bs-target="#banner" data-bs-slide-to="0"></button>
+    <button  data-bs-target="#banner" data-bs-slide-to="1"></button>
+    <button  data-bs-target="#banner" data-bs-slide-to="2"></button>
+</div>
+```
+
+## Modal 
+#### Classes : 
+1. `.modal`
+1. `.modal-dialog`
+1. `.modal-content`
+1. `.modal-header`
+1. `.modal-body`
+1. `.modal-footer`
+
+Syntax : 
+```
+<div class="modal">
+|
+    <div class="modal-dialog">
+    |        
+        <div class="modal-content">
+        |
+            <div class="modal-header">
+            | 
+            </div>
+
+            <div class="modal-body">
+            |
+            </div>
+            
+            <div class="modal-footer">
+            |
+            </div>
+        |    
+        </div>
+    |   
+    </div>
+|
+</div>
+```
+
+Few other classes:<br>
+We can control the position using the classes :
+1. `.modal-dialog-centered`
+1. `.modal-fullscreen`
+1. `.modal-dialog-scrollable`
+
+
+### Spinner-component 
+- It is used to show status of any task performed in a page <br>
+classes : 
+1. `.spinner-border`
+1. `.spinner-border-sm|lg`
+1. `.spinner-grow`
+1. `.spinner-grow-sm|lg`
+
+attributes
+1. `.data-bs-target` (Specify the element we target)
+2. `.data-bs-toggle` (specify the component)
