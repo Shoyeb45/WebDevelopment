@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <nav class="nav nav-pills" role="tablist">
+        <div class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab1" aria-controls="tab1" role="tab" aria-selected="true" id="pills-tab1">
+                Basic Details
+            </button>
+        </div>
+
+        <div class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab2" aria-controls="tab2" role="tab"  aria-selected="false" id="pills-tab2">
+                Preview
+            </button>
+        </div>
+
+        <div class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab3" aria-controls="tab3" role="tab" aria-selected="false" id="pills-tab3">
+                Features
+            </button>
+        </div>
+        <div class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab4" aria-controls="tab4" role="tab" aria-selected="false">
+                Ratings
+            </button>
+        </div>
+
+  
+    </nav>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show d-flex flex-column mt-2 ms-3" id="tab1" role="tabpanel" aria-labelledby="pills-tab1" tabindex="0">
+            <h4>Realme</h4>
+            <h5>IPHONE 53% OFF</h5>
+            <h3>75,000</h3>
+        </div>
+
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="pills-tab2" tabindex="0">
+            <img src="./../../../public/Image/iphone.jpeg" alt="">
+        </div>
+        
+        <ul class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="pills-tab3" tabindex="0">
+            <li>Good</li>
+        </ul>
+        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="pills-tab4" tabindex="0">
+            5 star
+        </div>
+      
+    </div>
+    
+    <script src="./../../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="./../../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

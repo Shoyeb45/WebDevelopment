@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./../../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="accordion">
+
+        <div class="accordion-item " id="faq">
+            
+            <h2 class="accordion-header" >
+                <button class="btn btn-danger w-25" data-bs-toggle="collapse" data-bs-target="#q1">
+                    Home
+                </button>
+            </h2>
+
+            <div class="accordion-collapse collapse" id="q1" data-bs-parent="#faq">
+                <div class="accordion-body">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item" id="faq">
+           
+
+            <h2 class="accordion-header" >
+                <button class="btn btn-danger w-25" data-bs-toggle="collapse" data-bs-target="#q2">Electronics</button>
+            </h2>
+            <div class="accordion-collapse collapse" id="q2" data-bs-parent="#faq">
+                <div class="accordion-body">
+                    <ul>
+                        <li>PC</li>
+                        <li>Mobile</li>
+                        <li></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item" id="faq">
+            <h2 class="accordion-header" >
+                <button class="btn btn-danger w-25" data-bs-toggle="collapse" data-bs-target="#q3">
+                    Fashion
+                </button>
+            </h2>
+
+            <div class="accordion-collapse collapse" id="q3" data-bs-parent="#faq">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Men fashion</li>
+                        <li>Women fashion</li>
+                        <li>Kids fashion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./../../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="./../../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
