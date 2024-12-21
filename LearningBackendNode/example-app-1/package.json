@@ -1,0 +1,18 @@
+{
+  "name": "simple-backend",
+  "version": "1.0.0",
+  "description": "a basic app to deply",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Shoyeb Ansari",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
