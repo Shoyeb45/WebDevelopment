@@ -1,3 +1,8 @@
+export default function handler(req, res) {
+    res.status(200).json({ message: "Hello from Vercel!" });
+}
+
+  
 require("dotenv").config();
 const express = require("express");
 
