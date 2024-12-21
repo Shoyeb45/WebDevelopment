@@ -2576,3 +2576,48 @@ classes :
 attributes
 1. `.data-bs-target` (Specify the element we target)
 2. `.data-bs-toggle` (specify the component)
+
+### Accordion classes
+
+1. `.accordion`
+2. `.accordion-header`
+2. `.accordion-body`
+2. `.accordion-collapse`
+2. `.accordion-item`
+2. `.accordion-button`
+2. `.show`
+2. `.collapse`
+
+
+Syntax : 
+```
+
+```
+
+
+### Dropdown in bootstrap 
+
+1. `.dropdown`
+1. `.dropup`
+1. `.dropend`
+1. `.dropstart`
+1. `.dropdown-toggle`
+1. `.dropdown-menu`
+1. `.dropdown-item`
+1. `.dropdown-divider`
+
+Attribute : 
+1. data-bs-toggle
+
+### nav with tabs in bootstrap
+
+1. `.nav`
+1. `.nav-menu`
+1. `.nav-item`
+1. `.nav-text`
+1. `.nav-link`
+1. `.nav-tabs`
+1. `.nav-pills`
+1. `.nav-content`
+1. `.nav-pane`
+
