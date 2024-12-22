@@ -23,5 +23,7 @@ export const User = mongoose.model("user", userSchema);
 
 This folder have examples of data modelling:
 
-#### 1. [Todos-example](./models/todos/)
+### 1. [Todos-example](./models/todos/)
+### 2. [E-commerce-example](./models/ecommerce/)
+### 3. [Hopital Management-example](./models/hospital-management/)
 
