@@ -1,10 +1,11 @@
-// import axios from "axios";
+import axios from "axios";
 
 var btn = document.querySelector(".btn");
 
 btn.addEventListener("click", (event) => {
     request();
 })
+
 
 function request() {
     fetch("https://backend-sj5a.onrender.com/possibleDomains")
