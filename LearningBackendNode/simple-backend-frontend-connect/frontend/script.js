@@ -1,26 +1,39 @@
 // import axios from "axios";
 
-fetch("http://localhost:4000/possibleDomains")
-    .then(response => response.json())
-    .then((data) => {
-        let h2 = document.querySelector("h2");
-        h2.innerHTML = `Basic domains : ${data.length}`
-        const itemList = document.getElementById("list");
-        for (let i = 0; i < data.length; i++) {
-            const li = document.createElement("li");
-            li.textContent = data[i].domain;
-            itemList.appendChild(li);
+var btn = document.querySelector(".btn");
+
+btn.addEventListener("click", (event) => {
+    request();
+})
+
+function request() {
+    fetch("https://backend-sj5a.onrender.com/possibleDomains")
+        .then(response => response.json())
+        .then((data) => {
+            
+            let h2 = document.createElement("h2");
+
+            h2.innerHTML = `Domains : ${data.length}`
+            btn.after(h2);
+
+            const itemList = document.createElement("ul");
+            h2.after(itemList);
+
+            for (let i = 0; i < data.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = data[i].domain;
+                itemList.appendChild(li);
+            }
+            console.log(data);
+            console.log(h2);
+            
+            const p = document.createElement("p");
+            p.innerHTML = 'All data are fetched from server with url : <a href="https://backend-sj5a.onrender.com/possibleDomains">Here</a>';            
+            itemList.appendChild(p);
         }
-        console.log(data);
-        console.log(h2);
-        
-        const p = document.createElement("p");
-        p.innerHTML = "All data are fetched from server with url : <a>https://localhost:4000/possibleDomains</a> ";
-        itemList.appendChild(p);
-    }
-)
-.catch((error) => {
-        console.error("Error fetching data", error);
-        
-    }
-)
+    )
+    .catch((error) => {
+            console.error("Error fetching data", error);   
+        }
+    )
+}
