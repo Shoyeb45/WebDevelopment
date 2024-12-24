@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File uploading</title>
+</head>
+<body> 
+    <form method="post" action="http://localhost:3000/data" enctype="multipart/form-data">
+        Username: <input type="text" name="txtName"> <br>
+        Password: <input type="password" name="txtPassword">
+        UploadFile : <input type="file" name="file" required>
+        <button>submit</button>
+    </form>
+
+
+    <script>
+        const btn = document.querySelector("button");
+        const url = document.querySelector("form").getAttribute("action");
+        console.log(url);
+        btn.addEventListener("click", (event) => {
+            
+        })
+    </script>
+</body>
+
+</html>
