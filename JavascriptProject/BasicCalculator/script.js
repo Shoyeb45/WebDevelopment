@@ -1,22 +1,28 @@
-let buttons = document.getElementsByClassName("btn");
-let expression = document.getElementById("result");
+const display = document.getElementById('display');
 
-for (let i = 0; i < buttons.length - 1; i++) {
-    buttons[i].addEventListener("click", () => {
-        writeToTextArea(buttons[i].innerHTML, expression)
-    })
+window.addEventListener('keydown', (event) => {
+  const key = event.key;
+  if (/^[0-9/*+-\.]$/.test(key)) { 
+    appendToDisplay(key);
+  } else if (key === 'Enter' || key === '=') {
+    calculate();
+  } else if (key === 'c' || key === 'C' || key === 'Escape') {
+    clearDisplay();
+  }
+});
+
+function appendToDisplay(value) {
+  display.value += value;
 }
 
-buttons[buttons.length - 1].addEventListener("click", () => {
-    calculate(expression);
-})
-function writeToTextArea(character, textArea) {
-    text = textArea.innerHTML + character
-    console.log(text);
-    
-    textArea.innerHTML = text
+function clearDisplay() {
+  display.value = '';
 }
 
-function calculate(textArea) {
-    textArea.innerHTML = eval(textArea.innerHTML)
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = 'Error';
+  }
 }

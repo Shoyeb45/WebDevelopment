@@ -1,45 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Calculator</title>
-    <link rel="stylesheet" href="./../../FashionStore/node_modules/bootstrap/dist/css/bootstrap.css">
-    
-    <style>
-        textarea::placeholder {
-            text-align: center;
-        }
-        body {
-            height : 100vh;
-        }
-    </style>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .display {
+      width: 93%;
+      height: 50px;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 24px;
+      text-align: right;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+
+    .buttons button {
+        font-weight: bold;
+    }
+    button {
+      width: 100%;
+      height: 50px;
+      font-size: 18px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .operator {
+      background-color: #f0f0f0;
+    }
+
+    .equal {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .clear {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
 </head>
+<body bgcolor="black">
 
-<body class="d-flex justify-content-center align-items-center">
-    
-    <div class="main-calc w-25 d-flex flex-column align-items-center justify-content-center bg-dark pt-4 pb-4 rounded rounded-5">
-        <form action="" class=" d-flex justify-content-center align-items-center">
-            <textarea name="" id="result" placeholder="Enter expression" class="rounded rounded-1"></textarea>
-        </form>
-
-        <div class="calc-buttons d-flex gap-3 w-50 flex-wrap mt-2  justify-content-center">
-            <button class="btn btn-info p-3 text-light">0</button>
-            <button class="btn btn-info p-3 text-light">1</button>
-            <button class="btn btn-info p-3 text-light">2</button>
-            <button class="btn btn-info p-3 text-light">3</button>
-            <button class="btn btn-info p-3 text-light">4</button>
-            <button class="btn btn-info p-3 text-light">5</button>
-            <button class="btn btn-info p-3 text-light">6</button>
-            <button class="btn btn-info p-3 text-light">7</button>
-            <button class="btn btn-info p-3 text-light">8</button>
-            <button class="btn btn-info p-3 text-light">9</button>
-            <button class="btn btn-info p-3 text-light">-</button>
-            <button class="btn btn-info p-3 text-light">+</button>
-            <button class="btn btn-info p-3 text-light">=</button>
-        </div>
+  <div class="calculator">
+    <input type="text" class="display" id="display" readonly>
+    <div class="buttons">
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('/')" class="operator">/</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('*')" class="operator">*</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('-')" class="operator">-</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="calculate()" class="equal">=</button>
+      <button onclick="appendToDisplay('+')" class="operator">+</button>
+      <button onclick="clearDisplay()" class="clear">C</button>
     </div>
+  </div>
 
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
+
 </body>
 </html>
