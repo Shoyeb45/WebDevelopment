@@ -18,6 +18,10 @@ dotenv.config({
 import adminRoute from "./src/routes/admin.route.js";
 app.use("/api/admin", adminRoute);
 
+// user routes
+import userRoute from "./src/routes/user.route.js";
+app.use("/api/user", userRoute);
+
 app.listen(3000, async () => {
     try {
         await connectDB();
