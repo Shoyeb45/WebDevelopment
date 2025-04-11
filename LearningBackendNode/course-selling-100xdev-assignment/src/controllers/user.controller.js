@@ -2,6 +2,8 @@ import { genAccessToken, genRefreshToken } from "../utils/jwtMethods.js";
 import { validationSchema } from "./../utils/dataValidation.js";
 import { encryptPassword } from "../utils/passwordMethods.js";
 import { User } from "../models/user.model.js";
+import { Course } from "../models/course.model.js";
+import { any } from "zod";
 
 async function signup(request, response) {
     try {
@@ -71,10 +73,12 @@ async function signin(request, response) {
         // Generate access and refresh tokens
         let refreshToken = genRefreshToken({
             id: user._id,
-            ...inputUser
+            ...inputUser,
+            role: "user",
         }), accessToken = genAccessToken({
             id: user._id,
-            username: user.username
+            username: user.username,
+            role: "user",
         });
 
         const options = {
@@ -105,7 +109,123 @@ async function signin(request, response) {
     }
 }
 
+async function getAllTheCourses(request, response) {
+    try {
+        const allTheCourses = await Course.find({});
+
+        if (!allTheCourses) {
+            return response.status(500).json({
+                ok: false,
+                message: "Internal server error while getting all the courses."
+            });
+        }
+
+        return response.status(201).json({
+            message: "All the available courses",
+            ok: true,
+            courses: allTheCourses
+        });
+    } catch (error) {
+        console.error(`[Error while getting all the available courses]\n${error}`);
+        return response.status(500).json({
+            ok: false,
+            message: error?.message || "Unexpcted error occurred while getting all the available courses.",
+        });      
+    }
+}
+
+async function purchaseCourse(request, response) {
+    try {
+        const user = request.user;
+        const courseId = request.params.courseId;
+        const course = await Course.findById(courseId);
+
+        if (!course) {
+            return response.status(500).json({
+                ok: false,
+                message: "Invalid course id or course doesn't exist.",
+            });
+        }
+
+
+        const updatedUser = await User.findByIdAndUpdate(
+            user._id,
+            {
+                $addToSet: {
+                    courses: courseId
+                }
+            },
+            {
+                new: true,
+            }
+        ).select("-password -refreshToken");
+
+        return response.status(201).json({
+            ok: true,
+            message: "Course purchased successfully",
+            user: updatedUser,
+            purchasedCourse : course
+        });
+    } catch (error) {
+        console.error(`[Error while purchasing the course]\n${error}`);
+        return response.status(500).json({
+            ok: false,
+            message: error?.message || "Unexpected error while purchasing the course",
+            error
+        })
+    }
+}
+
+async function getAllpurchasedCourses(request, response) {
+    try {
+        const user = await User.findById(request.user._id);
+        
+        if (!user) {
+            return response.status(500).json({
+                ok: false,
+                message:"Unexpected error while fetching user from the database",
+            });
+        }
+
+        const allCourseList = user.courses;
+        
+        let allCourse = [];
+
+        for (let i = 0; i < allCourseList.length; i++) {
+            const courseId = allCourseList[i];
+            const course = await Course.findById(courseId).select("-mentor -createdAt -updatedAt -__v");
+            if (!course) {
+                console.error(`[Error while getting the course from db] id : ${courseId}`);
+            }
+            
+            allCourse.push(course);
+            console.log(course);
+        }
+            
+
+        console.log(allCourse);
+        
+        return response.status(201).json({
+            ok: true,
+            message: "Successfully got all the purchased courses",
+            courses: allCourse
+        });
+    } catch (error) {
+        console.error(`[Error while getting all the purchased courses]\n${error}`);
+        return response.status(500).json({
+            ok: false,
+            message: error?.message || "Unexpected error while getting all the purchased courses",
+            error
+        })
+        
+    }
+}
+
+
 export {
     signin,
-    signup
+    signup,
+    getAllTheCourses,
+    purchaseCourse,
+    getAllpurchasedCourses
 };

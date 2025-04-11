@@ -19,10 +19,8 @@ const courseSchema = new mongoose.Schema({
         required: true,
     },
     mentor: {
-        type: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Admin"
-        },
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Admin"
     }
 }, { timestamps: true });
 

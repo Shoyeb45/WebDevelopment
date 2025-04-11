@@ -1,9 +1,8 @@
-import { validationSchema } from "./../utils/dataValidation.js";
+import { validationSchema, courseSchemaValidation  } from "./../utils/dataValidation.js";
 import { Admin } from "./../models/admin.model.js";
 import { encryptPassword } from "../utils/passwordMethods.js";
 import { genAccessToken, genRefreshToken } from "../utils/jwtMethods.js";
-
-
+import { Course } from "../models/course.model.js";
 
 async function signup(request, response) {
     try {
@@ -75,10 +74,12 @@ async function signin(request, response) {
         // Generate access and refresh tokens
         let refreshToken = genRefreshToken({
             id: user._id,
-            ...adminUser
+            ...adminUser, 
+            role: "admin",
         }), accessToken = genAccessToken({
             id: user._id,
-            username: user.username
+            username: user.username,
+            role: "admin",
         });
 
         const options = {
@@ -105,7 +106,89 @@ async function signin(request, response) {
         response.status(500).json({ error });
     }
 }
+
+
+
+/**
+ * Function to create new course
+ * @param {*} request 
+ * @param {*} response 
+ */
+async function createCourse(request, response) {
+    try {
+        const inputCourse = courseSchemaValidation.parse(request.body);
+        console.log(request.user._id);
+        
+        
+        // save in database
+        const createdCourse = await Course.create({
+            ...inputCourse,
+            mentor: request.user._id
+        });
+
+        if (!createdCourse) {
+            return response.status(500).json({
+                message: "Server error while creating course",
+                ok: false,
+            });
+        }
+
+        // Check if really course is created?
+        const savedCourse = await Course.findById(createdCourse._id);
+
+        if (!savedCourse) {
+            return response.status(500).json({
+                ok: false,
+                message: "Internal server error while saving the course",
+            });
+        }
+
+        return response.status(200).json({
+            ok: true,
+            message: "Course created successfully"
+        })
+    } catch (error) {
+        console.error(`[Error while creating new course]\n ${error}`);
+        response.status(500).json({
+            ok: false,
+            message: error?.message || "Unexpected error while creating new course",
+            error
+        });
+    }
+}
+
+async function getAllCourse(request, response) {
+    try {
+        const user = request.user;
+        const data = await Course.find({ mentor: user._id });
+        console.log(data);
+        
+        if (!data) {
+            return response.status(500).json({
+                ok: false,
+                message: `Internal error occurred while getting all the courses of admin with user id : ${user._id}`
+            });
+        }
+
+        return response.status(201).json({
+            ok: true,
+            message: `Successfully getting all the courses.`,
+            courses: data
+        });
+    } catch (error) {
+        console.error(`[Error while getting all courses for admin]\n${error}`);
+        return response.status(500).json({
+            ok: false,
+            message: error?.message || "Unexpected error while getting all the courses for admin.",
+            error
+        });
+
+    }
+}
 export {
     signup,
-    signin
-}
+    signin,
+    createCourse,
+    getAllCourse
+};
+
