@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do App</title>
+</head>
+
+<body>
+
+    <dt>Enter title of the task:</dt>
+    <dd><input type="text" id="title"></dd>
+
+    <dt>Enter description of the task:</dt>
+    <dd><input type="text" id="description"></dd>
+
+    <dd>
+        <button onclick="addTodo()">Add to do</button>
+    </dd>
+
+    <div id="to-dos"></div>
+
+    <script>
+        let globalId = 1;
+        let todoState = [];
+        let oldTodoState = [];
+
+        function addTodo() {
+            const title = document.getElementById("title").value.trim();
+            const description = document.getElementById("description").value.trim();
+
+            if (title === '' || description === '') return;
+
+            todoState.push({
+                id: globalId++,
+                title: title,
+                description: description,
+                completed: false
+            });
+
+            updateState(todoState);
+        }
+
+        function updateState(newTodos) {
+            // Calculate differences
+            const added = newTodos.filter(newTodo =>
+                !oldTodoState.some(oldTodo => oldTodo.id === newTodo.id)
+            );
+
+            const deleted = oldTodoState.filter(oldTodo =>
+                !newTodos.some(newTodo => newTodo.id === oldTodo.id)
+            );
+
+            const updated = newTodos.filter(newTodo =>
+                oldTodoState.some(oldTodo =>
+                    oldTodo.id === newTodo.id &&
+                    (oldTodo.title !== newTodo.title ||
+                        oldTodo.description !== newTodo.description ||
+                        oldTodo.completed !== newTodo.completed)
+                )
+            );
+
+            // Perform DOM updates
+            added.forEach(addTodoElement);
+            deleted.forEach(removeTodoElement);
+            updated.forEach(updateTodoElement);
+
+            oldTodoState = [...newTodos];
+        }
+
+        function addTodoElement(todo) {
+            const container = document.createElement("div");
+            container.id = todo.id;
+
+            const titleEl = document.createElement("h3");
+            titleEl.innerText = todo.title;
+
+            const descEl = document.createElement("p");
+            descEl.innerText = todo.description;
+
+            const doneBtn = document.createElement("button");
+            doneBtn.innerText = todo.completed ? "Done" : "Mark as done";
+            doneBtn.onclick = function () {
+                todo.completed = !todo.completed;
+                updateState(todoState);
+            };
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
+            deleteBtn.onclick = function () {
+                todoState = todoState.filter(t => t.id !== todo.id);
+                updateState(todoState);
+            };
+
+            container.appendChild(titleEl);
+            container.appendChild(descEl);
+            container.appendChild(doneBtn);
+            container.appendChild(deleteBtn);
+
+            document.getElementById("to-dos").appendChild(container);
+        }
+
+        function removeTodoElement(todo) {
+            const el = document.getElementById(todo.id);
+            if (el) el.remove();
+        }
+
+        function updateTodoElement(todo) {
+            const el = document.getElementById(todo.id);
+            if (!el) return;
+
+            el.children[0].innerText = todo.title;
+            el.children[1].innerText = todo.description;
+            el.children[2].innerText = todo.completed ? "Done" : "Mark as done";
+        }
+    </script>
+</body>
+
+</html>
