@@ -117,7 +117,6 @@ async function signin(request, response) {
 async function createCourse(request, response) {
     try {
         const inputCourse = courseSchemaValidation.parse(request.body);
-        console.log(request.user._id);
         
         
         // save in database
