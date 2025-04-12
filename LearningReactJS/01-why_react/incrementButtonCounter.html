@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment button</title>
+</head>
+<body>
+    <button id="btn-incr" onclick="updateCounter()">
+        Counter 0
+    </button>
+
+    <script>
+
+        function updateCounter() {
+            const btn = document.querySelector("#btn-incr");
+            const cnt = btn.innerHTML.trim().split(" ")[1];
+            console.log(btn.innerHTML.trim());
+            
+            console.log(cnt);
+            
+            const newCnt = parseInt(cnt) + 1;
+            btn.innerHTML = "Counter " + newCnt;
+        }
+    </script>
+</body>
+</html>

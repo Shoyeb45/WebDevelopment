@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter app - react like</title>
+</head>
+
+<body>
+
+    <div id="btnParent">
+
+    </div>
+
+    <script>
+        let state = {
+            count: 0,
+        };
+
+        // function renderState() {
+        //     const div = document.querySelector("#btnParent");
+        //     div.innerHTML = "";
+        //     const btn = document.createElement("button");
+        //     btn.innerHTML = `Counter ${state.count}`;
+        //     btn.setAttribute("onclick", "changeState()");
+        //     div.appendChild(btn);
+        // }
+
+        function buttonComponent(count) {
+            const btn = document.createElement("button");
+            btn.innerHTML = `Counter ${count}`;
+            btn.setAttribute("onclick", "changeState()");
+            return btn;
+        }
+
+        function buttonComponentReRender() {
+            const div = document.querySelector("#btnParent");
+            div.innerHTML = "";
+            div.appendChild(buttonComponent(state.count));
+        }
+
+        function changeState() {
+            state.count++;
+            buttonComponentReRender();
+        }
+
+        buttonComponentReRender();
+    </script>
+</body>
+
+</html>
