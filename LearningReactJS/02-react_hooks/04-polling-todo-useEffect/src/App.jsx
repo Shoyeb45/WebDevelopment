@@ -23,8 +23,10 @@ function App() {
     {todos.map((todo) => {
       return <Todo key={todo.id} title={todo.todo} description={todo.description}></Todo>
     })}
+
   </div>);
 }
+
 
 function Todo({ title, description }) {
   return (
@@ -34,4 +36,5 @@ function Todo({ title, description }) {
     </div>
   );
 }
+
 export default App;
