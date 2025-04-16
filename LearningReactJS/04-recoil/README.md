@@ -370,3 +370,6 @@ export default App;
 Make sure to adjust your project's entry point to use `App.js`.
 
 Now, your Recoil-powered React application should render a counter with increase and decrease buttons. The message "It is EVEN" will be displayed when the count is an even number.
+
+
+- NOTE: As of today(16-04-2025), recoil library supports react version 18. So if you want to use recoil in react then you need to use older version of react i.e., 18 or below. Else you will find unexpected errors.  
