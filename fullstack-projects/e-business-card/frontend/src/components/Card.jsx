@@ -1,7 +1,7 @@
 import "./../styles/card.css";
 
 export function Card(props) {
-
+  let i = 1, j = 1;
   return (
     <div className="card">
       <div className="name">{props.user.name}</div>
@@ -13,7 +13,7 @@ export function Card(props) {
       <div className="interests">
         <ul>
           {props.user.interests.map((interest) => {
-            return <li>{interest}</li>;
+            return <li key={i++}>{interest}</li>;
           })}
         </ul>
       </div>
@@ -22,7 +22,7 @@ export function Card(props) {
         <ul>
           {props.user.socialHandles.map((socialHandle) => {
             return (
-              <li> 
+              <li key={j++}> 
                 <a href={socialHandle.url}>
                     <i className={`bi bi-${socialHandle.name}`}></i>
                 </a>

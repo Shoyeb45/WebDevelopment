@@ -1,6 +1,7 @@
 import { Card } from "./components/Card"
 import { AddCard } from "./components/AddCard";
-
+import { useState } from "react";
+import { AllCards } from "./components/AllCards";
 
 const user = {
   name : "Shoyeb Ansari",
@@ -30,11 +31,15 @@ const user = {
   ]
 }
 function App() {
-
+  const [cards, setCards] = useState([user]);
   return (
     <>
-    <AddCard></AddCard>
-    <Card user={user}/>
+
+    {/* Component of adding card */}
+    <AddCard cards={cards} setCards={setCards}></AddCard>
+
+    {/* Show all cards */}
+      <AllCards cards={cards}></AllCards>
     </>
   )
 }
