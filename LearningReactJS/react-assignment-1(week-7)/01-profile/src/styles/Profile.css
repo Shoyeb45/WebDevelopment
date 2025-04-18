@@ -1,0 +1,69 @@
+.profile-image {
+    position: relative;
+    /* top: 31vh; */
+    bottom: 70px;
+    left: 170px;
+    border-radius: 50%;
+}
+
+.cover-image {
+    position: relative;
+    left: 34px;
+}
+
+.img-container {
+    width: 420px;
+    height: 300px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    border: 3px solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 2.1vh;
+}
+
+.city {
+    margin-top:1.2vh;
+    color: rgb(71, 68, 68)
+}
+
+.stats {
+    display: flex;
+    padding: 1.4em;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    margin-top: 3vh;
+    /* gap: 7.6vw */
+}
+
+
+.individual-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1vh
+}
+
+.count {
+    font-weight:900;
+    font-size: larger;
+}
+
+.type {
+    color: gray;
+}
