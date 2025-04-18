@@ -1,0 +1,16 @@
+.color-box {
+    padding: 12px;
+    border-radius: 14px;
+    width: 60px;
+}
+
+.color-container, .color-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-container {
+    padding: 10px;
+    gap: 40px;
+}
