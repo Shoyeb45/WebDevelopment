@@ -20,6 +20,14 @@ app.use(cookieParser());
 import userRoute from "./src/routes/user.route.js"
 app.use("/api/v1/user", userRoute);
 
+// account Routes
+import accountRoute from "./src/routes/account.route.js";
+app.use("/api/v1/account", accountRoute);
+
+// admin routes
+import adminRoute from "./src/routes/admin.route.js";
+app.use("/api/v1/admin", adminRoute);
+
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 4000, () => {
