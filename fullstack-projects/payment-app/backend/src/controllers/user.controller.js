@@ -1,6 +1,7 @@
-import { userSignupSchema, userSigninSchema } from "../validations/user.validation.js";
+import { userSignupSchema, userSigninSchema, userInfoSchema, userPasswordSchema } from "../validations/user.validation.js";
 import { User } from "../models/user.model.js";
 import bcrypt from "bcryptjs";
+import { Account } from "../models/account.model.js";
 
 
 export const signUp = async (req, res) => {
@@ -47,6 +48,13 @@ export const signUp = async (req, res) => {
             });
             return;
         }
+
+        // create account
+        await Account.create({
+            user: createdUser._id,
+            balance: 0
+        });
+
         res.status(201).json({
             message: "User registered successfully",
             user: createdUser,
@@ -54,7 +62,7 @@ export const signUp = async (req, res) => {
         });
         return;
     } catch (error) {
-        console.log(`[Error while signing up]\n${error}`);
+        console.error(`[Error while signing up]\n${error}`);
         res.status(500).json({
             message: "Signed up failed due to some internal server error",
             error: JSON.stringify(error),
@@ -114,13 +122,13 @@ export const signIn = async (req, res) => {
           .cookie("refreshToken", refreshToken, options)
           .cookie("accessToken", accessToken, options)
           .json({
-            message: "Login successful",
+            message: "errorin successful",
             refreshToken,
             accessToken
           });
         return;
     } catch (error) {
-        console.log(`[Error while signing in]\n${error}`);
+        console.error(`[Error while signing in]\n${error}`);
         res.status(500).json({
             message: error?.message || "Signed in failed due to some internal server error",
             error: JSON.stringify(error),
@@ -128,4 +136,148 @@ export const signIn = async (req, res) => {
         });
         return;
     }
+}
+
+
+export const changeDetails = async (req, res) => {
+    try {
+        
+        const userInfo = userInfoSchema.parse(req.body);
+        const updatedUser = await User.updateOne({ _id: req.user._id }, { 
+            $set: userInfo
+        });
+        
+        if (!updatedUser) {
+            res.status(500).json({
+                error: "Unexpected error while updating information",
+                ok: false
+            });
+            return;
+        }
+
+        res.status(200).json({
+            message: "User information update successfully",
+            ok: true
+        });
+        return;
+    } catch (error) {
+        console.error(`[Error while changing user details]\n${error}`);
+        res.status(500).json({
+            message: error?.message || "Changing user details failed due to some internal server error",
+            error: JSON.stringify(error),
+            ok: false,
+        });
+        return;
+    }
+};
+
+export const changePassword = async (req, res) => {
+    try {
+        const passwordInfo = userPasswordSchema.parse(req.body);
+
+        if (!passwordInfo) {
+            res.status(500).json({
+                error: "Invalid username or password",
+                ok: false
+            });
+            return;
+        }
+
+        // check if old password is matching with new one
+        {const isCorrectPassword = await bcrypt.compare(passwordInfo.oldPassword, req.user.password)
+            if (!isCorrectPassword) {
+                res.status(401).json({
+                    error: "Old Password didn't match",
+                    ok: false
+                });
+            }
+        }
+
+        // encrypt new password
+        const encryptedPassword = await bcrypt.hash(passwordInfo.newPassword, 10);
+
+        const update = await User.updateOne({ _id: req.user._id}, {
+            $set: {
+                password: encryptedPassword
+            }
+        });
+
+        if (!update) {
+            res.status(500).json({
+                error: "Unexpected error while updating password",
+                ok: false
+            });
+            return;
+        }
+
+        res.status(200).json({
+            message: "Password successfully changed",
+            ok: true
+        });
+        return;
+
+    } catch (error) {
+        console.error(`[Error while changing user password]\n${error}`);
+        res.status(500).json({
+            message: error?.message || "Changing user password failed due to some internal server error",
+            error: JSON.stringify(error),
+            ok: false,
+        });
+        return;
+        
+    }
+}
+
+export const getUsers = async (req, res) => {
+    try {
+        const filter = req.query.filter;
+
+        if (!filter) {
+            // give all users
+            const users = await User.find({})
+              .select("username firstName lastName _id");
+
+            const usersWithBalance = await getUsersWithBalance(users)
+            res.status(201).json({
+                usersWithBalance,
+                ok: true,
+                message: "All users retrieved successfully"
+            });
+            return;
+        }
+
+        const users = await User.find({
+            $or: [
+                { firstName: { $regex: filter, $options: 'i' } },
+                { lastName: { $regex: filter, $options: 'i' } },
+            ]
+        }).select("username firstName lastName _id");
+
+        const usersWithBalance = await getUsersWithBalance(users);
+
+        res.status(201).json({
+            messge: `Found ${users.length} users`,
+            usersWithBalance
+        });
+    } catch (error) {
+        console.error(`[Error while getting users]\n${error}`);
+        res.status(500).json({
+            message: error?.message || "Getting users failed due to some internal server error",
+            error: JSON.stringify(error),
+            ok: false,
+        });
+        return;
+    }
+}
+
+async function getUsersWithBalance(users) {
+    return await Promise.all(
+        users.map(async (user) => {
+            const account = await Account.findOne({ user: user._id });
+            return {
+                ...user.toObject(),
+                balance: account?.balance || 0
+            };
+        })
+    );
 }
