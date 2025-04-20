@@ -117,7 +117,7 @@ export const getHistory = async (req, res) => {
                     receiverUser: id,
                 }
             ]
-        }).populate("senderUser", "username firstName lastName")  // populate only `username` field
+        }).populate("senderUser", "username firstName lastName")  
           .populate("receiverUser", "username firstName lastName");
         
         res.status(201).json({
