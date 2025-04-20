@@ -27,7 +27,7 @@ const userSchema = mongoose.Schema({
     },
     refreshToken: {
         type: String,
-    }
+    }, 
 }, { timestamps : true});
 
 userSchema.methods.generateAccessToken = function() {
