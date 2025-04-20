@@ -96,7 +96,39 @@ export const performTransaction = async (req, res) => {
     } catch (error) {
         console.error(`[Error while performing transaction]\n${error}`);
         res.status(500).json({
-            error: error?.message || "unexpected error while getting balance",
+            error: error?.message || "unexpected error while performing transaction",
+            ok: false
+        });
+        return;
+    }
+};
+
+
+export const getHistory = async (req, res) => {
+    try {
+        const id = req.user._id;
+
+        const results = await Transaction.find({
+            $or: [
+                {
+                    senderUser: id,
+                }, 
+                {
+                    receiverUser: id,
+                }
+            ]
+        }).populate("senderUser", "username firstName lastName")  // populate only `username` field
+          .populate("receiverUser", "username firstName lastName");
+        
+        res.status(201).json({
+            message: "Retrieved history",
+            history: results
+        });
+        return;
+    } catch (error) {
+        console.error(`[Error while getting history]\n${error}`);
+        res.status(500).json({
+            error: error?.message || "unexpected error while getting history",
             ok: false
         });
         return;

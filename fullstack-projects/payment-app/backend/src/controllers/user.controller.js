@@ -122,7 +122,7 @@ export const signIn = async (req, res) => {
           .cookie("refreshToken", refreshToken, options)
           .cookie("accessToken", accessToken, options)
           .json({
-            message: "errorin successful",
+            message: "Sign in successful",
             refreshToken,
             accessToken
           });
@@ -239,7 +239,7 @@ export const getUsers = async (req, res) => {
 
             const usersWithBalance = await getUsersWithBalance(users)
             res.status(201).json({
-                usersWithBalance,
+                users: usersWithBalance,
                 ok: true,
                 message: "All users retrieved successfully"
             });
