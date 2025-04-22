@@ -2,7 +2,7 @@ import { userSignupSchema, userSigninSchema, userInfoSchema, userPasswordSchema 
 import { User } from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { Account } from "../models/account.model.js";
-
+import { ZodError } from "zod";
 
 export const signUp = async (req, res) => {
     try {
@@ -10,7 +10,7 @@ export const signUp = async (req, res) => {
 
         if (!user) {
             res.status(400).json({
-                error: "Missing user data in request body", 
+                message: "Missing user data in request body, please try once more", 
                 ok: false, 
             });
             return;
@@ -21,7 +21,7 @@ export const signUp = async (req, res) => {
 
         if (alreadyExistedUser) {
             res.status(409).json({
-                error: "Username already taken",
+                message: "Username already taken please choose another username",
                 ok: false,
             });
             return;
@@ -43,7 +43,7 @@ export const signUp = async (req, res) => {
 
         if (!createdUser) {
             res.status(500).json({
-                error: "Something went wrong while creating user",
+                message: "Something went wrong in database while creating user please try once more",
                 ok: false,
             });
             return;
@@ -62,9 +62,20 @@ export const signUp = async (req, res) => {
         });
         return;
     } catch (error) {
+        if (error instanceof ZodError) {
+            // Extract error details nicely
+            const message = error.errors
+              .map(e => `${e.path.join('.')} - ${e.message}`)
+              .join(', ');
+
+            return res.status(400).json({
+                message: `Validation failed: ${message}`,
+                ok: false,
+            });
+        }
         console.error(`[Error while signing up]\n${error}`);
         res.status(500).json({
-            message: "Signed up failed due to some internal server error",
+            message: error?.message || "Signed up failed due to some internal server error",
             error: JSON.stringify(error),
             ok: false,
         });
@@ -79,7 +90,7 @@ export const signIn = async (req, res) => {
 
         if (!userR) {
             res.status(400).json({
-                error: "Missing user data in request body", 
+                message: "Missing user data in request body", 
                 ok: false, 
             });
             return;
@@ -91,7 +102,7 @@ export const signIn = async (req, res) => {
 
         if (!user) {
             res.status(404).json({
-                error: "User not found",
+                message: "User not found",
                 ok: false,
             });
             return;
@@ -102,7 +113,7 @@ export const signIn = async (req, res) => {
 
         if (!passwordMatch) {
             res.status(401).json({
-                error: "Invalid username or password",
+                message: "Invalid username or password",
                 ok: false
             });
             return;
@@ -116,7 +127,9 @@ export const signIn = async (req, res) => {
         await user.save();
         const options = {
             httpOnly: true,
-            secure: true      
+            secure: true,
+            sameSite: "None",
+            path: "/",   
         };
         res.status(200)
           .cookie("refreshToken", refreshToken, options)
@@ -124,10 +137,23 @@ export const signIn = async (req, res) => {
           .json({
             message: "Sign in successful",
             refreshToken,
-            accessToken
+            accessToken,
+            ok: true
           });
         return;
     } catch (error) {
+        if (error instanceof ZodError) {
+            // Extract error details nicely
+            const message = error.errors
+              .map(e => `${e.path.join('.')} - ${e.message}`)
+              .join(', ');
+
+            return res.status(400).json({
+                message: `Validation failed: ${message}`,
+                ok: false,
+            });
+        }
+
         console.error(`[Error while signing in]\n${error}`);
         res.status(500).json({
             message: error?.message || "Signed in failed due to some internal server error",
@@ -257,7 +283,8 @@ export const getUsers = async (req, res) => {
 
         res.status(201).json({
             messge: `Found ${users.length} users`,
-            usersWithBalance
+            users: usersWithBalance,
+            ok: true
         });
     } catch (error) {
         console.error(`[Error while getting users]\n${error}`);

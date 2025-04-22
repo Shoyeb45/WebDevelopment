@@ -10,13 +10,14 @@ export const getBalance = async (req, res) => {
 
         if (!balanceInfo) {
             res.status(500).json({
-                error: "Error getting balance",
+                message: "Error getting balance",
                 ok: false
             });
             return;
         }
 
         res.status(201).json({
+            message: "Successfully sent balance",
             balance: balanceInfo.balance,
             ok: true,
         });
@@ -24,7 +25,7 @@ export const getBalance = async (req, res) => {
     } catch (error) {
         console.error(`[Error while getting balance]\n${error}`);
         res.status(500).json({
-            error: error?.message || "unexpected error while getting balance",
+            message: error?.message || "unexpected error while getting balance",
             ok: false
         });
         return;
@@ -45,7 +46,7 @@ export const performTransaction = async (req, res) => {
         if (!receiversAccount) {
             await session.abortTransaction();
             res.status(500).json({
-                error: "Couldn't find receiver account",
+                message: "Couldn't find receiver account",
                 ok: false
             });
             return;
@@ -55,7 +56,7 @@ export const performTransaction = async (req, res) => {
         if (!sendersAccount || sendersAccount.balance < amount) {
             await session.abortTransaction();
             res.status(500).json({
-                error: "Couldn't find senders account or insufficient balance",
+                message: "Couldn't find senders account or insufficient balance",
                 ok: false
             });
             return;
@@ -90,7 +91,9 @@ export const performTransaction = async (req, res) => {
         res.status(201).json({
             message: "Transaction completed successfully",
             senderId: req.user._id,
-            receiverId: receiversAccount.user
+            receiverId: receiversAccount.user,
+            availableBalance: sendersAccount.balance,
+            ok: true
         });
         return;
     } catch (error) {
@@ -120,15 +123,23 @@ export const getHistory = async (req, res) => {
         }).populate("senderUser", "username firstName lastName")  
           .populate("receiverUser", "username firstName lastName");
         
+        if (!results) {
+            res.status(500).json({
+                message: "Failed to get transaction history",
+                ok: false
+            });
+        }
+
         res.status(201).json({
             message: "Retrieved history",
-            history: results
+            history: results,
+            ok: true
         });
         return;
     } catch (error) {
         console.error(`[Error while getting history]\n${error}`);
         res.status(500).json({
-            error: error?.message || "unexpected error while getting history",
+            message: error?.message || "unexpected error while getting history",
             ok: false
         });
         return;

@@ -1,12 +1,31 @@
 import { jwtDecode } from "jwt-decode";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { useRecoilValueLoadable } from "recoil";
+import { transactionsAtom } from "../stores/state";
+import { Loading } from "./LoadingSpinner";
 
 
+export function TransactionTable() {
+    const transactions = useRecoilValueLoadable(transactionsAtom);
 
-export function TransactionTable({ transactions }) {
+    if (transactions.state === "loading") {
+        return (
+            <div className="text-2xl p-8">
+                <Loading message={"Fetching transactions"} />
+            </div>
+        )
+    }
+
+    if (transactions.state === "hasValue" && transactions.length === 0) {
+        return (
+            <div>
+                There are no transaction to display, please make a transaction
+            </div>
+        )
+    }
     return (
         <div>
-            {transactions.map((txn) => {
+            {transactions.contents.map((txn) => {
                 return <Transaction transaction={txn} key={txn._id}/>
             })}
             {/* <Transaction transaction={transactions}/> */}

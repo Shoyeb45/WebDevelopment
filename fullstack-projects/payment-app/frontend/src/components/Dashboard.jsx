@@ -4,20 +4,16 @@ import { TransactionTable } from "./TransactionTable";
 import { NavBar } from "./NavBar";
 
 
-export function Dashboard({
-    name,
-    balance,
-    transactions
-}) {
+export function Dashboard() {
     return (
         <div >
-            <Intro name={name} balance={balance} />
+            <Intro />
             <div className="mt-4">
                 <NavBar />
             </div>
                 <TransactionHead />
 
-            <TransactionTable transactions={transactions} />
+            <TransactionTable />
         </div>
     )
 }

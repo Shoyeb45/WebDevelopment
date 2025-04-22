@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import { connectDB } from "./src/services/connectDB.service.js";
+import cors from "cors";
 
 const app = express()
 
@@ -14,7 +15,9 @@ dotenv.config({
     path: "./.env"
 });
 app.use(cookieParser());
-
+app.use(cors({
+  origin: '*'
+}));
 
 // User Routes
 import userRoute from "./src/routes/user.route.js"

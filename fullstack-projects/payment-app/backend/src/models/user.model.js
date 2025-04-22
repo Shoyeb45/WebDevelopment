@@ -35,6 +35,8 @@ userSchema.methods.generateAccessToken = function() {
         _id: this._id, // id from database  
         email: this.email,
         username: this.username,
+        firstName: this.firstName,
+        lastName: this.lastName
     }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "7d" });
 }
 

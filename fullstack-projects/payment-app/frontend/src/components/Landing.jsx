@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom"
+import { useRecoilValue } from "recoil";
+import { isUserLoggedInAtom } from "../stores/state";
 
-export function Landing({ isUserLoggedIn }) {
-
+export function Landing() {
+    const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
+    
     const navigate = useNavigate();
-
+    console.log(isUserLoggedIn);
+    
     function navigator() {
         if (!isUserLoggedIn) {
             navigate("/signup");

@@ -1,9 +1,21 @@
 import { IoLogOut } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { isUserLoggedInAtom } from "../stores/state";
+import { isAccessTokenExpired } from "../utils/helperFunctions";
+import { useEffect } from "react";
 
-export function Header({ isUserLoggedIn }) {
+export function Header() {
+    const [isUserLoggedIn, setIsUserLoggedIn] = useRecoilState(isUserLoggedInAtom);
+
+    useEffect(() => {
+        if (!isAccessTokenExpired(localStorage.getItem("accessToken"))) {
+            setIsUserLoggedIn(true);
+        }
+    }, []);
     const navigate = useNavigate();
+    
     return (
         <header className="w-full flex justify-between p-1 py-1 border-b border-b-gray-500">
             <div 
@@ -20,7 +32,7 @@ export function Header({ isUserLoggedIn }) {
 
 
 function HeaderLeft({ isUserLoggedIn, navigate }) {
-
+    
     if (!isUserLoggedIn) {
         return (
             <div className="sm:me-14 me-3 flex sm:gap-5 gap-2 items-center font-medium ">

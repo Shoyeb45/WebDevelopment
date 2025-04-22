@@ -4,18 +4,60 @@ import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { RiSecurePaymentLine } from "react-icons/ri";
+import { domain, getUser, proper } from "../utils/helperFunctions.js";
+import { useRecoilStateLoadable, useRecoilState } from "recoil";
+import { balanceAtom, usersAtom } from "../stores/state.js";
+import { Loading } from "./LoadingSpinner.jsx";
+import { useRef } from "react";
 
-
-export const Users = ({ users }) => {
+export const Users = () => {
+    const [users, setUsers] = useRecoilStateLoadable(usersAtom);
     
+    async function handleFilter(event) {
+        event.preventDefault();
+        try {
+            const form = new FormData(event.target);
+            const filter = form.get("filter");
+            const api = filter ? `${domain}/user/users/?filter=${filter}`: `${domain}/user/users`;
+            let response = await fetch(api, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+                }
+            });
+            response = await response.json();
+
+            if (!response.ok) {
+                return;
+            }
+
+            setUsers((user) => response.users);
+        } catch (error) {
+            console.log(error);
+            return;
+        }
+    }
+
+    if (users.state === "loading") {
+        return (
+            <div className="p-4">
+                <Loading message={"Getting all the users"} />
+            </div>
+        )
+    }
+    
+    const id = getUser(localStorage.getItem("accessToken"))?._id;
+
     return (
         <div className="flex flex-col p-2  gap-10">
             <div className="mt-4">
-                <UserSearchBar />
+                <UserSearchBar handleFilter={handleFilter}/>
             </div>
             <div className="flex flex-col gap-6">
 
-            {users.map((user) => {
+            {users.contents.map((user) => {
+                if (user._id.toString() === id.toString()) {
+                    return (<></>)
+                }
                 return <User {...user} key={user._id} id={user._id}/>
             })}
 
@@ -44,13 +86,13 @@ const User = ({
             </div>
 
             <div>
-                <SendMoneyButton name={firstName + " " + lastName}/>
+                <SendMoneyButton name={firstName + " " + lastName} id={_id}/>
             </div>
             
         </div>
     )
 }
-function SendMoneyButton({ name }) {
+function SendMoneyButton({ name, id }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -73,21 +115,19 @@ function SendMoneyButton({ name }) {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 name={name}
+                id={id}
             ></Modal>
         </>
     )
 }
 
-function proper(str) {
-    if (!str) return "";
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
-function UserSearchBar() {
+
+function UserSearchBar({ handleFilter }) {
 
     return (
         <div>
-            <form action="">
+            <form action="" onSubmit={handleFilter}>
                 <div className="border-1 sm:ms-14 sm:me-14 ms-3 me-3 flex rounded-xl justify-between" >
                     <input 
                         name="filter" 
@@ -108,7 +148,44 @@ function UserSearchBar() {
     )
 }
 
-const Modal = ({ isOpen, onClose, name }) => {
+const Modal = ({ isOpen, onClose, name, id }) => {
+    const errorRef = useRef();
+    const [balance, setBalance] = useRecoilState(balanceAtom);
+
+    async function transferMoney(event) {
+        try {
+            event.preventDefault();
+            const form = new FormData(event.target);
+            
+            if (balance < form.get("amount")) {
+                errorRef.current.class = "text-center text-red-500";
+                errorRef.current.innerHTML = "Low Balance";
+                return;
+            }
+
+            let response = await fetch(`${domain}/account/transaction`, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify({ receiverId: id, amount: form.get("amount") })
+            });
+            response = await response.json();
+
+            if (!response.ok) {
+                errorRef.current.class = "text-center text-red-500";
+                errorRef.current.innerHTML = "Transaction Failed";
+                return;
+            }
+            errorRef.current.class = "text-center text-green-500";
+            errorRef.current.innerHTML = "Transaction Completed";
+            setBalance(response.availableBalance);
+            return;
+        } catch (error) {
+            return;
+        }
+    }
     if (!isOpen) return null;
   
     return (
@@ -131,7 +208,11 @@ const Modal = ({ isOpen, onClose, name }) => {
                 </div>
 
                 <div className="flex flex-col justify-center">
-                    <form action="" className="flex flex-col justify-center items-center">
+                    <form 
+                        action="" 
+                        className="flex flex-col justify-center items-center"
+                        onSubmit={transferMoney}
+                    >
                         <div className="flex items-center border-1 p-1 w-full">
                             <label htmlFor="amount" className="p-1">
                                 <MdOutlineCurrencyRupee />
@@ -145,6 +226,8 @@ const Modal = ({ isOpen, onClose, name }) => {
                             />
                         </div>
 
+                        <div className="text-center" ref={errorRef}>
+                        </div>
                         <button className="text-xl flex items-center justify-center text-white bg-green-500 p-1  mt-5 gap-2 border-2 rounded-xl w-[30%]">
                             <div>Pay</div>
                             <div className="">
