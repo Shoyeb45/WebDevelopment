@@ -24,7 +24,7 @@ export function Dashboard({
 
 function TransactionHead() {
     return (
-        <div className="flex sm:text-5xl text-3xl  sm:justify-center items-center gap-4 p-3 font-semibold mt-5">
+        <div className="flex sm:text-5xl text-2xl  sm:justify-center justify-between items-center gap-4 p-3 font-semibold mt-5">
             <span>Recent Transactions</span>
             <span className="text-center flex items-center">
                 <GrTransaction />

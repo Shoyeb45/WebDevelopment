@@ -36,11 +36,11 @@ const User = ({
     return (
         <div  className="flex  justify-between w-full items-center">
 
-            <div className="flex gap-6 items-center sm:ms-13 ms-3">
-                <div className="text-xl w-12 h-12 rounded-full bg-green-300 text-center flex items-center justify-center">
+            <div className="flex sm:gap-6 gap-3 items-center sm:ms-13 ms-3">
+                <div className="sm:text-xl sm:w-12 sm:h-12 w-8 h-8 rounded-full sm:p-0 p-1.5 bg-green-300 text-center flex items-center justify-center">
                     {firstName?.charAt(0) + lastName?.charAt(0)}
                 </div>
-                <div className="text-2xl">{firstName + " " + lastName}</div>
+                <div className="sm:text-2xl ">{firstName + " " + lastName}</div>
             </div>
 
             <div>
@@ -56,16 +56,14 @@ function SendMoneyButton({ name }) {
     return (
         <>
             <button 
-                className="p-2 px-6 border-1 rounded-3xl flex items-center justify-center gap-3 sm:me-13 me-3"
-                onClick={() => {
-                    console.log("Model opened");
-                    
+                className="sm:p-2 p-1 px-6 border-1 rounded-3xl flex items-center justify-center gap-3 sm:me-13 me-3"
+                onClick={() => {                    
                     setIsModalOpen(true)
                 }}
             >
-                <div className="text-xl">Send Money</div>
+                <div className="sm:text-xl">Send Money</div>
                 <div 
-                    className="text-2xl p-0.5" 
+                    className="sm:text-2xl text-xl sm:p-0.5" 
                 >
                     <FaMoneyBillTransfer />
                 </div>

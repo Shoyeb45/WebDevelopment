@@ -3,8 +3,8 @@ import { IoKeyOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 export const SignIn = () => {
   return (
-    <div className="flex flex-col items-center p-12">
-      <div className="text-3xl sm:text-4xl p-4 flex flex-col">Log In to make payment</div>
+    <div className="flex flex-col items-center sm:p-12 p-6">
+      <div className="text-2xl sm:text-4xl sm:p-4 flex flex-col">Log In to make payment</div>
       <div className="p-3 mt-3">
         <SignInForm />
       </div>
@@ -19,7 +19,7 @@ const SignInForm = () => {
   const labelStyle = "text-xl text-center text-gray-600 p-1";
 
   return (
-    <form action="" className="flex flex-col p-3 gap-6 sm:w-90 w-100">
+    <form action="" className="flex flex-col p-3 gap-6 sm:w-90 ">
 
       <div className={outerDivStyle}>
         <label htmlFor="username" className={labelStyle}>

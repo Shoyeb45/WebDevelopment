@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
   return (
-    <div className="flex flex-col p-12 items-center">
-        <div className=" sm:text-3xl text-xl flex flex-col gap-2 sm:items-center items-start  px-1 py-3 sm:me-0 me-13">
+    <div className="flex flex-col sm:p-12 p-4 items-center">
+        <div className=" sm:text-3xl  flex flex-col gap-2 sm:items-center items-start  px-1 py-3 sm:me-0 me-2">
             <div>
                 EasyPay: Get started with new digital 
             </div>
