@@ -120,7 +120,9 @@ export const getHistory = async (req, res) => {
                     receiverUser: id,
                 }
             ]
-        }).populate("senderUser", "username firstName lastName")  
+        })
+          .sort({ createdAt: -1 })
+          .populate("senderUser", "username firstName lastName")  
           .populate("receiverUser", "username firstName lastName");
         
         if (!results) {

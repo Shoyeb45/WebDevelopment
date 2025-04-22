@@ -16,7 +16,10 @@ dotenv.config({
 });
 app.use(cookieParser());
 app.use(cors({
-  origin: '*'
+  origin: 'https://easy-pay-45.vercel.app', // Frontend URL
+  methods: 'GET, POST, PUT, DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+  credentials: true // Allow cookies
 }));
 
 // User Routes
