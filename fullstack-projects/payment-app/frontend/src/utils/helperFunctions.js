@@ -23,8 +23,10 @@ export function proper(str) {
 
 export function getUser() {
   const token = localStorage.getItem("accessToken");
+  
   if (!token) {
-    undefined;
+    return undefined;
   }
   return jwtDecode(token);
 }
+

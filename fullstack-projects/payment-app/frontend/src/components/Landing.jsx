@@ -23,7 +23,7 @@ export function Landing() {
                 <p>Made Simpler</p>
             </div>
             <button 
-                className="border-2 p-3 sm:text-2xl  sm:rounded-2xl rounded-xl"
+                className="border-2 p-3 sm:text-2xl  sm:rounded-2xl rounded-xl hover:cursor-pointer"
                 onClick={navigator}
             >
                 Get Started

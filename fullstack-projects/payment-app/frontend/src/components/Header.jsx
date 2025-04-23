@@ -12,6 +12,9 @@ export function Header() {
     useEffect(() => {
         if (!isAccessTokenExpired(localStorage.getItem("accessToken"))) {
             setIsUserLoggedIn(true);
+        } 
+        else {
+            setIsUserLoggedIn(false);
         }
     }, []);
     const navigate = useNavigate();
@@ -25,26 +28,44 @@ export function Header() {
                 EasyPay
             </div>
 
-            <HeaderLeft navigate={navigate} isUserLoggedIn={isUserLoggedIn}></HeaderLeft>
+            <HeaderLeft navigate={navigate} isUserLoggedIn={true} setIsUserLoggedIn={setIsUserLoggedIn}></HeaderLeft>
         </header>
     );
 }
 
 
-function HeaderLeft({ isUserLoggedIn, navigate }) {
+function HeaderLeft({ 
+    isUserLoggedIn,
+    navigate,
+    setIsUserLoggedIn 
+}) {
+
+    function logOut() {
+        
+        localStorage.removeItem("accessToken");
+        setIsUserLoggedIn("false");
+    } 
     
     if (!isUserLoggedIn) {
         return (
             <div className="sm:me-14 me-3 flex sm:gap-5 gap-2 items-center font-medium ">
-                <button className="sm:p-3 p-1" onClick={() => navigate("/signin")}>Sign In</button>
-                <button className="sm:p-3 p-1 border-1 rounded-3xl text-center w-25" onClick={() => navigate("/signup")}>Sign Up</button>
+                <button className="sm:p-3 p-1 hover:cursor-pointer" onClick={() => navigate("/signin")}>Sign In</button>
+                <button className="sm:p-3 p-1 border-1 rounded-3xl text-center w-25 hover:cursor-pointer" onClick={() => navigate("/signup")}>Sign Up</button>
             </div>
         )
     }
     return (
-        <div className="sm:me-14 me-3 flex gap-5 items-center">
-            <button className="p-1 text-2xl"><FaUserCircle /></button>
-            <button className="p-1 text-3xl  ">
+        <div className="sm:me-14 me-3 flex gap-5 items-center x">
+            <button 
+                className="p-1 text-2xl hover:cursor-pointer"
+                onClick={() => { navigate("/profile") }}
+            >
+                <FaUserCircle />
+            </button>
+            <button 
+                className="p-1 text-3xl hover:cursor-pointer  hover:text-red-500 " 
+                onClick={logOut}
+            >
                 <IoLogOut />
             </button>
         </div>
