@@ -9,6 +9,8 @@ import { useEffect } from "react";
 export function Header() {
     const [isUserLoggedIn, setIsUserLoggedIn] = useRecoilState(isUserLoggedInAtom);
 
+    const navigate = useNavigate();
+    
     useEffect(() => {
         if (!isAccessTokenExpired(localStorage.getItem("accessToken"))) {
             setIsUserLoggedIn(true);
@@ -16,8 +18,7 @@ export function Header() {
         else {
             setIsUserLoggedIn(false);
         }
-    }, []);
-    const navigate = useNavigate();
+    }, [isUserLoggedIn]);
     
     return (
         <header className="w-full flex justify-between p-1 py-1 border-b border-b-gray-500">
@@ -41,9 +42,9 @@ function HeaderLeft({
 }) {
 
     function logOut() {
-        
         localStorage.removeItem("accessToken");
         setIsUserLoggedIn("false");
+        navigate("/");
     } 
     
     if (!isUserLoggedIn) {
