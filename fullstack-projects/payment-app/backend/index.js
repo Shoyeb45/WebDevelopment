@@ -22,6 +22,7 @@ app.use(cors({
   credentials: true // Allow cookies
 }));
 
+app.get("/", (_ ,res) => {res.json({msg:"Working......"})})
 // User Routes
 import userRoute from "./src/routes/user.route.js"
 app.use("/api/v1/user", userRoute);

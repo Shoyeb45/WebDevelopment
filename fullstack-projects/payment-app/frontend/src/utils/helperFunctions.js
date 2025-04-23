@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 
-export const domain = "http://localhost:4000/api/v1";
+export const domain = "https://easypay-backend.up.railway.app/api/v1";
 
 export function isAccessTokenExpired(token) {
   if (!token) return true;
