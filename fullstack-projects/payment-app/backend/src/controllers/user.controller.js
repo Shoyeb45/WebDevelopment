@@ -169,21 +169,41 @@ export const changeDetails = async (req, res) => {
     try {
         
         const userInfo = userInfoSchema.parse(req.body);
+
+        if (userInfo.username) {
+            {
+                const user = await User.findOne({ username: userInfo.username });
+                if (user) {
+                    res.status(409).json({
+                        message: "Username is already taken, please change the username",
+                        ok: false
+                    });
+                    return;
+                }
+            }
+        }
+
         const updatedUser = await User.updateOne({ _id: req.user._id }, { 
             $set: userInfo
         });
         
         if (!updatedUser) {
             res.status(500).json({
-                error: "Unexpected error while updating information",
+                message: "Unexpected error while updating information",
                 ok: false
             });
             return;
         }
 
+        const user = await User.findById(req.user._id);
+
+        // send refresh token
+        const accessToken = user.generateAccessToken();
+        
         res.status(200).json({
-            message: "User information update successfully",
-            ok: true
+            message: "User information updated successfully",
+            accessToken,
+            ok: true,
         });
         return;
     } catch (error) {
@@ -203,7 +223,7 @@ export const changePassword = async (req, res) => {
 
         if (!passwordInfo) {
             res.status(500).json({
-                error: "Invalid username or password",
+                message: "Invalid username or password",
                 ok: false
             });
             return;
@@ -213,7 +233,7 @@ export const changePassword = async (req, res) => {
         {const isCorrectPassword = await bcrypt.compare(passwordInfo.oldPassword, req.user.password)
             if (!isCorrectPassword) {
                 res.status(401).json({
-                    error: "Old Password didn't match",
+                    message: "Current Password is wrong",
                     ok: false
                 });
             }
@@ -230,7 +250,7 @@ export const changePassword = async (req, res) => {
 
         if (!update) {
             res.status(500).json({
-                error: "Unexpected error while updating password",
+                message: "Unexpected error while updating password",
                 ok: false
             });
             return;
