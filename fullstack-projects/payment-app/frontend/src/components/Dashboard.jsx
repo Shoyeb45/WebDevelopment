@@ -2,9 +2,23 @@ import { Intro } from "./Intro"
 import { GrTransaction } from "react-icons/gr";
 import { TransactionTable } from "./TransactionTable";
 import { NavBar } from "./NavBar";
-
+import { useRecoilValue } from "recoil";
+import { isUserLoggedInAtom } from "../stores/state.js";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export function Dashboard() {
+    const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isUserLoggedIn) {
+            navigate("/signin");
+            return;
+        }
+    }, []);
+    
+    
     return (
         <div >
             <Intro />

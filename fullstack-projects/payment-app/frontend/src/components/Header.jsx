@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 export function Header() {
     const [isUserLoggedIn, setIsUserLoggedIn] = useRecoilState(isUserLoggedInAtom);
-
+    
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -29,7 +29,7 @@ export function Header() {
                 EasyPay
             </div>
 
-            <HeaderLeft navigate={navigate} isUserLoggedIn={true} setIsUserLoggedIn={setIsUserLoggedIn}></HeaderLeft>
+            <HeaderLeft navigate={navigate} isUserLoggedIn={isUserLoggedIn} setIsUserLoggedIn={setIsUserLoggedIn}></HeaderLeft>
         </header>
     );
 }

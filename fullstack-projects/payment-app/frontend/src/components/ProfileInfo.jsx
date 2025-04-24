@@ -1,13 +1,24 @@
 import { getUser } from "../utils/helperFunctions.js"
 import { InputField } from "./InputField.jsx";
 import { FaRegEdit } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { domain } from "../utils/helperFunctions.js";
+import { useRecoilValue } from "recoil";
+import { isUserLoggedInAtom } from "../stores/state.js";
+import { useNavigate } from "react-router-dom";
 
 export function ProfileInfo() {
     const user = getUser();
     const [isEdit, setIsEdit] = useState(false);
+    const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        if (!isUserLoggedIn) {
+            navigate("/signin");
+            return;
+        }
+    }, []);
     const [errorMessage, setErrorMessage] = useState("");    
 
     const editInfo = async (event) => {

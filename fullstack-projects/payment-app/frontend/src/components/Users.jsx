@@ -1,18 +1,25 @@
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { domain, getUser, proper } from "../utils/helperFunctions.js";
-import { useRecoilStateLoadable, useRecoilState } from "recoil";
-import { balanceAtom, usersAtom } from "../stores/state.js";
+import { useRecoilStateLoadable, useRecoilState, useRecoilValue } from "recoil";
+import { balanceAtom, isUserLoggedInAtom, usersAtom } from "../stores/state.js";
 import { Loading } from "./LoadingSpinner.jsx";
-import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Users = () => {
     const [users, setUsers] = useRecoilStateLoadable(usersAtom);
-    
+    const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!isUserLoggedIn) {
+            navigate("/signin")
+        }
+    }, []);
+
     async function handleFilter(event) {
         event.preventDefault();
         try {

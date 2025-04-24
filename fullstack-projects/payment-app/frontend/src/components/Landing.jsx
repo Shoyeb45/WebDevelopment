@@ -6,7 +6,6 @@ export function Landing() {
     const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
     
     const navigate = useNavigate();
-    console.log(isUserLoggedIn);
     
     function navigator() {
         if (!isUserLoggedIn) {
