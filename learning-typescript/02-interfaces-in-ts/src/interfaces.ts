@@ -16,3 +16,13 @@ provideUserInfo({
     email: "shoyeb@gmail.com",
     username: "shoyeb12",
 });
+
+interface Hammad {
+    name: string,
+    age: number,
+}
+interface Hammad {
+    name: string,
+    age: number,
+    email: string,   
+}
