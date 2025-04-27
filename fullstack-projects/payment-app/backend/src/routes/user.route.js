@@ -8,6 +8,6 @@ router.route("/signup").post(signUp);
 router.route("/signin").post(signIn);
 router.route("/").put(verifJWT, changeDetails);
 router.route("/changepassword").put(verifJWT, changePassword);
-router.route("/users").get(verifJWT, getUsers);
+router.route("/users").get(getUsers);
 
 export default router;
