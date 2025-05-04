@@ -12,7 +12,8 @@ export function InputField({
     placeholder,
     id,
     pattern,
-    disabled = false
+    disabled = false,
+    value
   }) {
     return (
       <div className={outerDivStyle}>
@@ -29,6 +30,7 @@ export function InputField({
           required
           {...(disabled ? {disabled: true} : {})}
           {...(pattern ? { pattern } : {})}
+          {...(value ? {defaultValue: value} : {})}
         />
       </div>
     )

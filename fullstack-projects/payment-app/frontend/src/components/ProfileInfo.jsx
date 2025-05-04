@@ -9,10 +9,11 @@ import { useNavigate } from "react-router-dom";
 
 export function ProfileInfo() {
     const user = getUser();
+
     const [isEdit, setIsEdit] = useState(false);
     const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
         if (!isUserLoggedIn) {
             navigate("/signin");
@@ -71,7 +72,11 @@ export function ProfileInfo() {
             <div className="text-4xl text-center p-2 font-medium">
                 Edit Basic Information
             </div>
-            <form className="p-2 flex flex-col gap-3 sm:ms-14 sm:me-14 ms-2 me-2" noValidate onSubmit={editInfo}>
+            <form 
+                className="p-2 flex flex-col gap-3 sm:ms-14 sm:me-14 ms-2 me-2" 
+                noValidate 
+                onSubmit={editInfo}
+            >
                 <InputField
                     outerDivStyle={outerDivStyle}
                     inputStyle={inputStyle}
@@ -81,6 +86,7 @@ export function ProfileInfo() {
                     id="username"
                     disabled={!isEdit}
                     Icon={"Username"}
+                    value={user.username}
                 />
 
                 <div className="sm:gap-8 gap-3 flex flex-wrap w-full sm:flex-nowrap sm:flex-row">
@@ -93,6 +99,7 @@ export function ProfileInfo() {
                         id="firstName"
                         disabled={!isEdit}
                         Icon={"First Name"}
+                        value={user.firstName}
                     />
 
                     <InputField
@@ -104,6 +111,7 @@ export function ProfileInfo() {
                         id="lastName"
                         disabled={!isEdit}
                         Icon={"Last Name"}
+                        value={user.lastName}
                     />
 
                 </div>
