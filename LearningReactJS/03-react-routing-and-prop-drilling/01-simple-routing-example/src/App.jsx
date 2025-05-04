@@ -25,7 +25,7 @@ export default function App() {
         {/* Using useNavigate hook from react-router-dom - it shoub be inside browser route */}
         {/* No refresh */}
         <AppBar></AppBar>
-        <Routes>
+          <Routes>
           {/* use Suspense API for fallback, because the component will be getting fetched from server, so it's like asynchronous and there will be little delay to laod the component so we need something to show meanwhile it'll load  */}
           <Route path="/" element={<Suspense fallback="loading....."> <Landing /> </Suspense>}></Route>
           <Route path="/dashboard" element={<Suspense fallback="loading....."> <Dashboard /> </Suspense>}></Route>
