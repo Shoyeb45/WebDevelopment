@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+</head>
+<body class="bg">
+    <div>
+        <dd>
+            Enter Credit Card Number:
+        </dd>
+        <dt class="flex w-70">
+            <input type="text" class="border-2" id="input-box">
+            <div class="border-1">
+                <img src="" width="55" alt="" id="card-icon">                
+            </div>
+        </dt>
+    </div>
+
+    <div>
+        <dd>
+            Enter your gmail
+        </dd>
+        <dt>
+            <input type="text" class="border-2" id="gmail-input-box">
+            <div id="error">
+
+            </div>
+        </dt>
+    </div>
+
+
+    <div class="mt-20"> Username validation </div>
+
+    <div>
+        <dd>
+            Enter username:
+        </dd>
+        <dt>
+
+            <input class="border-2" type="text" id="username-input">
+            <div id="username-error"></div>
+        </dt>
+    </div>
+    <script>
+        let inputBox = document.getElementById("input-box")
+        console.log(inputBox);
+        
+        inputBox.addEventListener("blur", (e) => {
+            let data = e.target.value;
+            const cardIcon = document.getElementById("card-icon");
+
+            if (data.startsWith("4")) {
+                cardIcon.setAttribute("src", "./visa.png")
+            } else if (data.startsWith("2") | data.startsWith("5")) {
+                cardIcon.setAttribute("src", "./mastercard.png");
+            } else {
+                cardIcon.setAttribute("src", "");
+            }
+        });
+
+        document.getElementById("gmail-input-box").addEventListener("blur", (e) => {
+            let data = e.target.value;
+            
+            if (data === "") {
+                document.getElementById("error").innerHTML = "Please enter mail".fontcolor("green");
+                return;
+            }
+            if (!(data.endsWith("gmail.com"))) {
+                document.getElementById("error").innerHTML = "Only gmail is acceptable".fontcolor("red");
+                return;
+            } 
+            document.getElementById("error").innerHTML.charAt() = "";
+        })
+        
+        document.getElementById("username-input").addEventListener("keyup", (e) => {
+            let firstChar = e.target.value.charCodeAt(0);
+            console.log(firstChar);
+
+            const errorDivUsername = document.getElementById("username-error");
+            if (e.target.value === "") {
+                errorDivUsername.innerHTML = "";
+            }
+            if (firstChar < 65 || firstChar > 90) {
+                errorDivUsername.innerHTML = "The username should be uppercase".fontcolor("red");
+                return;
+            }
+
+            errorDivUsername.innerHTML = "Valid username".fontcolor("green");
+        });
+    </script>
+</body>
+</html>

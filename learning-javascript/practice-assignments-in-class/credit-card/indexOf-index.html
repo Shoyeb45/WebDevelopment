@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        <dd>
+            Enter your gmail
+        </dd>
+        <dt>
+            <input type="text" class="border-2" id="mail-input-box">
+            <div id="error">
+
+            </div>
+        </dt>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("mail-input-box").addEventListener("blur", (e) => {
+            let email = e.target.value;
+
+            let errorDiv = document.getElementById("error");
+            if (email === "" || !email) {   
+                errorDiv.innerHTML = "";
+                return;
+            }
+
+            if (email.indexOf("@") === -1) {
+                errorDiv.innerHTML = 'Invalid email'.fontcolor("red");
+                return;
+            }
+
+            if (email.endsWith("@gmail.com")) {
+                errorDiv.innerHTML = "Valid email".fontcolor("green");
+                return;
+            }
+            errorDiv.innerHTML = "Only gmail is allowed".fontcolor("rEd");
+        });
+    </script>
+</body>
+</html>
