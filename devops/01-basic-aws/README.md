@@ -203,6 +203,118 @@ https://be1.100xdevs.com/
 
 ![Website Running](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F6f3c6675-2178-43e1-bbfe-a90e391db2f4%2FScreenshot_2024-02-11_at_8.50.59_AM.png?table=block&id=8a6d5e90-7897-498b-bdd3-bc2ab958c683&cache=v2)
 
-## 8. Certificate Management
+## 8. Certificate Management (SSL/HTTPS Setup)
 
-For HTTPS setup, use [Certbot](https://certbot.eff.org/) to obtain and install SSL certificates.
+Setting up HTTPS with SSL certificates is essential for secure website communication. [Certbot](https://certbot.eff.org/) makes this process straightforward.
+
+### 8.1. What Are SSL Certificates?
+
+SSL certificates provide:
+- Encrypted connections between servers and clients
+- Authentication to verify website identity
+- Data integrity to prevent tampering during transmission
+
+### 8.2. Installing Certbot
+
+```bash
+# For Ubuntu/Debian systems
+sudo apt update
+sudo apt install certbot python3-certbot-nginx
+```
+
+### 8.3. Obtaining a Certificate
+
+Before running Certbot, ensure:
+1. Your domain is pointing to your EC2 instance's public IP
+2. Port 80 is open in your security group
+3. Nginx is properly configured with your domain name
+
+Then run:
+
+```bash
+sudo certbot --nginx -d your-domain.com
+```
+
+Certbot will:
+- Verify domain ownership (using HTTP challenge)
+- Generate certificates
+- Automatically modify your Nginx configuration
+- Set up automatic renewal
+
+### 8.4. Verifying HTTPS Setup
+
+Once Certbot completes:
+1. Visit `https://your-domain.com` in your browser
+2. Check for the padlock icon in the address bar
+3. Verify certificate details by clicking the padlock
+
+### 8.5. Certificate Auto-Renewal
+
+Certbot installs a cron job/timer that automatically renews certificates before they expire (Let's Encrypt certificates are valid for 90 days).
+
+To test the renewal process:
+```bash
+sudo certbot renew --dry-run
+```
+
+### 8.6. Advanced Configuration
+
+For specific setups, you may need to modify your Nginx configuration:
+
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+    
+    # Redirect all HTTP traffic to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name your-domain.com;
+    
+    # SSL certificate paths (managed by Certbot)
+    ssl_certificate /etc/letsencrypt/live/your-domain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
+    
+    # Recommended SSL settings
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 1d;
+    
+    # HSTS (uncomment to enable - forces HTTPS for all connections)
+    # add_header Strict-Transport-Security "max-age=31536000" always;
+    
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+### 8.7. Troubleshooting SSL
+
+Common issues and solutions:
+
+1. **Certificate not renewed automatically**
+   - Check certbot timer status: `sudo systemctl status certbot.timer`
+   - Verify renewal hooks: `sudo ls -la /etc/letsencrypt/renewal-hooks/`
+
+2. **Mixed content warnings**
+   - Ensure all website resources (images, scripts, styles) are loaded via HTTPS
+   - Check for hardcoded HTTP URLs in your application
+
+3. **Certificate validation fails**
+   - Verify domain DNS settings
+   - Check that port 80 is accessible from the internet
+   - Look at Certbot logs: `sudo journalctl -xe`
