@@ -50,7 +50,7 @@ function TableRow({
     console.log(orderId);
     
     return (
-        <tr className="text-[#4d4d4d">
+        <tr className="text-[#4d4d4d]">
             <td className={tableRowStyling1 + ` text-[#146eb4] font-medium`}>{orderId}</td>
             <td className={tableRowStyling1}>
                 <Status status={status}/>
