@@ -1,0 +1,23 @@
+{
+  "name": "prisma-relationship",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --b",
+    "dev": "npm run build && nodemon dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prisma": "^6.10.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.10.0",
+    "@types/express": "^5.0.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
