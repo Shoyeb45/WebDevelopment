@@ -211,4 +211,3 @@ If successful, your app is now live!
 
 ---
 
-Let me know if you'd like this exported as a `.md` file or want summaries for further slides.
