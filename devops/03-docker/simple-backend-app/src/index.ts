@@ -15,8 +15,7 @@ async function connectDb() {
         console.error("Error while connecting DB", error); 
         throw error
     }
-}
-    
+}   
 const userSchema = new Schema({
     name: {
         type: String,
