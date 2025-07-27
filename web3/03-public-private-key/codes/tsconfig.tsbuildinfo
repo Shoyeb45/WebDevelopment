@@ -1,1 +1,1 @@
-{"root":["./src/eddsa.ts","./src/ecdsasecp.ts","./src/ecether.ts","./src/solweb3.ts"],"version":"5.8.3"}
+{"root":["./src/eddsa.ts","./src/derievedpathsol.ts","./src/ecdsasecp.ts","./src/ecether.ts","./src/ethderievedpath.ts","./src/mnemonic.ts","./src/solweb3.ts"],"version":"5.8.3"}
