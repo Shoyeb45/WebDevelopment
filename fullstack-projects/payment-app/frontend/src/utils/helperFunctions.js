@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 
-export const domain = "https://webdevelopment-izeb.onrender.com/api/v1";
+export const domain = "http://webdevelopment-izeb.onrender.com/api/v1";
 
 export function isAccessTokenExpired(token) {
   if (!token) return true;

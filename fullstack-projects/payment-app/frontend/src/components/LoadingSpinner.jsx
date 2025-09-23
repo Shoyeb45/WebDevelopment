@@ -3,7 +3,7 @@ const LoadingSpinner = () => {
       <div role="status" className="flex justify-center items-center">
         <svg
           aria-hidden="true"
-          className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className="w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-indigo-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -49,9 +49,10 @@ const LoadingSpinner = () => {
 
 export function Loading({ message }) {
     return (
-        <div className="flex flex-col items-center justify-center">
-            <div>{message}</div>
+        <div className="flex flex-col items-center justify-center py-8">
+            <div className="text-xl font-medium text-gray-700 mb-4">{message}</div>
             <LoadingSpinner />
+            <div className="text-sm text-gray-500 mt-4">Please wait...</div>
         </div>
     )
 }

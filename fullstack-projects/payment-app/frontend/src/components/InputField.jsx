@@ -20,7 +20,6 @@ export function InputField({
         <label htmlFor={id} className={labelStyle}>
           {Icon}
         </label>
-  
         <input
           type={type}
           name={id}

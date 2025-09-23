@@ -7,72 +7,51 @@ import { SignUp } from "./components/SignUp";
 import { SignIn } from "./components/SignIn";
 import { Users } from "./components/Users";
 import { Dashboard } from "./components/Dashboard";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { ProfileInfo } from "./components/ProfileInfo";
 
-
 export default function App() {
-
-    return (
-        <RecoilRoot>
-        <BrowserRouter>
-            <div>
-                <div className="w-[100vw]">
-                    <Header />
-                </div>
-                
+  return (
+    <RecoilRoot>
+      <BrowserRouter>
+        <div className="flex flex-col min-h-screen bg-gray-50">
+          <Header />
+          <main className="flex-1">
+            <div className="min-h-[calc(100vh-72px)]">
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center min-h-[calc(100vh-72px)]">
+                    <div className="text-xl text-gray-600">Loading...</div>
+                  </div>
+                }
+              >
                 <Routes>
-                    <Route 
-                        path="/" 
-                        element={<Suspense fallback="loading...">
-                            <div className="h-[90.8vh]">
-                                <Landing /> 
-                            </div> 
-                        </Suspense>}
-                    />
-                    <Route 
-                        path="/signin" 
-                        element={<Suspense fallback="loading..." >
-                            <SignIn />
-                        </Suspense>} 
-                    />
-
-                    <Route 
-                        path="/signup" 
-                        element={<Suspense fallback="loading..." >
-                            <SignUp />
-                        </Suspense>} 
-                    />
-
-                    <Route
-                        path="/dashboard"
-                        element={<Suspense>
-                            <Dashboard/>
-                        </Suspense>} 
-                    />
-                    
-                    <Route
-                        path="/users"
-                        element={<Suspense fallback="loading..">
-                            <Users />
-                        </Suspense>} 
-                    />
-                    <Route
-                        path="/profile"
-                        element={<Suspense fallback="loading..">
-                            <div className="">
-                                <ProfileInfo />
-                            </div>
-                        </Suspense>} 
-                    />
-
+                  <Route
+                    path="/"
+                    element={
+                      <div className="h-[calc(100vh-72px)]">
+                        <Landing />
+                      </div>
+                    }
+                  />
+                  <Route path="/signin" element={<SignIn />} />
+                  <Route path="/signup" element={<SignUp />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/users" element={<Users />} />
+                  <Route
+                    path="/profile"
+                    element={
+                      <div className="pb-8">
+                        <ProfileInfo />
+                      </div>
+                    }
+                  />
                 </Routes>
-             
+              </Suspense>
             </div>
-
-        </BrowserRouter>
-        </RecoilRoot>
-    );
-
+          </main>
+        </div>
+      </BrowserRouter>
+    </RecoilRoot>
+  );
 }
-
