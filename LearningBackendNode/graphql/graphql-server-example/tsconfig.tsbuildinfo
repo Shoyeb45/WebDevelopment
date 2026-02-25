@@ -1,0 +1,1 @@
+{"root":["./src/_db.ts","./src/codegen.ts","./src/index.ts","./src/resolvers.ts","./src/schema.ts","./src/generated/graphql.ts"],"version":"5.9.3"}

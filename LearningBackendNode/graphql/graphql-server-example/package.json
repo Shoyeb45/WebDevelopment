@@ -1,0 +1,26 @@
+{
+  "name": "graphql-server-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --b",
+    "start": "npm run build && node dist/index.js",
+    "generate": "graphql-codegen --config src/codegen.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^5.4.0",
+    "graphql": "^16.13.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "6.1.2",
+    "@graphql-codegen/typescript": "5.0.8",
+    "@graphql-codegen/typescript-resolvers": "5.1.6",
+    "@types/node": "^25.3.0",
+    "typescript": "^5.9.3"
+  }
+}
